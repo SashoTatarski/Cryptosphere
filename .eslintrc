@@ -1,10 +1,31 @@
 {
-  "extends": ["prettier"],
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": ["error"]
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
   },
-  "parser": "babel-eslint",
-  "quotes": ["error", "single"],
-  "semi": ["error", "always"]
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
+  "ignorePatterns": [ "dist/", "node_modules/" ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-unused-vars": 0,
+    "react/prop-types": 0,
+    "no-dupe-keys":0,
+  }
 }
