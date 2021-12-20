@@ -14,7 +14,7 @@
 
 
 ### **1. Description**
-<br>
+<br> 
 
 Stock Market Dashboard Project - deployed to [Gitlab page]()
 
