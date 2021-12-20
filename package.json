@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .js,.jsx, --fix",
     "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\"",
+    "build": "webpack --mode production",
     "prepare": "husky install"
   },
   "husky": {
