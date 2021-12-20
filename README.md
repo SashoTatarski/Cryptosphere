@@ -1,6 +1,6 @@
 # React Stock Market Dashboard Project.
 <br>
-
+![image.png](./image.png)
 
 ## Table of contents
    - [1. Description](#1-description)
