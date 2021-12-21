@@ -16,7 +16,7 @@
 ### **1. Description**
 <br> 
 
-Stock Market Dashboard Project - deployed to [Gitlab page](https://sashot.gitlab.io/stock-market-dashboard/){:target="_blank"}
+Stock Market Dashboard Project - deployed to <a href="https://sashot.gitlab.io/stock-market-dashboard" target="_blank">Gitlab page</a>
 
 <br>
 
