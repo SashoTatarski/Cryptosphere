@@ -1,6 +1,6 @@
 # React Stock Market Dashboard Project.
 <br>
-
+![image.png](./image.png)
 
 ## Table of contents
    - [1. Description](#1-description)
@@ -16,7 +16,7 @@
 ### **1. Description**
 <br> 
 
-Stock Market Dashboard Project - deployed to [Gitlab page]()
+Stock Market Dashboard Project - deployed to [Gitlab page](https://sashot.gitlab.io/stock-market-dashboard/)
 
 <br>
 
