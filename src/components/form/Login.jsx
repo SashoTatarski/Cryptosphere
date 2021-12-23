@@ -1,15 +1,12 @@
 import React from 'react';
 
 const Login = () => {
-
-
   const onSubmit = (e) => {
     e.preventDefault();
 
     console.log('HI');
   };
 
-  
   return (
     <div>
       <form onSubmit={onSubmit}>

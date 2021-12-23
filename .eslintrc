@@ -7,9 +7,11 @@
   "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
+    "requireConfigFile":false,
     "ecmaFeatures": {
       "jsx": true
     },
+  
     "ecmaVersion": 12,
     "sourceType": "module"
   },
@@ -27,6 +29,6 @@
     "no-unused-vars": 0,
     "react/prop-types": 0,
     "no-dupe-keys":0,
-    "requireConfigFile": false
+  
   }
 }
