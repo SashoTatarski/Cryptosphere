@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Login = () => {
+  [email, setEmail] = React.useState('');
+  [password, setPassword] = React.useState('');
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log('HI');
+    console.log(password, email);
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input placeholder="email"></input>
-        <input type="current-password" placeholder="password"></input>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <form onSubmit={onSubmit}>
+      <input
+        type="email"
+        placeholder="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 

@@ -6,7 +6,9 @@ import store from './redux/store';
 const App = () => {
   return (
     <div>
-      <Provider store={store}></Provider>
+      <Provider store={store}>
+        <Login></Login>
+      </Provider>
     </div>
   );
 };
