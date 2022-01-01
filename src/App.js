@@ -1,13 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Login } from './components';
 import store from './redux/store';
 
 const App = () => {
   return (
-    <div>
+    <div className="App" style={ {display: 'flex', justifyContent: 'center' } }>
       <Provider store={store}></Provider>
+      <div style={ {width: '70%' } }>
+      <Chart />
+      </div>
     </div>
+    
   );
 };
 
