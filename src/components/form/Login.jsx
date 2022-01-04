@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../../redux/user/userActions';
+import { fetchUser } from '../../redux/auth/authActions';
 
 const Login = ({ userData, fetchUser }) => {
   const [email, setEmail] = useState('');
@@ -9,7 +9,7 @@ const Login = ({ userData, fetchUser }) => {
     e.preventDefault();
     fetchUser({ password, email });
   };
-  console.log(userData.error);
+
   return (
     <form onSubmit={onSubmit}>
       <input

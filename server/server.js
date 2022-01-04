@@ -76,17 +76,14 @@ server.post('/api/auth/register', (req, res) => {
 
 server.post('/api/auth/login', (req, res) => {
   const { email, password } = req.body;
-
   if (!isLoginAuthenticated({ email, password })) {
-    const status = 401;
-    const error = 'Incorrect Email or Password';
-    res.status(status).json({ status, error });
-    return;
+    res.status(401).json({ error: 'Incorrect Email or Password' });
+  } else {
+    const access_token = createToken({ email, password });
+    const user = filteredUsers({ email, password });
+
+    res.status(200).json({ access_token, user });
   }
-  const access_token = createToken({ email, password });
-  const user = filteredUsers({ email, password });
- 
-  res.status(200).json({ access_token, user });
 });
 
 server.listen(8000, () => {
