@@ -25,7 +25,6 @@ export const fetchUserFailure = (error) => {
 };
 
 export const fetchUser = (values) => {
-
   return function (dispatch) {
     dispatch(fetchUserRequest);
     fetch('http://localhost:8000/api/auth/login', {
