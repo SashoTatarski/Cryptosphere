@@ -1,2 +1,2 @@
-import Login from './form/Login';
-export { Login };
+import Chart from './Chart';
+export { Chart };

@@ -1,4 +1,4 @@
-import { SET_MESSAGE } from '../message/messageTypes';
+
 import { LOGIN_FAIL, LOGIN_SUCCESS } from './authTypes';
 
 export const loginUserSuccess = (data) => {
@@ -8,18 +8,13 @@ export const loginUserSuccess = (data) => {
   };
 };
 
-export const loginUserFailure = () => {
+export const loginUserFailure = (error) => {
   return {
-    type: LOGIN_FAIL
+    type: LOGIN_FAIL,
+    payload: {error:error}
   };
 };
 
-export const message = (error) => {
-  return {
-    type: SET_MESSAGE,
-    payload: error
-  };
-};
 
 export const fetchUser = (values) => {
   return function (dispatch) {
@@ -30,16 +25,12 @@ export const fetchUser = (values) => {
       },
       body: JSON.stringify(values)
     })
-      .then((res) => res.json())
-      .then((data) => {
-        const { error } = data;
-        if (error) {
-          dispatch(loginUserFailure());
-
-          dispatch(message(error));
-        } else {
-          dispatch(loginUserSuccess(data));
-        }
-      });
+      .then((data) => data.json())
+      .then((data) =>
+        data.access_token && data.user
+          ? dispatch(loginUserSuccess(data)) &&
+            localStorage.setItem('user', JSON.stringify(data))
+          : dispatch(loginUserFailure(data.error)) 
+      );
   };
 };

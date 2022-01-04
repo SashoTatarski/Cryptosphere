@@ -9,8 +9,8 @@ import {
 const user = JSON.parse(localStorage.getItem('user'));
 
 const initialState = user
-  ? { isLoggedIn: true, user }
-  : { isLoggedIn: false, user: null };
+  ? { isLoggedIn: true, user, error: '' }
+  : { isLoggedIn: false, user: null, error: '' };
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -24,7 +24,8 @@ const reducer = (state = initialState, action) => {
     case REGISTER_FAIL:
       return {
         ...state,
-        isLoggedIn: false
+        isLoggedIn: false,
+        error: payload.error
       };
     case LOGIN_SUCCESS:
       return {
@@ -36,7 +37,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: false,
-        user: null
+        user: null,
+        error: payload.error
       };
     case LOGOUT:
       return {

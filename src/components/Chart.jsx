@@ -63,7 +63,11 @@ const Chart = () => {
     ]
   };
 
-  return <CanvasJSChart options={options} />;
+  return (
+    <div style={{ width: '70%' }}>
+      <CanvasJSChart options={options} />;
+    </div>
+  );
 };
 
 function formatStockData(stockData) {

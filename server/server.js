@@ -29,7 +29,11 @@ function filteredUsers({ email, password }) {
   const filteredUsers = userdb.users.filter((user) => {
     return user.email === email && user.password === password;
   });
-  return filteredUsers[0];
+  return {
+    id: filteredUsers[0].id,
+    name: filteredUsers[0].name,
+    email: filteredUsers[0].email
+  };
 }
 
 function isRegisterAuthenticated({ email }) {

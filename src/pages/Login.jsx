@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../../redux/auth/authActions';
+import { fetchUser } from '../redux';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ userData, fetchUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [user, setUser] = useState('');
+  const navigate = useNavigate();
   const onSubmit = (e) => {
     e.preventDefault();
     fetchUser({ password, email });
+    
   };
+  console.log(userData);
 
   return (
     <form onSubmit={onSubmit}>
@@ -30,7 +35,7 @@ const Login = ({ userData, fetchUser }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    userData: state.user
+    userData: state.auth
   };
 };
 
