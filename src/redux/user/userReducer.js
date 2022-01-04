@@ -1,34 +1,34 @@
 import {
-  FETCH_USERS_FAILURE,
-  FETCH_USERS_REQUEST,
-  FETCH_USERS_SUCCESS
+  FETCH_USER_FAILURE,
+  FETCH_USER_REQUEST,
+  FETCH_USER_SUCCESS
 } from './userTypes';
 
 const initialState = {
   loading: false,
-  users: [],
+  user: [],
   error: ''
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_USERS_REQUEST:
+    case FETCH_USER_REQUEST:
       return {
         ...state,
         loading: true
       };
-    case FETCH_USERS_SUCCESS:
+    case FETCH_USER_SUCCESS:
       return {
         ...state,
         loading: false,
-        users: action.payload,
+        user: action.payload,
         error: ''
       };
-    case FETCH_USERS_FAILURE:
+    case FETCH_USER_FAILURE:
       return {
         ...state,
         loading: false,
-        users: [],
+        user: [],
         error: action.payload
       };
     default:

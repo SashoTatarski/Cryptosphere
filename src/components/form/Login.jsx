@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { fetchUser } from '../../redux/user/userActions';
 
-const Login = () => {
-  [email, setEmail] = React.useState('');
-  [password, setPassword] = React.useState('');
+const Login = ({ userData, fetchUser }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const onSubmit = (e) => {
     e.preventDefault();
-
-    console.log(password, email);
+    fetchUser({ password, email });
   };
-
+  console.log(userData.error);
   return (
     <form onSubmit={onSubmit}>
       <input
@@ -27,5 +28,15 @@ const Login = () => {
     </form>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    userData: state.user
+  };
+};
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUser: (values) => dispatch(fetchUser(values))
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
