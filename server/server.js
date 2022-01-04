@@ -1,10 +1,9 @@
 import fs from 'fs';
 import bodyParser from 'body-parser';
-import jsonServer  from 'json-server';
+import jsonServer from 'json-server';
 import jwt from 'jsonwebtoken';
 
-
-const server = jsonServer.create;
+const server = jsonServer.create();
 const userdb = JSON.parse(fs.readFileSync('./users.json', 'utf-8'));
 
 server.use(bodyParser.urlencoded({ extended: true }));
@@ -16,9 +15,7 @@ const SECRET_KEY = '72676376';
 const expiresIn = '1h';
 
 function createToken(payload) {
- 
   return jwt.sign(payload, SECRET_KEY, { expiresIn });
-  
 }
 
 function isLoginAuthenticated({ email, password }) {
@@ -27,6 +24,12 @@ function isLoginAuthenticated({ email, password }) {
       (user) => user.email === email && user.password === password
     ) !== -1
   );
+}
+function filteredUsers({ email, password }) {
+  const filteredUsers = userdb.users.filter((user) => {
+    return user.email === email && user.password === password;
+  });
+  return filteredUsers[0];
 }
 
 function isRegisterAuthenticated({ email }) {
@@ -73,15 +76,17 @@ server.post('/api/auth/register', (req, res) => {
 
 server.post('/api/auth/login', (req, res) => {
   const { email, password } = req.body;
-  
+
   if (!isLoginAuthenticated({ email, password })) {
     const status = 401;
-    const message = 'Incorrect Email or Password';
-    res.status(status).json({ status, message });
+    const error = 'Incorrect Email or Password';
+    res.status(status).json({ status, error });
     return;
   }
   const access_token = createToken({ email, password });
-  res.status(200).json({ access_token });
+  const user = filteredUsers({ email, password });
+ 
+  res.status(200).json({ access_token, user });
 });
 
 server.listen(8000, () => {

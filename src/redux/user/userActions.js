@@ -1,42 +1,47 @@
-import axios from 'axios';
 import {
-  FETCH_USERS_FAILURE,
-  FETCH_USERS_REQUEST,
-  FETCH_USERS_SUCCESS
+  FETCH_USER_FAILURE,
+  FETCH_USER_REQUEST,
+  FETCH_USER_SUCCESS
 } from './userTypes';
 
-export const fetchUsersRequest = () => {
+export const fetchUserRequest = () => {
   return {
-    type: FETCH_USERS_REQUEST
+    type: FETCH_USER_REQUEST
   };
 };
 
-export const fetchUsersSuccess = (users) => {
+export const fetchUserSuccess = (user) => {
   return {
-    type: FETCH_USERS_SUCCESS,
-    payload: users
+    type: FETCH_USER_SUCCESS,
+    payload: user
   };
 };
 
-export const fetchUsersFailure = (error) => {
+export const fetchUserFailure = (error) => {
   return {
-    type: FETCH_USERS_FAILURE,
+    type: FETCH_USER_FAILURE,
     payload: error
   };
 };
 
-export const fetchUsers = () => {
+export const fetchUser = (values) => {
+
   return function (dispatch) {
-    dispatch(fetchUsersRequest);
-    axios
-      .get('https://jsonplaceholder.typicode.com/users')
-      .then((response) => {
-        const users = response.data;
-        dispatch(fetchUsersSuccess(users));
+    dispatch(fetchUserRequest);
+    fetch('http://localhost:8000/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(fetchUserSuccess(data));
       })
       .catch((error) => {
         const errorMsg = error.message;
-        dispatch(fetchUsersFailure(errorMsg));
+        dispatch(fetchUserFailure(errorMsg));
       });
   };
 };
