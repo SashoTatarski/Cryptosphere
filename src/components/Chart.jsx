@@ -44,7 +44,7 @@ const Chart = () => {
       crosshair: {
         enabled: true,
         snapToDataPoint: true
-      }     
+      }
     },
     data: [
       {
