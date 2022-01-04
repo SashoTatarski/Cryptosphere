@@ -1,4 +1,3 @@
-
 import { LOGIN_FAIL, LOGIN_SUCCESS } from './authTypes';
 
 export const loginUserSuccess = (data) => {
@@ -11,10 +10,9 @@ export const loginUserSuccess = (data) => {
 export const loginUserFailure = (error) => {
   return {
     type: LOGIN_FAIL,
-    payload: {error:error}
+    payload: { error: error }
   };
 };
-
 
 export const fetchUser = (values) => {
   return function (dispatch) {
@@ -30,7 +28,7 @@ export const fetchUser = (values) => {
         data.access_token && data.user
           ? dispatch(loginUserSuccess(data)) &&
             localStorage.setItem('user', JSON.stringify(data))
-          : dispatch(loginUserFailure(data.error)) 
+          : dispatch(loginUserFailure(data.error))
       );
   };
 };

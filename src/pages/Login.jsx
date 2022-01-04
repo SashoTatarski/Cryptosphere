@@ -11,7 +11,6 @@ const Login = ({ userData, fetchUser }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     fetchUser({ password, email });
-    
   };
   console.log(userData);
 
