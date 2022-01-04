@@ -24,6 +24,7 @@ module.exports = {
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
+    historyApiFallback: true,
     static: path.resolve(__dirname, './dist'),
     hot: true,
     port: 3000

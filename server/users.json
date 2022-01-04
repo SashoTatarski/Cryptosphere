@@ -1,4 +1,6 @@
   
 {
-    "users": [{ "id": 2, "email": "test@gmail.com", "password": "123456" }]
+    "users": [{ "id": 2, "name":"Test","email": "test@gmail.com", "password": "123456" },
+      { "id": 3, "name":"Pesho","email": "pesho@gmail.com", "password": "11111" }
+    ]
   }
