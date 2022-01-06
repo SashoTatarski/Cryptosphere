@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Login, NotFound } from './pages';
-import { Chart } from './components';
 import { store } from './redux';
+
+import { Login, NotFound } from './pages';
+import { Chart, ProtectedRoute } from './components';
 
 const App = () => {
   return (
@@ -14,7 +14,10 @@ const App = () => {
         <Provider store={store}>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/dashboard" element={<Chart />} />
+            <Route
+              path="/dashboard"
+              element={<ProtectedRoute component={Chart} />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>

@@ -1,13 +1,13 @@
 import { LOGIN_FAIL, LOGIN_SUCCESS } from './authTypes';
 
-export const loginUserSuccess = (data) => {
+const loginUserSuccess = (data) => {
   return {
     type: LOGIN_SUCCESS,
     payload: { user: data }
   };
 };
 
-export const loginUserFailure = (error) => {
+const loginUserFailure = (error) => {
   return {
     type: LOGIN_FAIL,
     payload: { error: error }

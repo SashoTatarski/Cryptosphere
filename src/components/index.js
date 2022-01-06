@@ -1,2 +1,3 @@
 import Chart from './Chart';
-export { Chart };
+import ProtectedRoute from './ProtectedRoute';
+export { Chart,ProtectedRoute };
