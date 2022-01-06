@@ -13,12 +13,11 @@ const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="/" element={<Login />}>
+            <Route path="/" element={<Login />}/>
               <Route
                 path="dashboard"
                 element={<ProtectedRoute component={Chart} />}
               />
-            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>
