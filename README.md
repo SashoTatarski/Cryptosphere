@@ -42,16 +42,23 @@ Stock Market Dashboard Project - deployed to <a href="https://sashot.gitlab.io/s
 - Platform and version: **Node 1.0+**
 - Core Packages:  **ESLint**,  **React**,  **Webpack** ,  **Babel**
 
-
 <br>
 
-### **5. Setup**
+### **5. Structure**
    - 1. Clone/download repo
    - 2. yarn install (or npm install for npm)
 
 <br>
 
-### **6. Usage**
+<br>
+
+### **6. Setup**
+   - 1. Clone/download repo
+   - 2. yarn install (or npm install for npm) a-for client(src folder) and server
+
+<br>
+
+### **7. Usage**
    - `npm run start` - starts the project -App served @ http://localhost:3000
 
 All commands:

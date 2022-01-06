@@ -13,9 +13,9 @@ const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="stock-market-dashboard/" element={<Login />} />
             <Route
-              path="/dashboard"
+              path="stock-market-dashboard/dashboard"
               element={<ProtectedRoute component={Chart} />}
             />
             <Route path="*" element={<NotFound />} />
