@@ -6,13 +6,13 @@ pages:
     paths:
       - node_modules/
   variables:
-    GIT_STRATEGY: none 
-    PUBLIC_URL:  http://gitlab-react-page.garrick.monster
+    PUBLIC_URL:  /stock-market-dashboard
   script:
     - npm install
     - npm run build
     - rm -rf public
     - mv dist public
+    - cp public/index.html public/404.html
   artifacts:
     paths:
       - public
