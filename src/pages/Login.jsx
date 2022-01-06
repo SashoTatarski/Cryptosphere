@@ -14,7 +14,6 @@ const Login = ({ userData, fetchUser }) => {
     userData.isLoggedIn ? navigate('/dashboard') : null;
   };
 
-
   return (
     <div>
       <form onSubmit={onSubmit}>
