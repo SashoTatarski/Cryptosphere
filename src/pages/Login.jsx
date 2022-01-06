@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../redux';
 import { useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 const Login = ({ userData, fetchUser }) => {
   const [email, setEmail] = useState('');
@@ -32,6 +33,8 @@ const Login = ({ userData, fetchUser }) => {
         <button type="submit">Submit</button>
       </form>
       {userData.error ? <p>{userData.error}</p> : null}
+
+      <Outlet />
     </div>
   );
 };

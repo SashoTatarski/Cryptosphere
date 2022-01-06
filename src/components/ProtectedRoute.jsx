@@ -10,6 +10,6 @@ const ProtectedRoute = ({ component: RouteComponent }) => {
     return <RouteComponent />;
   }
 
-  return <Navigate to="/" />;
+  return <Navigate to="stock-market-dashboard" />;
 };
 export default ProtectedRoute;

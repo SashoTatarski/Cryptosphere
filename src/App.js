@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import { store } from './redux';
 
@@ -13,15 +13,12 @@ const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="stock-market-dashboard">
-              <Route index={true} element={<Login />} />
+            <Route path="/" element={<Login />}>
               <Route
-                index={false}
                 path="dashboard"
                 element={<ProtectedRoute component={Chart} />}
               />
             </Route>
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>
