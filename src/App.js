@@ -13,15 +13,15 @@ const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="stock-market-dashboard" >
-            <Route index={true} element={<Login />}/>
+            <Route path="stock-market-dashboard">
+              <Route index={true} element={<Login />} />
               <Route
                 index={false}
                 path="dashboard"
                 element={<ProtectedRoute component={Chart} />}
               />
-              </Route>
-           
+            </Route>
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>
