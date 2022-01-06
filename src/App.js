@@ -15,7 +15,7 @@ const App = () => {
           <Routes>
             <Route path="stock-market-dashboard/" element={<Login />} />
             <Route
-              path="stock-market-dashboard/dashboard"
+              path="/dashboard"
               element={<ProtectedRoute component={Chart} />}
             />
             <Route path="*" element={<NotFound />} />

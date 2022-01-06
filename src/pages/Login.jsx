@@ -11,7 +11,7 @@ const Login = ({ userData, fetchUser }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     fetchUser({ password, email });
-    userData.isLoggedIn ? navigate('stock-market-dashboard/dashboard') : null;
+    userData.isLoggedIn ? navigate('/dashboard') : null;
   };
 
   return (
