@@ -34,7 +34,16 @@ Stock Market Dashboard Project - deployed to <a href="https://sashot.gitlab.io/s
 
 <br>
 
-### **4. Project information**
+### **4. Issue Board**
+
+<br>
+
+- [Board](https://gitlab.com/SashoT/stock-market-dashboard/-/boards)
+
+
+<br>
+
+### **5. Project information**
 
 <br>
 
@@ -44,21 +53,21 @@ Stock Market Dashboard Project - deployed to <a href="https://sashot.gitlab.io/s
 
 <br>
 
-### **5. Structure**
-   - 1. Clone/download repo
-   - 2. yarn install (or npm install for npm)
+### **6. Structure**
+- Project structure consists of two main parts - back-end (folder server) and front-end (folder client)
+  -  For the use of the project server is used json server.
 
 <br>
 
 <br>
 
-### **6. Setup**
+### **7. Setup**
    - 1. Clone/download repo
    - 2. yarn install (or npm install for npm) a-for client(src folder) and server
 
 <br>
 
-### **7. Usage**
+### **8. Usage**
    - `npm run start` - starts the project -App served @ http://localhost:3000
 
 All commands:
@@ -67,3 +76,5 @@ All commands:
 - `npm run lint` - run lint
 - `npm run lint:fix` - fix lint errors
 - `npm run format` - Format code
+- `npm run build `-create bundle
+- `npm run auth` -run server
