@@ -10,7 +10,7 @@ import { Chart, ProtectedRoute } from './components';
 const App = () => {
   return (
     <div className="App" style={{ display: 'flex', justifyContent: 'center' }}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="/stock-market-dashboard">
         <Provider store={store}>
           <Routes>
             <Route path="/" element={<Login />} />
