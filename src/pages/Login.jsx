@@ -51,7 +51,7 @@ const Login = ({ userData, fetchUser }) => {
         {userData.error ? <StyledError>{userData.error}</StyledError> : null}
         <StyledButton>Login</StyledButton>
         <SRedirect>
-          <SRedirectLabel>{'Don\'t have an account?'}&nbsp;</SRedirectLabel>
+          <SRedirectLabel>{"Don't have an account?"}&nbsp;</SRedirectLabel>
           <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
         </SRedirect>
       </SForm>

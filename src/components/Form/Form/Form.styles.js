@@ -71,7 +71,6 @@ export const SRedirect = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 16px;
- 
 `;
 export const SRedirectLabel = styled.span`
   color: rgb(74, 74, 74);
