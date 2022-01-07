@@ -2,7 +2,20 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../redux';
 import { useNavigate } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+
+import {
+  SFlexContainer,
+  SForm,
+  StyledButton,
+  StyledError,
+  StyledInput,
+  StyledTitle,
+  IconStyleWrapper,
+  SmallStyledTitle,
+  SRedirectLabel,
+  SRedirect,
+  SRedirectLink
+} from '../components';
 
 const Login = ({ userData, fetchUser }) => {
   const [email, setEmail] = useState('');
@@ -16,26 +29,33 @@ const Login = ({ userData, fetchUser }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
+    <SFlexContainer>
+      <IconStyleWrapper />
+      <StyledTitle>Login</StyledTitle>
+      <SmallStyledTitle>Sign in to your account</SmallStyledTitle>
+      <SForm onSubmit={onSubmit}>
+        <br></br>
+        <StyledInput
           type="email"
-          placeholder="email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <input
+
+        <StyledInput
           type="password"
-          placeholder="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Submit</button>
-      </form>
-      {userData.error ? <p>{userData.error}</p> : null}
-
-      <Outlet />
-    </div>
+        {userData.error ? <StyledError>{userData.error}</StyledError> : null}
+        <StyledButton>Login</StyledButton>
+        <SRedirect>
+          <SRedirectLabel>{"Don't have an account?"}&nbsp;</SRedirectLabel>
+          <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
+        </SRedirect>
+      </SForm>
+    </SFlexContainer>
   );
 };
 const mapStateToProps = (state) => {

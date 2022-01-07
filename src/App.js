@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import { store } from './redux';
 
-import { Login, NotFound } from './pages';
+import { Login, NotFound, Register } from './pages';
 import { Chart, ProtectedRoute } from './components';
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
         <Provider store={store}>
           <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="register" element={<Register />} />
             <Route path="dashboard" element={<ProtectedRoute component={Chart} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
