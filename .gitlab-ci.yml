@@ -5,8 +5,6 @@ pages:
   cache:
     paths:
       - node_modules/
-  variables:
-    PUBLIC_URL:  /stock-market-dashboard
   script:
     - npm install
     - npm run build
