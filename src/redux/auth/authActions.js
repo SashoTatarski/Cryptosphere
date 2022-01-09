@@ -63,7 +63,8 @@ export const createUser = (values) => {
       .then((data) => data.json())
       .then((data) =>
         data?.message
-          ? dispatch(registerUserSuccess()) && dispatch(showModal({ title: 'Registration Completed Successfully!' }))
+          ? dispatch(registerUserSuccess()) &&
+            dispatch(showModal({ title: 'Registration Completed Successfully!' }))
           : dispatch(registerUserFailure(data?.error))
       )
       .catch((e) => {

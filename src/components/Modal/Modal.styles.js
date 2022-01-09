@@ -33,7 +33,7 @@ export const IconDoneStyleWrapper = styled(CheckmarkDoneCircle)`
   color: #667eea;
   width: 15%;
   height: 15%;
-  
+
   margin-left: 150px;
 `;
 export const StyledModalTitle = styled.h3`

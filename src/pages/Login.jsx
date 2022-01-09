@@ -25,7 +25,7 @@ const Login = ({ userData, fetchUser }) => {
   } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit =  (data) => {
+  const onSubmit = (data) => {
     fetchUser(data);
   };
 

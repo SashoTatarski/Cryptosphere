@@ -9,6 +9,6 @@ export const hideModal = () => {
 export const showModal = (title) => {
   return {
     type: MODAL_SHOW,
-    payload:  title ,
+    payload: title
   };
 };
