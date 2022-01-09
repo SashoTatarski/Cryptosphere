@@ -29,9 +29,6 @@ export const SmallStyledTitle = styled.h1`
   margin-right: 80px;
 `;
 
-
-
-
 export const StyledInput = styled.input`
   display: block;
   outline: 0;

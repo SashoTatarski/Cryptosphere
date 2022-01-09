@@ -54,12 +54,9 @@ export const Register = () => {
         <StyledInput
           type="password"
           placeholder="Confirm Password"
-          {...register(
-            'confirmPassword',
-            {
-              validate: (value) => value === password || 'The passwords do not match'
-            }
-          )}
+          {...register('confirmPassword', {
+            validate: (value) => value === password || 'The passwords do not match'
+          })}
           validationFailed={errors.confirmPassword}
         />
         {errors.confirmPassword && (

@@ -5,7 +5,6 @@ import {
   SForm,
   IconStyleWrapper,
   StyledTitle,
-
   StyledInput,
   StyledError,
   SmallStyledTitle,
@@ -20,7 +19,6 @@ export {
   SForm,
   IconStyleWrapper,
   StyledTitle,
-
   StyledInput,
   StyledError,
   StyledButton,
