@@ -6,11 +6,7 @@ import {
   REGISTER_SUCCESS
 } from './authTypes';
 
-const user = JSON.parse(localStorage.getItem('user'));
-
-const initialState = user
-  ? { isLoggedIn: true, user, error: '' }
-  : { isLoggedIn: false, user: null, error: '' };
+const initialState = { isLoggedIn: false, user: null, error: '' };
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -19,7 +15,8 @@ const reducer = (state = initialState, action) => {
     case REGISTER_SUCCESS:
       return {
         ...state,
-        isLoggedIn: false
+        isLoggedIn: false,
+        user: null
       };
     case REGISTER_FAIL:
       return {

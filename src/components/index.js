@@ -1,6 +1,7 @@
 import Chart from './Chart';
 import ProtectedRoute from './ProtectedRoute';
 import { SFlexContainer } from './Form/Container/Container.styles';
+import Modal from './Modal/Modal';
 import {
   SForm,
   IconStyleWrapper,
@@ -26,5 +27,6 @@ export {
   SFlexContainer,
   SRedirect,
   SRedirectLabel,
-  SRedirectLink
+  SRedirectLink,
+  Modal
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../redux';
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +25,7 @@ const Login = ({ userData, fetchUser }) => {
   } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     fetchUser(data);
   };
 
@@ -63,6 +63,7 @@ const Login = ({ userData, fetchUser }) => {
     </SFlexContainer>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     userData: state.auth
