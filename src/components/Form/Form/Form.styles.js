@@ -29,24 +29,17 @@ export const SmallStyledTitle = styled.h1`
   margin-right: 80px;
 `;
 
-const styles = `
-display: block;
-
-outline: 0;
-width: 70%;
-padding: 8px;
-font-size: 14px;
-border: 0;
-border-bottom: 0.5px solid blue;
-background-color: #EDF2F7;
-margin-bottom :20px
-`;
-
-export const StyledText = styled.text`
-  ${styles}
-`;
 export const StyledInput = styled.input`
-  ${styles}
+  display: block;
+  outline: 0;
+  width: 70%;
+  padding: 8px;
+  font-size: 14px;
+  border: 0;
+  border-bottom: ${(props) =>
+    props.validationFailed ? '0.5px solid red' : '0.5px solid blue'};
+  background-color: #edf2f7;
+  margin-bottom: 20px;
 `;
 
 export const StyledError = styled.div`
