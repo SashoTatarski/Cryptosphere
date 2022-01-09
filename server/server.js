@@ -41,11 +41,12 @@ function isRegisterAuthenticated({ email }) {
 }
 
 server.post('/api/auth/register', (req, res) => {
-  const { email, password } = req.body;
+
+  const { firstName, lastName, email, password } = req.body;
   if (isRegisterAuthenticated({ email })) {
     const status = 401;
     const message = 'Email already exist';
-    res.status(status).json({ status, message });
+    res.status(status).json({ error: message });
     return;
   }
 
@@ -60,7 +61,13 @@ server.post('/api/auth/register', (req, res) => {
 
     let last_item_id = data.users[data.users.length - 1].id;
 
-    data.users.push({ id: last_item_id + 1, email: email, password: password });
+    data.users.push({
+      id: last_item_id + 1,
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    });
     let writeData = fs.writeFile(
       './users.json',
       JSON.stringify(data),
@@ -74,11 +81,12 @@ server.post('/api/auth/register', (req, res) => {
       }
     );
   });
-  const access_token = createToken({ email, password });
-  res.status(200).json({ access_token });
+
+  res.status(200).json({message:'Successs'});
 });
 
 server.post('/api/auth/login', (req, res) => {
+
   const { email, password } = req.body;
   if (!isLoginAuthenticated({ email, password })) {
     res.status(401).json({ error: 'Incorrect Email or Password' });

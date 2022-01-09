@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
 import {
   SFlexContainer,
   SForm,
@@ -10,20 +11,28 @@ import {
   IconStyleWrapper,
   SRedirect,
   SRedirectLabel,
-  SRedirectLink
+  SRedirectLink,
+  Modal
 } from '../components';
-export const Register = () => {
+import { createUser } from '../redux';
+
+export const Register = ({ userData, createUser }) => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors }
   } = useForm();
-  const onSubmit = (e) => {};
+  const onSubmit = (data) => {
+    createUser(data);
+    reset();
+  };
 
   const password = watch('password');
   return (
     <SFlexContainer>
+      <Modal />
       <IconStyleWrapper />
       <StyledTitle>Register</StyledTitle>
 
@@ -62,7 +71,8 @@ export const Register = () => {
         {errors.confirmPassword && (
           <StyledError>{errors.confirmPassword.message}</StyledError>
         )}
-        <StyledButton>Register</StyledButton>
+        {userData.error ? <StyledError>{userData.error}</StyledError> : null}
+        <StyledButton type="submit">Register</StyledButton>
         <SRedirect>
           <SRedirectLabel>{'Already have an account?'}&nbsp;</SRedirectLabel>
           <SRedirectLink to={'/'}>{'Login'}</SRedirectLink>
@@ -72,4 +82,15 @@ export const Register = () => {
   );
 };
 
-export default Register;
+const mapStateToProps = (state) => {
+  return {
+    userData: state.auth
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createUser: (values) => dispatch(createUser(values))
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
