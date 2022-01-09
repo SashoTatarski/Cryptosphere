@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../redux';
 import { useNavigate } from 'react-router-dom';
-
+import { useForm } from 'react-hook-form';
 import {
   SFlexContainer,
   SForm,
@@ -18,40 +18,46 @@ import {
 } from '../components';
 
 const Login = ({ userData, fetchUser }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
   const navigate = useNavigate();
-  const onSubmit = (e) => {
-    e.preventDefault();
-    fetchUser({ password, email });
-    userData.isLoggedIn ? navigate('dashboard') : null;
+
+  const onSubmit = async (data) => {
+
+    fetchUser(data);
   };
+
+  useEffect(() => {
+    userData.isLoggedIn ? navigate('dashboard') : null;
+  }, [userData.isLoggedIn]);
 
   return (
     <SFlexContainer>
       <IconStyleWrapper />
       <StyledTitle>Login</StyledTitle>
       <SmallStyledTitle>Sign in to your account</SmallStyledTitle>
-      <SForm onSubmit={onSubmit}>
-        <br></br>
+      <SForm onSubmit={handleSubmit(onSubmit)}>
         <StyledInput
-          type="email"
+          type=""
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          {...register('email', { required: true })}
+          validationFailed={errors.email}
         />
 
         <StyledInput
           type="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          {...register('password', { required: true })}
+          validationFailed={errors.password}
         />
+
         {userData.error ? <StyledError>{userData.error}</StyledError> : null}
-        <StyledButton>Login</StyledButton>
+        <StyledButton type="submit">Login</StyledButton>
         <SRedirect>
-          <SRedirectLabel>{"Don't have an account?"}&nbsp;</SRedirectLabel>
+          <SRedirectLabel>{'Do not have an account?'}&nbsp;</SRedirectLabel>
           <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
         </SRedirect>
       </SForm>
