@@ -1,43 +1,69 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../redux';
 import { useNavigate } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import {
+  SFlexContainer,
+  SForm,
+  StyledButton,
+  StyledError,
+  StyledInput,
+  StyledTitle,
+  IconStyleWrapper,
+  SmallStyledTitle,
+  SRedirectLabel,
+  SRedirect,
+  SRedirectLink
+} from '../components';
 
 const Login = ({ userData, fetchUser }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
   const navigate = useNavigate();
-  const onSubmit = (e) => {
-    e.preventDefault();
-    fetchUser({ password, email });
-    userData.isLoggedIn ? navigate('dashboard') : null;
+
+  const onSubmit = (data) => {
+    fetchUser(data);
   };
 
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-      {userData.error ? <p>{userData.error}</p> : null}
+  useEffect(() => {
+    userData.isLoggedIn ? navigate('dashboard') : null;
+  }, [userData.isLoggedIn]);
 
-      <Outlet />
-    </div>
+  return (
+    <SFlexContainer>
+      <IconStyleWrapper />
+      <StyledTitle>Login</StyledTitle>
+      <SmallStyledTitle>Sign in to your account</SmallStyledTitle>
+      <SForm onSubmit={handleSubmit(onSubmit)}>
+        <StyledInput
+          type=""
+          placeholder="Email"
+          {...register('email', { required: true })}
+          validationFailed={errors.email}
+        />
+
+        <StyledInput
+          type="password"
+          placeholder="Password"
+          {...register('password', { required: true })}
+          validationFailed={errors.password}
+        />
+
+        {userData.error ? <StyledError>{userData.error}</StyledError> : null}
+        <StyledButton type="submit">Login</StyledButton>
+        <SRedirect>
+          <SRedirectLabel>{'Do not have an account?'}&nbsp;</SRedirectLabel>
+          <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
+        </SRedirect>
+      </SForm>
+    </SFlexContainer>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     userData: state.auth

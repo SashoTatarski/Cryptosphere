@@ -1,3 +1,3 @@
 import store from './store';
-import { fetchUser } from './auth/authActions';
-export { store, fetchUser };
+import { fetchUser, createUser } from './auth/authActions';
+export { store, fetchUser, createUser };
