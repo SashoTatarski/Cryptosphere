@@ -5,7 +5,6 @@ import React from 'react';
 
 const ProtectedRoute = ({ component: RouteComponent }) => {
   const userData = useSelector((state) => state.auth);
-
   if (userData.isLoggedIn) {
     return <RouteComponent />;
   }
