@@ -9,7 +9,7 @@ import rootReducer from './rootReducer';
 const localStorageMiddleware = (store) => (next) => (action) => {
   const result = next(action);
   if (action.type === LOGIN_SUCCESS) {
-    const authState = store.getState().auth;
+    const authState = store.getState().auth.user;
     localStorage.setItem('user', JSON.stringify(authState));
   }
   return result;
