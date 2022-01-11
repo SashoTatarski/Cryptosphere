@@ -8,9 +8,9 @@ import { store } from './redux';
 
 ReactDOM.render(
   <Provider store={store}>
-  <CryptoContext>
-    <App />
-  </CryptoContext>
+    <CryptoContext>
+      <App />
+    </CryptoContext>
   </Provider>,
   document.getElementById('app')
 );
