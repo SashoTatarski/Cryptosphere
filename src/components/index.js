@@ -1,19 +1,13 @@
 import Chart from './Chart';
-import ProtectedRoute from './ProtectedRoute';
 import { SFlexContainer } from './Form/Container/Container.styles';
-import Modal from './Modal/Modal';
 import {
-  SForm,
-  IconStyleWrapper,
-  StyledTitle,
-  StyledInput,
-  StyledError,
-  SmallStyledTitle,
-  StyledButton,
-  SRedirect,
+  IconStyleWrapper, SForm, SmallStyledTitle, SRedirect,
   SRedirectLabel,
-  SRedirectLink
+  SRedirectLink, StyledButton, StyledError, StyledInput, StyledTitle
 } from './Form/Form/Form.styles';
+import Header from './Header';
+import Modal from './Modal/Modal';
+import ProtectedRoute from './ProtectedRoute';
 export {
   Chart,
   ProtectedRoute,
@@ -28,5 +22,7 @@ export {
   SRedirect,
   SRedirectLabel,
   SRedirectLink,
-  Modal
+  Modal,
+  Header
 };
+
