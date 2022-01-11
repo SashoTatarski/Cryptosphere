@@ -1,31 +1,16 @@
-import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Header } from './components';
 import { CoinPage, Dashboard, Login, NotFound, Register } from './pages';
 import { store } from './redux';
 
-const App = () => {
+const App = () => { 
 
-  const useStyles = makeStyles(() => ({
-    App: {
-      backgroundColor: '#14161a',
-      color: 'white',
-      minHeight: '100vh',
-    }
-  }));
-
-  const classes = useStyles();
-
-  return (
-    <div className={classes.App}>      
+  return (      
+    //<div className="App" style={{ display: 'flex', justifyContent: 'center' }}>
       <BrowserRouter basename="/stock-market-dashboard">
-        <Provider store={store}>
-          <div>
-            <Header />
-          </div>
+        <Provider store={store}>          
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="register" element={<Register />} />
@@ -34,8 +19,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>
-      </BrowserRouter>
-    </div>
+      </BrowserRouter>   
   );
 };
 
