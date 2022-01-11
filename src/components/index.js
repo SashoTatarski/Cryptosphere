@@ -1,10 +1,17 @@
 import Banner from './Banner/Banner';
 import Chart from './Chart';
-import { SFlexContainer,SFlexDiv } from './Form/Container/Container.styles';
+import { SFlexContainer, SFlexDiv } from './Form/Container/Container.styles';
 import {
-  IconStyleWrapper, SForm, SmallStyledTitle, SRedirect,
+  IconStyleWrapper,
+  SForm,
+  SmallStyledTitle,
+  SRedirect,
   SRedirectLabel,
-  SRedirectLink, StyledButton, StyledError, StyledInput, StyledTitle
+  SRedirectLink,
+  StyledButton,
+  StyledError,
+  StyledInput,
+  StyledTitle
 } from './Form/Form/Form.styles';
 import Header from './Header';
 import Modal from './Modal/Modal';
@@ -28,4 +35,3 @@ export {
   Banner,
   SFlexDiv
 };
-

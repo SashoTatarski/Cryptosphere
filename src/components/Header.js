@@ -1,8 +1,12 @@
 import {
   AppBar,
-  Container, createTheme, makeStyles,
+  Container,
+  createTheme,
+  makeStyles,
   MenuItem,
-  Select, ThemeProvider, Toolbar,
+  Select,
+  ThemeProvider,
+  Toolbar,
   Typography
 } from '@material-ui/core';
 import React from 'react';
@@ -23,40 +27,42 @@ const Header = () => {
   const classes = useStyles();
   const history = useNavigate();
 
-  const {currency, setCurrency} = CryptoState();
+  const { currency, setCurrency } = CryptoState();
 
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: '#fff',
+        main: '#fff'
       },
-      type: 'dark',
-    },
+      type: 'dark'
+    }
   });
 
   return (
     <ThemeProvider theme={darkTheme}>
-    <AppBar color="transparent" position="static">
-      <Container>
-        <Toolbar>
-          <Typography onClick={() => history.push('/')} className={classes.title}>Crypto Dashboard</Typography>
-          <Select
-            variant="outlined"
-            style={{
-              width: 100,
-              height: 40,
-              marginRight: 15
-            }}
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-          >
-            <MenuItem value={'USD'}>USD</MenuItem>
-            <MenuItem value={'EUR'}>EUR</MenuItem>
-          </Select>
-          <MenuItem >Logout</MenuItem>
-        </Toolbar>
-      </Container>
-    </AppBar>
+      <AppBar color="transparent" position="static">
+        <Container>
+          <Toolbar>
+            <Typography onClick={() => history.push('/')} className={classes.title}>
+              Crypto Dashboard
+            </Typography>
+            <Select
+              variant="outlined"
+              style={{
+                width: 100,
+                height: 40,
+                marginRight: 15
+              }}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+            >
+              <MenuItem value={'USD'}>USD</MenuItem>
+              <MenuItem value={'EUR'}>EUR</MenuItem>
+            </Select>
+            <MenuItem>Logout</MenuItem>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </ThemeProvider>
   );
 };

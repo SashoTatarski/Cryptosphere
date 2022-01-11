@@ -7,62 +7,59 @@ import { TrendingCoins } from '../../config/api';
 import { CryptoState } from '../../Context/CryptoContext';
 
 export function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 const Carousel = () => {
-    const [trending, setTrending] = useState([]);
-    const { currency, symbol } = CryptoState();
-  
-    const fetchTrendingCoins = async () => {
-      const { data } = await axios.get(TrendingCoins(currency));
-  
-      console.log(data);
-      setTrending(data);
-    };
-  
-    useEffect(() => {
-      fetchTrendingCoins();
-    }, [currency]);
+  const [trending, setTrending] = useState([]);
+  const { currency, symbol } = CryptoState();
 
-    const useStyles = makeStyles((theme) => ({
-        carousel: {
-          height: '50%',
-          display: 'flex',
-          alignItems: 'center',
-        },
-        carouselItem: {
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          cursor: 'pointer',
-          textTransform: 'uppercase',
-          color: 'white',
-        },
-      }));
+  const fetchTrendingCoins = async () => {
+    const { data } = await axios.get(TrendingCoins(currency));
 
-      const classes = useStyles();
+    console.log(data);
+    setTrending(data);
+  };
 
-      const items = trending.map((coin) => {
-        let profit = coin?.price_change_percentage_24h >= 0;
-        return (
-            <Link
-                className={classes.carouselItem}
-                to={`/coins/${coin.id}`}
-                key={coin.id}>
-             <img
-                src={coin?.image}
-                alt={coin.name}
-                height='80'
-                style={{ marginBottom: 10 }}  
-            /> 
-             <span>
+  useEffect(() => {
+    fetchTrendingCoins();
+  }, [currency]);
+
+  const useStyles = makeStyles((theme) => ({
+    carousel: {
+      height: '50%',
+      display: 'flex',
+      alignItems: 'center'
+    },
+    carouselItem: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      cursor: 'pointer',
+      textTransform: 'uppercase',
+      color: 'white'
+    }
+  }));
+
+  const classes = useStyles();
+
+  const items = trending.map((coin) => {
+    let profit = coin?.price_change_percentage_24h >= 0;
+    return (
+      <Link className={classes.carouselItem} to={`/coins/${coin.id}`} key={coin.id}>
+        <img
+          src={coin?.image}
+          alt={coin.name}
+          height="80"
+          style={{ marginBottom: 10 }}
+        />
+        <span>
           {coin?.symbol}
           &nbsp;
           <span
             style={{
               color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
-              fontWeight: 500,
+              fontWeight: 500
             }}
           >
             {profit && '+'}
@@ -71,32 +68,34 @@ const Carousel = () => {
         </span>
         <span style={{ fontSize: 22, fontWeight: 500 }}>
           {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
-        </span>  
-            </Link>
-        );
-      });
-    
-      const responsive = {
-        0: {
-          items: 2,
-        },
-        512: {
-          items: 4,
-        },
-      };
-    return <div className={classes.carousel}>
-        <AliceCarousel 
-            mouseTracking
-            infinite
-            autoPlayInterval={1000}
-            animationDuration={1500}
-            disableDotsControls
-            disableButtonsControls
-            responsive={responsive}
-            autoPlay
-            items={items}
-        />
-    </div>;
+        </span>
+      </Link>
+    );
+  });
+
+  const responsive = {
+    0: {
+      items: 2
+    },
+    512: {
+      items: 4
+    }
+  };
+  return (
+    <div className={classes.carousel}>
+      <AliceCarousel
+        mouseTracking
+        infinite
+        autoPlayInterval={1000}
+        animationDuration={1500}
+        disableDotsControls
+        disableButtonsControls
+        responsive={responsive}
+        autoPlay
+        items={items}
+      />
+    </div>
+  );
 };
- 
+
 export default Carousel;

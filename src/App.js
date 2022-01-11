@@ -5,22 +5,19 @@ import './App.css';
 import { CoinPage, Dashboard, Login, NotFound, Register } from './pages';
 import { store } from './redux';
 
-const App = () => { 
-
-  return (      
-   
-      <BrowserRouter basename="/stock-market-dashboard">
-        <Provider store={store}>          
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="/coins/:id" element={<CoinPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Provider>
-      </BrowserRouter>   
-
+const App = () => {
+  return (
+    <BrowserRouter basename="/stock-market-dashboard">
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/coins/:id" element={<CoinPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Provider>
+    </BrowserRouter>
   );
 };
 

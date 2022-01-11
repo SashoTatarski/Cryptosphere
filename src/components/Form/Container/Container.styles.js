@@ -6,7 +6,7 @@ export const SFlexContainer = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const SFlexDiv= styled.div`
+export const SFlexDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
