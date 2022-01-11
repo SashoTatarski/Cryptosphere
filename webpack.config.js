@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback:  { index: '/stock-market-dashboard/' } ,
     static: path.resolve(__dirname, './dist'),
     hot: true,
     port: 3000

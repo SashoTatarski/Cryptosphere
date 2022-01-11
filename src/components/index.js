@@ -14,6 +14,8 @@ import {
   SRedirectLabel,
   SRedirectLink
 } from './Form/Form/Form.styles';
+import Navbar from './Navbar/Navbar';
+
 export {
   Chart,
   ProtectedRoute,
@@ -28,5 +30,6 @@ export {
   SRedirect,
   SRedirectLabel,
   SRedirectLink,
-  Modal
+  Modal,
+  Navbar
 };
