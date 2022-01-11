@@ -3,7 +3,8 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   REGISTER_SUCCESS,
-  REGISTER_FAIL
+  REGISTER_FAIL,
+  LOGOUT
 } from './authTypes';
 
 const loginUserSuccess = (data) => {
@@ -70,5 +71,10 @@ export const createUser = (values) => {
       .catch((e) => {
         dispatch(registerUserFailure(e));
       });
+  };
+};
+export const logoutUser = () => {
+  return {
+    type: LOGOUT
   };
 };

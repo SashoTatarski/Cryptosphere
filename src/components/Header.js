@@ -10,8 +10,10 @@ import {
   Typography
 } from '@material-ui/core';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { CryptoState } from '../Context/CryptoContext';
+import { logoutUser } from '../redux/auth/authActions';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -26,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const history = useNavigate();
-
+  const dispatch = useDispatch();
+  const handleLogout = () => dispatch(logoutUser());
   const { currency, setCurrency } = CryptoState();
 
   const darkTheme = createTheme({
@@ -59,7 +62,7 @@ const Header = () => {
               <MenuItem value={'USD'}>USD</MenuItem>
               <MenuItem value={'EUR'}>EUR</MenuItem>
             </Select>
-            <MenuItem>Logout</MenuItem>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Toolbar>
         </Container>
       </AppBar>

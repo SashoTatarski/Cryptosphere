@@ -1,22 +1,24 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+
+import { ProtectedRoute } from './components';
+
 import { CoinPage, Dashboard, Login, NotFound, Register } from './pages';
-import { store } from './redux';
+
+import './App.css';
 
 const App = () => {
   return (
     <BrowserRouter basename="/stock-market-dashboard">
-      <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="/coins/:id" element={<CoinPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Provider>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="dashboard" element={<ProtectedRoute component={Dashboard} />} />
+        <Route path="coins/:id" element={<ProtectedRoute component={CoinPage} />} />
+        <Route path="user" element={<ProtectedRoute component={CoinPage} />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </BrowserRouter>
   );
 };
