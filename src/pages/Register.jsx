@@ -12,7 +12,8 @@ import {
   SRedirect,
   SRedirectLabel,
   SRedirectLink,
-  Modal
+  Modal,
+  SFlexDiv
 } from '../components';
 import { createUser } from '../redux';
 
@@ -31,54 +32,56 @@ export const Register = ({ userData, createUser }) => {
 
   const password = watch('password');
   return (
-    <SFlexContainer>
-      <Modal />
-      <IconStyleWrapper />
-      <StyledTitle>Register</StyledTitle>
+    <SFlexDiv>
+      <SFlexContainer>
+        <Modal />
+        <IconStyleWrapper />
+        <StyledTitle>Register</StyledTitle>
 
-      <SForm onSubmit={handleSubmit(onSubmit)}>
-        <StyledInput
-          placeholder="First Name"
-          {...register('firstName', { required: true })}
-          validationFailed={errors.firstName}
-        />
-        <StyledInput
-          placeholder="Last Name"
-          {...register('lastName', { required: true })}
-          validationFailed={errors.lastName}
-        />
+        <SForm onSubmit={handleSubmit(onSubmit)}>
+          <StyledInput
+            placeholder="First Name"
+            {...register('firstName', { required: true })}
+            validationFailed={errors.firstName}
+          />
+          <StyledInput
+            placeholder="Last Name"
+            {...register('lastName', { required: true })}
+            validationFailed={errors.lastName}
+          />
 
-        <StyledInput
-          type="email"
-          placeholder="Email"
-          {...register('email', { required: true })}
-          validationFailed={errors.email}
-        />
-        <StyledInput
-          type="password"
-          placeholder="Password"
-          {...register('password', { required: true })}
-          validationFailed={errors.password}
-        />
-        <StyledInput
-          type="password"
-          placeholder="Confirm Password"
-          {...register('confirmPassword', {
-            validate: (value) => value === password || 'The passwords do not match'
-          })}
-          validationFailed={errors.confirmPassword}
-        />
-        {errors.confirmPassword && (
-          <StyledError>{errors.confirmPassword.message}</StyledError>
-        )}
-        {userData.error ? <StyledError>{userData.error}</StyledError> : null}
-        <StyledButton type="submit">Register</StyledButton>
-        <SRedirect>
-          <SRedirectLabel>{'Already have an account?'}&nbsp;</SRedirectLabel>
-          <SRedirectLink to={'/'}>{'Login'}</SRedirectLink>
-        </SRedirect>
-      </SForm>
-    </SFlexContainer>
+          <StyledInput
+            type="email"
+            placeholder="Email"
+            {...register('email', { required: true })}
+            validationFailed={errors.email}
+          />
+          <StyledInput
+            type="password"
+            placeholder="Password"
+            {...register('password', { required: true })}
+            validationFailed={errors.password}
+          />
+          <StyledInput
+            type="password"
+            placeholder="Confirm Password"
+            {...register('confirmPassword', {
+              validate: (value) => value === password || 'The passwords do not match'
+            })}
+            validationFailed={errors.confirmPassword}
+          />
+          {errors.confirmPassword && (
+            <StyledError>{errors.confirmPassword.message}</StyledError>
+          )}
+          {userData.error ? <StyledError>{userData.error}</StyledError> : null}
+          <StyledButton type="submit">Register</StyledButton>
+          <SRedirect>
+            <SRedirectLabel>{'Already have an account?'}&nbsp;</SRedirectLabel>
+            <SRedirectLink to={'/'}>{'Login'}</SRedirectLink>
+          </SRedirect>
+        </SForm>
+      </SFlexContainer>
+    </SFlexDiv>
   );
 };
 

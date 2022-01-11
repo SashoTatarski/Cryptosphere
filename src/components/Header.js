@@ -53,6 +53,7 @@ const Header = () => {
             <MenuItem value={'USD'}>USD</MenuItem>
             <MenuItem value={'EUR'}>EUR</MenuItem>
           </Select>
+          <MenuItem >Logout</MenuItem>
         </Toolbar>
       </Container>
     </AppBar>

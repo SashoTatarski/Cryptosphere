@@ -8,7 +8,7 @@ import { store } from './redux';
 const App = () => { 
 
   return (      
-    //<div className="App" style={{ display: 'flex', justifyContent: 'center' }}>
+   
       <BrowserRouter basename="/stock-market-dashboard">
         <Provider store={store}>          
           <Routes>
@@ -20,6 +20,7 @@ const App = () => {
           </Routes>
         </Provider>
       </BrowserRouter>   
+
   );
 };
 

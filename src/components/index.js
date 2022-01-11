@@ -1,6 +1,6 @@
 import Banner from './Banner/Banner';
 import Chart from './Chart';
-import { SFlexContainer } from './Form/Container/Container.styles';
+import { SFlexContainer,SFlexDiv } from './Form/Container/Container.styles';
 import {
   IconStyleWrapper, SForm, SmallStyledTitle, SRedirect,
   SRedirectLabel,
@@ -25,6 +25,7 @@ export {
   SRedirectLink,
   Modal,
   Header,
-  Banner
+  Banner,
+  SFlexDiv
 };
 

@@ -14,7 +14,8 @@ import {
   SmallStyledTitle,
   SRedirectLabel,
   SRedirect,
-  SRedirectLink
+  SRedirectLink,
+  SFlexDiv
 } from '../components';
 
 const Login = ({ userData, fetchUser }) => {
@@ -34,33 +35,35 @@ const Login = ({ userData, fetchUser }) => {
   }, [userData.isLoggedIn]);
 
   return (
-    <SFlexContainer>
-      <IconStyleWrapper />
-      <StyledTitle>Login</StyledTitle>
-      <SmallStyledTitle>Sign in to your account</SmallStyledTitle>
-      <SForm onSubmit={handleSubmit(onSubmit)}>
-        <StyledInput
-          type=""
-          placeholder="Email"
-          {...register('email', { required: true })}
-          validationFailed={errors.email}
-        />
+    <SFlexDiv>
+      <SFlexContainer>
+        <IconStyleWrapper />
+        <StyledTitle>Login</StyledTitle>
+        <SmallStyledTitle>Sign in to your account</SmallStyledTitle>
+        <SForm onSubmit={handleSubmit(onSubmit)}>
+          <StyledInput
+            type=""
+            placeholder="Email"
+            {...register('email', { required: true })}
+            validationFailed={errors.email}
+          />
 
-        <StyledInput
-          type="password"
-          placeholder="Password"
-          {...register('password', { required: true })}
-          validationFailed={errors.password}
-        />
+          <StyledInput
+            type="password"
+            placeholder="Password"
+            {...register('password', { required: true })}
+            validationFailed={errors.password}
+          />
 
-        {userData.error ? <StyledError>{userData.error}</StyledError> : null}
-        <StyledButton type="submit">Login</StyledButton>
-        <SRedirect>
-          <SRedirectLabel>{'Do not have an account?'}&nbsp;</SRedirectLabel>
-          <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
-        </SRedirect>
-      </SForm>
-    </SFlexContainer>
+          {userData.error ? <StyledError>{userData.error}</StyledError> : null}
+          <StyledButton type="submit">Login</StyledButton>
+          <SRedirect>
+            <SRedirectLabel>{'Do not have an account?'}&nbsp;</SRedirectLabel>
+            <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
+          </SRedirect>
+        </SForm>
+      </SFlexContainer>
+    </SFlexDiv>
   );
 };
 
