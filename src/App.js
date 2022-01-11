@@ -14,8 +14,11 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<ProtectedRoute component={Chart} />} />
-          <Route path="user-profile" element={<ProtectedRoute component={UserProfile } />} />
-       
+          <Route
+            path="user-profile"
+            element={<ProtectedRoute component={UserProfile} />}
+          />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

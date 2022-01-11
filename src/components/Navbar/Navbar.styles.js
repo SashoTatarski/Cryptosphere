@@ -8,7 +8,6 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-
 `;
 export const Wrapper = styled.div`
   padding: 10px 20px;
@@ -22,7 +21,6 @@ export const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-
 `;
 
 export const Center = styled.div`
@@ -30,8 +28,7 @@ export const Center = styled.div`
   align-items: center;
   text-align: center;
   font-size: 35px;
-
-  `;
+`;
 
 export const Right = styled.div`
   flex: 1;
@@ -39,7 +36,6 @@ export const Right = styled.div`
   align-items: center;
 
   justify-content: flex-end;
- 
 `;
 
 export const MenuItem = styled.div`
@@ -50,7 +46,7 @@ export const MenuItem = styled.div`
 `;
 export const StyledIconHome = styled(HomeAlt)`
   color: darkblue;
-  
+
   width: 15%;
   height: 15%;
 `;
@@ -63,5 +59,4 @@ export const StyledIconLogout = styled(LogOutCircle)`
   color: darkblue;
   width: 15%;
   height: 15%;
- 
 `;
