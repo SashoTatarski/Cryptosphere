@@ -59,9 +59,13 @@ export const Register = ({ userData, createUser }) => {
           <StyledInput
             type="password"
             placeholder="Password"
-            {...register('password', { required: true })}
+            {...register('password', {
+              validate: (value) =>
+                value.length > 5 || 'Password must be at least 6 characters long'
+            })}
             validationFailed={errors.password}
           />
+          {errors.password && <StyledError>{errors.password.message}</StyledError>}
           <StyledInput
             type="password"
             placeholder="Confirm Password"
