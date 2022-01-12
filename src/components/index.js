@@ -3,7 +3,6 @@ import Chart from './Chart';
 import CoinInfo from './CoinInfo';
 import CoinsTable from './CoinsTable';
 import SelectButton from './SelectButton';
-import { SFlexContainer } from './Form/Container/Container.styles';
 import {
   SFlexContainer,
   SFlexDiv,
@@ -66,7 +65,7 @@ export {
   Stats,
   EditStyledIcon,
   SaveStyledSave,
-  NameParagraph
+  NameParagraph,
   CoinsTable,
   CoinInfo,
   SelectButton

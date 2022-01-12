@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Banner, Header, CoinsTable } from '../components';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const useStyles = makeStyles(() => ({
