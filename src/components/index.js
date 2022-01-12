@@ -1,5 +1,9 @@
 import Banner from './Banner/Banner';
 import Chart from './Chart';
+import CoinInfo from './CoinInfo';
+import CoinsTable from './CoinsTable';
+import SelectButton from './SelectButton';
+import { SFlexContainer } from './Form/Container/Container.styles';
 import {
   SFlexContainer,
   SFlexDiv,
@@ -63,4 +67,7 @@ export {
   EditStyledIcon,
   SaveStyledSave,
   NameParagraph
+  CoinsTable,
+  CoinInfo,
+  SelectButton
 };
