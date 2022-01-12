@@ -1,7 +1,8 @@
 import {
   CircularProgress,
   createTheme,
-  makeStyles, ThemeProvider
+  makeStyles,
+  ThemeProvider
 } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -81,29 +82,31 @@ const CoinInfo = ({ coin }) => {
                   {
                     data: historicData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days ) in ${currency}`,
-                    borderColor: '#EEBC1D',
-                  },
-                ],
+                    borderColor: '#EEBC1D'
+                  }
+                ]
               }}
               options={{
                 elements: {
                   point: {
-                    radius: 1,
-                  },
-                },
+                    radius: 1
+                  }
+                }
               }}
             />
-            <div style={{
+            <div
+              style={{
                 display: 'flex',
                 marginTop: 20,
                 justifyContent: 'space-around',
-                width: '100%',
+                width: '100%'
               }}
             >
               {chartDays.map((day) => (
                 <SelectButton
                   key={day.value}
-                  onClick={() => {setDays(day.value);
+                  onClick={() => {
+                    setDays(day.value);
                     setflag(false);
                   }}
                   selected={day.value === days}

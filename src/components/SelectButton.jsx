@@ -16,11 +16,11 @@ const SelectButton = ({ children, selected, onClick }) => {
       fontWeight: selected ? 700 : 500,
       '&:hover': {
         backgroundColor: 'gold',
-        color: 'black',
+        color: 'black'
       },
-      width: '22%',
+      width: '22%'
       //   margin: 5,
-    },
+    }
   });
 
   const classes = useStyles();

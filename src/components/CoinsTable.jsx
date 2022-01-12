@@ -1,17 +1,17 @@
 import {
-    Container,
-    createTheme,
-    LinearProgress,
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    TextField,
-    ThemeProvider,
-    Typography
+  Container,
+  createTheme,
+  LinearProgress,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TextField,
+  ThemeProvider,
+  Typography
 } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/styles';
@@ -22,8 +22,8 @@ import { CoinList } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 
 export function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
@@ -54,15 +54,15 @@ const CoinsTable = () => {
       backgroundColor: '#16171a',
       cursor: 'pointer',
       '&:hover': {
-        backgroundColor: '#131111',
+        backgroundColor: '#131111'
       },
-      fontFamily: 'Montserrat',
+      fontFamily: 'Montserrat'
     },
     pagination: {
       '& .MuiPaginationItem-root': {
-        color: 'gold',
-      },
-    },
+        color: 'gold'
+      }
+    }
   });
 
   const classes = useStyles();
@@ -87,9 +87,7 @@ const CoinsTable = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Container style={{ textAlign: 'center' }}>
-        <Typography 
-            variant="h4" 
-            style={{ margin: 18, fontFamily: 'Montserrat' }}>
+        <Typography variant="h4" style={{ margin: 18, fontFamily: 'Montserrat' }}>
           Cryptocurrency Prices by Market Cap
         </Typography>
         <TextField
@@ -110,7 +108,7 @@ const CoinsTable = () => {
                       style={{
                         color: 'black',
                         fontWeight: '700',
-                        fontFamily: 'Montserrat',
+                        fontFamily: 'Montserrat'
                       }}
                       key={head}
                       align={head === 'Coin' ? '' : 'right'}
@@ -127,7 +125,7 @@ const CoinsTable = () => {
                   .map((row) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
-                      <TableRow                        
+                      <TableRow
                         onClick={() => navigate(`/coins/${row.id}`)}
                         className={classes.row}
                         key={row.name}
@@ -137,7 +135,7 @@ const CoinsTable = () => {
                           scope="row"
                           style={{
                             display: 'flex',
-                            gap: 15,
+                            gap: 15
                           }}
                         >
                           <img
@@ -146,31 +144,26 @@ const CoinsTable = () => {
                             height="50"
                             style={{ marginBottom: 10 }}
                           />
-                          <div
-                            style={{ display: 'flex', flexDirection: 'column' }}
-                          >
+                          <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span
                               style={{
                                 textTransform: 'uppercase',
-                                fontSize: 22,
+                                fontSize: 22
                               }}
                             >
                               {row.symbol}
                             </span>
-                            <span style={{ color: 'darkgrey' }}>
-                              {row.name}
-                            </span>
+                            <span style={{ color: 'darkgrey' }}>{row.name}</span>
                           </div>
                         </TableCell>
                         <TableCell align="right">
-                          {symbol}{' '}
-                          {numberWithCommas(row.current_price.toFixed(2))}
+                          {symbol} {numberWithCommas(row.current_price.toFixed(2))}
                         </TableCell>
                         <TableCell
                           align="right"
                           style={{
                             color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
-                            fontWeight: 500,
+                            fontWeight: 500
                           }}
                         >
                           {profit && '+'}
@@ -178,10 +171,7 @@ const CoinsTable = () => {
                         </TableCell>
                         <TableCell align="right">
                           {symbol}{' '}
-                          {numberWithCommas(
-                            row.market_cap.toString().slice(0, -6)
-                          )}    
-                          M                      
+                          {numberWithCommas(row.market_cap.toString().slice(0, -6))}M
                         </TableCell>
                       </TableRow>
                     );
@@ -196,7 +186,7 @@ const CoinsTable = () => {
             padding: 20,
             width: '100%',
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
           classes={{ ul: classes.pagination }}
           onChange={(_, value) => {
