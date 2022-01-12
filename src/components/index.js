@@ -1,6 +1,10 @@
 import Banner from './Banner/Banner';
 import Chart from './Chart';
-import { SFlexContainer, SFlexDiv } from './Form/Container/Container.styles';
+import {
+  SFlexContainer,
+  SFlexDiv,
+  FlexWrapper
+} from './Form/Container/Container.styles';
 import {
   IconStyleWrapper,
   SForm,
@@ -11,11 +15,25 @@ import {
   StyledButton,
   StyledError,
   StyledInput,
-  StyledTitle
+  StyledTitle,
+  
 } from './Form/Form/Form.styles';
 import Header from './Header';
 import Modal from './Modal/Modal';
 import ProtectedRoute from './ProtectedRoute';
+import {
+  Wrapper,
+  Card,
+  UserHeader,
+  Avatar,
+  Title,
+  Name,
+  StyledParagraph,
+  Stats,
+  EditStyledIcon,
+  SaveStyledSave,
+  NameParagraph 
+} from './User/User.styles';
 export {
   Chart,
   ProtectedRoute,
@@ -33,5 +51,17 @@ export {
   Modal,
   Header,
   Banner,
-  SFlexDiv
+  SFlexDiv,
+  FlexWrapper,
+  Wrapper,
+  Card,
+  UserHeader,
+  Avatar,
+  Name,
+  Title,
+  StyledParagraph,
+  Stats,
+  EditStyledIcon,
+  SaveStyledSave,
+  NameParagraph 
 };

@@ -12,8 +12,8 @@ export const SFlexDiv = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const SFixedContainer = styled.div`
-  max-width: ${({ size }) => (!size ? 'initial' : `${size}px`)};
-  width: 100%;
-  margin: 0 auto;
+
+export const FlexWrapper = styled.div`
+  display: flex;
+  justify-content:space-around;
 `;
