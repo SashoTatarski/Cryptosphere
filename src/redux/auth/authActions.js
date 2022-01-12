@@ -4,7 +4,9 @@ import {
   LOGIN_SUCCESS,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
-  LOGOUT
+  LOGOUT,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAIL
 } from './authTypes';
 
 const loginUserSuccess = (data) => {
@@ -73,6 +75,43 @@ export const createUser = (values) => {
       });
   };
 };
+
+const updateUserSuccess = (data) => {
+  return {
+    type: UPDATE_USER_SUCCESS,
+    payload: { user: data }
+  };
+};
+
+const updateUserFailure = (error) => {
+  return {
+    type: UPDATE_USER_FAIL,
+    payload: { error: error }
+  };
+};
+
+export const updateUser = (values) => {
+  return function (dispatch) {
+    fetch('http://localhost:8000/api/update', {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + `${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    })
+      .then((data) => data.json())
+      .then((data) =>
+        data
+          ? dispatch(updateUserSuccess(data))
+          : dispatch(updateUserFailure(data?.error))
+      )
+      .catch((e) => {
+        dispatch(updateUserFailure(e));
+      });
+  };
+};
+
 export const logoutUser = () => {
   return {
     type: LOGOUT
