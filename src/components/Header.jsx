@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CryptoState } from '../Context/CryptoContext';
 import { logoutUser } from '../redux/auth/authActions';
 
@@ -46,7 +46,10 @@ const Header = () => {
       <AppBar color="transparent" position="static">
         <Container>
           <Toolbar>
-            <Typography onClick={() => history.push('/')} className={classes.title}>
+            <Typography
+              onClick={() => history('/dashboard')}
+              className={classes.title}
+            >
               Crypto Dashboard
             </Typography>
             <Select
@@ -62,6 +65,9 @@ const Header = () => {
               <MenuItem value={'USD'}>USD</MenuItem>
               <MenuItem value={'EUR'}>EUR</MenuItem>
             </Select>
+            <Link to="/user" style={{ textDecoration: 'none', color: 'white' }}>
+              <MenuItem>User</MenuItem>
+            </Link>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Toolbar>
         </Container>

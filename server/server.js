@@ -32,16 +32,27 @@ function filteredUsers({ email, password }) {
   return {
     id: filteredUsers[0].id,
     name: filteredUsers[0].name,
-    email: filteredUsers[0].email
+    email: filteredUsers[0].email,
+    firstName: filteredUsers[0].firstName,
+    lastName: filteredUsers[0].lastName
   };
 }
-
+function filteredUserId(id) {
+  const filteredUsers = userdb.users.filter((user) => {
+    return user.id === id;
+  });
+  return {
+    id: filteredUsers[0].id,
+    email: filteredUsers[0].email,
+    firstName: filteredUsers[0].firstName,
+    lastName: filteredUsers[0].lastName
+  };
+}
 function isRegisterAuthenticated({ email }) {
   return userdb.users.findIndex((user) => user.email === email) !== -1;
 }
 
 server.post('/api/auth/register', (req, res) => {
-
   const { firstName, lastName, email, password } = req.body;
   if (isRegisterAuthenticated({ email })) {
     const status = 401;
@@ -82,11 +93,10 @@ server.post('/api/auth/register', (req, res) => {
     );
   });
 
-  res.status(200).json({message:'Successs'});
+  res.status(200).json({ message: 'Successs' });
 });
 
 server.post('/api/auth/login', (req, res) => {
-
   const { email, password } = req.body;
   if (!isLoginAuthenticated({ email, password })) {
     res.status(401).json({ error: 'Incorrect Email or Password' });
@@ -98,6 +108,39 @@ server.post('/api/auth/login', (req, res) => {
   }
 });
 
+server.post('/api/update', (req, res) => {
+  const { id, firstName, lastName } = req.body;
+  console.log('new', id, firstName, lastName);
+  fs.readFile('./users.json', (err, data) => {
+    if (err) {
+      const status = 401;
+      const message = err;
+      res.status(status).json({ status, message });
+      return;
+    }
+    data = JSON.parse(data.toString());
+    data.users.map((user) => {
+      if (user.id === id) {
+        (user.firstName = firstName), (user.lastName = lastName);
+      }
+    });
+    let writeData = fs.writeFile(
+      './users.json',
+      JSON.stringify(data),
+      (err, result) => {
+        if (err) {
+          const status = 401;
+          const message = err;
+          res.status(status).json({ status, message });
+          return;
+        }
+        const updateUser = data.users.filter((user) => user.id === id);
+      
+        res.status(200).json(updateUser[0]);
+      }
+    );
+  });
+});
 server.listen(8000, () => {
   console.log('Running fake api json server');
 });

@@ -3,7 +3,9 @@ import {
   LOGIN_SUCCESS,
   LOGOUT,
   REGISTER_FAIL,
-  REGISTER_SUCCESS
+  REGISTER_SUCCESS,
+  UPDATE_USER_FAIL,
+  UPDATE_USER_SUCCESS
 } from './authTypes';
 const user = JSON.parse(localStorage.getItem('user'));
 
@@ -37,6 +39,18 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: false,
+        user: null,
+        error: payload.error
+      };
+    case UPDATE_USER_SUCCESS:
+      return {
+        ...state,
+        user: { ...user, user: payload.user },
+        error: null
+      };
+    case UPDATE_USER_FAIL:
+      return {
+        ...state,
         user: null,
         error: payload.error
       };
