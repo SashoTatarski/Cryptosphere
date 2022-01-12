@@ -9,7 +9,7 @@ import { Line } from 'react-chartjs-2';
 import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
 import { CryptoState } from '../Context/CryptoContext';
-import { SelectButton } from '../components';
+import { SelectButton } from '.';
 import Chart from 'chart.js/auto';
 
 const CoinInfo = ({ coin }) => {

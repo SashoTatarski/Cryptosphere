@@ -50,7 +50,7 @@ const Header = () => {
               onClick={() => history('/dashboard')}
               className={classes.title}
             >
-              Crypto Dashboard
+              Home
             </Typography>
             <Select
               variant="outlined"
