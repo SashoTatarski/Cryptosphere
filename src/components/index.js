@@ -1,5 +1,8 @@
 import Banner from './Banner/Banner';
 import Chart from './Chart';
+import CoinInfo from './CoinInfo';
+import CoinsTable from './CoinsTable';
+import SelectButton from './SelectButton';
 import { SFlexContainer } from './Form/Container/Container.styles';
 import {
   IconStyleWrapper, SForm, SmallStyledTitle, SRedirect,
@@ -25,6 +28,9 @@ export {
   SRedirectLink,
   Modal,
   Header,
-  Banner
+  Banner,
+  CoinsTable,
+  CoinInfo,
+  SelectButton
 };
 

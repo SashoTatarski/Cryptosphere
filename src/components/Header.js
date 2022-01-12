@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const {currency, setCurrency} = CryptoState();
 
@@ -39,7 +39,7 @@ const Header = () => {
     <AppBar color="transparent" position="static">
       <Container>
         <Toolbar>
-          <Typography onClick={() => history.push('/')} className={classes.title}>Crypto Dashboard</Typography>
+          <Typography onClick={() => navigate('/')} className={classes.title}>Crypto Dashboard</Typography>
           <Select
             variant="outlined"
             style={{

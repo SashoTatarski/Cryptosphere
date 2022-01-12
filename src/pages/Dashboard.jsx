@@ -1,10 +1,10 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import { Banner, Header } from '../components';
+import { Banner, Header, CoinsTable } from '../components';
 
 const Dashboard = () => {
   const useStyles = makeStyles(() => ({
-    App: {
+    Dashboard: {
       backgroundColor: '#14161a',
       color: 'white',
       minHeight: '100vh'
@@ -14,9 +14,10 @@ const Dashboard = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.App}>
+    <div className={classes.Dashboard}>
       <Header />
       <Banner />
+      <CoinsTable />
     </div>
   );
 };
