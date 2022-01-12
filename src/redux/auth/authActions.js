@@ -76,10 +76,10 @@ export const createUser = (values) => {
   };
 };
 
- const updateUserSuccess = (data) => {
+const updateUserSuccess = (data) => {
   return {
     type: UPDATE_USER_SUCCESS,
-    payload: {user:data}
+    payload: { user: data }
   };
 };
 

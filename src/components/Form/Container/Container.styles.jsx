@@ -15,5 +15,5 @@ export const SFlexDiv = styled.div`
 
 export const FlexWrapper = styled.div`
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 `;

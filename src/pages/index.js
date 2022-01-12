@@ -4,4 +4,4 @@ import Login from './Login';
 import NotFound from './NotFound';
 import Register from './Register';
 import Profile from './Profile';
-export { Login, NotFound, Register, Dashboard, CoinPage,Profile };
+export { Login, NotFound, Register, Dashboard, CoinPage, Profile };

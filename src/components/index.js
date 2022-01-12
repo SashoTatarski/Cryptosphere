@@ -15,8 +15,7 @@ import {
   StyledButton,
   StyledError,
   StyledInput,
-  StyledTitle,
-  
+  StyledTitle
 } from './Form/Form/Form.styles';
 import Header from './Header';
 import Modal from './Modal/Modal';
@@ -32,7 +31,7 @@ import {
   Stats,
   EditStyledIcon,
   SaveStyledSave,
-  NameParagraph 
+  NameParagraph
 } from './User/User.styles';
 export {
   Chart,
@@ -63,5 +62,5 @@ export {
   Stats,
   EditStyledIcon,
   SaveStyledSave,
-  NameParagraph 
+  NameParagraph
 };
