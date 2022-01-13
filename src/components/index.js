@@ -1,5 +1,4 @@
 import Banner from './Banner/Banner';
-import Chart from './Chart';
 import CoinInfo from './CoinInfo';
 import CoinsTable from './CoinsTable';
 import SelectButton from './SelectButton';
@@ -37,7 +36,6 @@ import {
   NameParagraph
 } from './User/User.styles';
 export {
-  Chart,
   ProtectedRoute,
   SForm,
   IconStyleWrapper,

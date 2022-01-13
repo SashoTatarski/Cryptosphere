@@ -11,7 +11,7 @@ import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
 import { CryptoState } from '../Context/CryptoContext';
 import { SelectButton } from '.';
-import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto'; //Do not clean this import
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
@@ -43,9 +43,7 @@ const CoinInfo = ({ coin }) => {
     const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
     setflag(true);
     setHistoricData(data.prices);
-  };
-
-  console.log(historicData);
+  };  
 
   useEffect(() => {
     fetchHistoricData();
