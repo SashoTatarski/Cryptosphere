@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './components';
 import { CoinPage, Dashboard, Login, NotFound, Profile, Register } from './pages';
+import './App.css';
 
 const App = () => {
   return (
