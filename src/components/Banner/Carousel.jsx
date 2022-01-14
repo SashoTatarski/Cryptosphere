@@ -8,7 +8,7 @@ import {
   StyledImg,
   StyledLinkCarouselItem,
   StyledSpanContainerPrice
-} from '../../components';
+} from './Carousel.styles';
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -35,7 +35,8 @@ const Carousel = () => {
         <span>
           {coin?.symbol}
           &nbsp;
-          <span style={{
+          <span
+            style={{
               color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
               fontWeight: 500              
             }}
@@ -59,7 +60,6 @@ const Carousel = () => {
       items: 4
     }
   };
-  
   return (
     <StyledDivCarousel>
       <AliceCarousel
