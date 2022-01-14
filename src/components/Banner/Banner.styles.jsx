@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { Typography } from '@material-ui/core';
+import { Typography, Container } from '@material-ui/core';
+
 
 export const StyledBannerWrapper = styled.div`
   background-image: url(../banner2.jpg);
 `;
 
-export const StyledBannerContainer = styled.div`
+export const StyledBannerContainer = styled(Container)`
   height: 400px;
   display: flex;
   flex-direction: column;

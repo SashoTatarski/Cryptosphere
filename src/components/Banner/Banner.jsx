@@ -4,7 +4,7 @@ import {
   StyledBannerWrapper,
   StyledTagline,
   StyledTypographySubtitle,
-  StyledTypographyTitle
+  StyledTypographyTitle,
 } from './Banner.styles';
 import Carousel from './Carousel';
 
