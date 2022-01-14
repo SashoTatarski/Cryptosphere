@@ -1,14 +1,24 @@
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Banner, CoinsTable, Header } from '../components';
-import { StyledDivDashboard } from '../pages';
 
 const Dashboard = () => {
+  const useStyles = makeStyles(() => ({
+    Dashboard: {
+      backgroundColor: '#14161a',
+      color: 'white',
+      minHeight: '100vh',    
+    }
+  }));
+
+  const classes = useStyles();
+
   return (       
-      <StyledDivDashboard>
+      <div className={classes.Dashboard}>
         <Header />
         <Banner />
         <CoinsTable />
-      </StyledDivDashboard>       
+      </div>       
   );
 };
 

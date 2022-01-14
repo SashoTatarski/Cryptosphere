@@ -5,7 +5,7 @@ import {
   StyledTagline,
   StyledTypographySubtitle,
   StyledTypographyTitle,
-} from '../../components';
+} from './Banner.styles';
 import Carousel from './Carousel';
 
 const Banner = () => {
