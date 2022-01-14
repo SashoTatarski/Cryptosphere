@@ -1,11 +1,23 @@
 import Banner from './Banner/Banner';
+import {
+  StyledBannerContainer,
+  StyledBannerWrapper,
+  StyledTagline,
+  StyledTypographySubtitle,
+  StyledTypographyTitle
+} from './Banner/Banner.styles';
+import {
+  StyledDivCarousel,
+  StyledImg,
+  StyledLinkCarouselItem,
+  StyledSpanContainerPrice
+} from './Banner/Carousel.styles';
 import CoinInfo from './CoinInfo';
 import CoinsTable from './CoinsTable';
-import SelectButton from './SelectButton';
 import {
+  FlexWrapper,
   SFlexContainer,
-  SFlexDiv,
-  FlexWrapper
+  SFlexDiv
 } from './Form/Container/Container.styles';
 import {
   IconStyleWrapper,
@@ -20,20 +32,27 @@ import {
   StyledTitle
 } from './Form/Form/Form.styles';
 import Header from './Header';
+import {
+  StyledDarkTheme,
+  StyledLinkUser,
+  StyledSelectCurrency,
+  StyledTypographyHomeLink
+} from './Header.styles';
 import Modal from './Modal/Modal';
 import ProtectedRoute from './ProtectedRoute';
+import SelectButton from './SelectButton';
 import {
-  Wrapper,
-  Card,
-  UserHeader,
   Avatar,
-  Title,
-  Name,
-  StyledParagraph,
-  Stats,
+  Card,
   EditStyledIcon,
+  Name,
+  NameParagraph,
   SaveStyledSave,
-  NameParagraph
+  Stats,
+  StyledParagraph,
+  Title,
+  UserHeader,
+  Wrapper
 } from './User/User.styles';
 export {
   ProtectedRoute,
@@ -66,5 +85,19 @@ export {
   NameParagraph,
   CoinsTable,
   CoinInfo,
-  SelectButton
+  SelectButton,
+  StyledSelectCurrency,
+  StyledTypographyHomeLink,
+  StyledLinkUser,
+  StyledDarkTheme,
+  StyledDivCarousel,
+  StyledImg,
+  StyledLinkCarouselItem,
+  StyledSpanContainerPrice,
+  StyledBannerContainer,
+  StyledBannerWrapper,
+  StyledTagline,
+  StyledTypographySubtitle,
+  StyledTypographyTitle,
 };
+

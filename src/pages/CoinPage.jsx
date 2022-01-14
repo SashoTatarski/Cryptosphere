@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import { LinearProgress, makeStyles, Typography } from '@material-ui/core';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { useParams } from 'react-router-dom';
 import { CoinInfo, Header } from '../components';
