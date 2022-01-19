@@ -1,5 +1,5 @@
-import { CircularProgress, makeStyles } from '@material-ui/core';
 import styled from 'styled-components';
+import { CircularProgress, makeStyles } from '@material-ui/core';
 
 export const StyledDivChartContainer = styled.div`
   width: 75%;

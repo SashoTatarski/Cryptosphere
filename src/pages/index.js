@@ -5,6 +5,14 @@ import NotFound from './NotFound';
 import Register from './Register';
 import Profile from './Profile';
 import { StyledDivDashboard } from './Dashboard.styles';
+import {
+  CoinPageUseStyles,
+  StyledImgCoinPage,
+  StyledTypographyHeading,
+  StyledTypographyCoinDesc,
+  StyledTypographyMont,
+  StyledSpan
+} from './CoinPage.styles';
 export {
   Login,
   NotFound,
@@ -12,5 +20,11 @@ export {
   Dashboard,
   CoinPage,
   Profile,
-  StyledDivDashboard
+  StyledDivDashboard,
+  CoinPageUseStyles,
+  StyledImgCoinPage,
+  StyledTypographyHeading,
+  StyledTypographyCoinDesc,
+  StyledTypographyMont,
+  StyledSpan
 };
