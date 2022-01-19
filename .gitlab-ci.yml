@@ -1,6 +1,7 @@
 image: node
 stages:
   - test
+
   - deploy
 
 testing:
@@ -30,4 +31,4 @@ deploy:
       - public
 
   only:
-    - main
+    - develop
