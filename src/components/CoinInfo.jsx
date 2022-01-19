@@ -4,14 +4,17 @@ import { CryptoState } from '../Context/CryptoContext';
 import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
 import { Line } from 'react-chartjs-2';
-import { SelectButton } from '.';
-import Chart from 'chart.js/auto'; //Do not clean this import
+/* eslint:disable:no-unused-variable */
+import Chart from 'chart.js/auto'; 
+import { ThemeProvider } from '@material-ui/core';
 import {
-  CircularProgress,
-  createTheme,
-  makeStyles,
-  ThemeProvider
-} from '@material-ui/core';
+  SelectButton,
+  StyledDarkTheme,
+  StyledDivChartContainer,
+  StyledDivChartResponsive,
+  StyledCircularProgress,
+  StyledDivChartButtons
+} from '../components';
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
@@ -19,50 +22,23 @@ const CoinInfo = ({ coin }) => {
   const { currency } = CryptoState();
   const [flag, setflag] = useState(false);
 
-  const useStyles = makeStyles((theme) => ({
-    container: {
-      width: '75%',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: 25,
-      padding: 40,
-      [theme.breakpoints.down('md')]: {
-        width: '100%',
-        marginTop: 0,
-        padding: 20,
-        paddingTop: 0
-      }
-    }
-  }));
-
-  const classes = useStyles();
+  const classes = StyledDivChartResponsive();
 
   const fetchHistoricData = async () => {
     const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
     setflag(true);
     setHistoricData(data.prices);
-  };  
+  };
 
   useEffect(() => {
     fetchHistoricData();
   }, [days, currency]);
 
-  const darkTheme = createTheme({
-    palette: {
-      primary: {
-        main: '#fff'
-      },
-      type: 'dark'
-    }
-  });
-
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.container}>
+    <ThemeProvider theme={StyledDarkTheme}>
+      <StyledDivChartContainer className={classes.container}>
         {!historicData ? (
-          <CircularProgress style={{ color: 'gold' }} size={250} thickness={1} />
+          <StyledCircularProgress size={250} thickness={1} />
         ) : (
           <>
             <Line
@@ -92,14 +68,7 @@ const CoinInfo = ({ coin }) => {
                 }
               }}
             />
-            <div
-              style={{
-                display: 'flex',
-                marginTop: 20,
-                justifyContent: 'space-around',
-                width: '100%'
-              }}
-            >
+            <StyledDivChartButtons>
               {chartDays.map((day) => (
                 <SelectButton
                   key={day.value}
@@ -112,10 +81,10 @@ const CoinInfo = ({ coin }) => {
                   {day.label}
                 </SelectButton>
               ))}
-            </div>
+            </StyledDivChartButtons>
           </>
         )}
-      </div>
+      </StyledDivChartContainer>
     </ThemeProvider>
   );
 };

@@ -14,7 +14,6 @@ import {
   StyledSpanEmpty
 } from '../../components';
 
-
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
   const { currency, symbol } = CryptoState();

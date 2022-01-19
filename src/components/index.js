@@ -65,6 +65,12 @@ import {
   Wrapper
 } from './User/User.styles';
 import { StyledSpanSelectButton } from './SelectButton.styles';
+import {
+  StyledDivChartContainer,
+  StyledDivChartResponsive,
+  StyledCircularProgress,
+  StyledDivChartButtons
+} from './CoinInfo.styles';
 
 export {
   Carousel,
@@ -120,5 +126,9 @@ export {
   StyledTagline,
   StyledTypographySubtitle,
   StyledTypographyTitle,
-  StyledSpanSelectButton
+  StyledSpanSelectButton,
+  StyledDivChartContainer,
+  StyledDivChartResponsive,
+  StyledCircularProgress,
+  StyledDivChartButtons
 };

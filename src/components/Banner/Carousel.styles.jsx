@@ -1,6 +1,6 @@
-import AliceCarousel from 'react-alice-carousel';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import AliceCarousel from 'react-alice-carousel';
 
 export const StyledDivCarousel = styled.div`
   height: 50%;
