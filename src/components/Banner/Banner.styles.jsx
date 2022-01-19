@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Typography, Container } from '@material-ui/core';
 
-
 export const StyledBannerWrapper = styled.div`
   background-image: url(../banner2.jpg);
 `;

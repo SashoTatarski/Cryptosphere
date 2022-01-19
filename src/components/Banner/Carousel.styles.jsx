@@ -46,5 +46,4 @@ export const StyledSpanPriceColor = styled.span`
 `;
 
 export const StyledSpanEmpty = styled.span``;
-
 export const StyledAliceCarousel = styled(AliceCarousel)``;

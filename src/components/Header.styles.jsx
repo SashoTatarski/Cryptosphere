@@ -1,10 +1,7 @@
 import {
-  MenuItem,
-  Select,
-  Typography,
   AppBar,
-  Container,
-  Toolbar
+  Container, MenuItem,
+  Select, Toolbar, Typography
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';

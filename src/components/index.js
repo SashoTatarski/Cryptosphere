@@ -1,6 +1,29 @@
-import Banner from './Banner/Banner';
+import Modal from './Modal/Modal';
+import ProtectedRoute from './ProtectedRoute';
+
+import Header from './Header';
 import CoinInfo from './CoinInfo';
 import CoinsTable from './CoinsTable';
+import Banner from './Banner/Banner';
+import Carousel from '../components/Banner/Carousel';
+import SelectButton from './SelectButton';
+import {
+  StyledBannerContainer,
+  StyledBannerWrapper,
+  StyledTagline,
+  StyledTypographySubtitle,
+  StyledTypographyTitle
+} from '../components/Banner/Banner.styles';
+import {
+  ResponsiveCarouselView,
+  StyledAliceCarousel,
+  StyledDivCarousel,
+  StyledImg,
+  StyledLinkCarouselItem,
+  StyledSpanContainerPrice,
+  StyledSpanEmpty,
+  StyledSpanPriceColor
+} from '../components/Banner/Carousel.styles';
 import { StyledDarkTheme } from './CoinsTable.styles';
 import {
   FlexWrapper,
@@ -19,19 +42,15 @@ import {
   StyledInput,
   StyledTitle
 } from './Form/Form/Form.styles';
-import Header from './Header';
 import {
-  StyledMenuItem,
-  StyledSelectCurrency,
-  StyledTypographyHeaderTitle,
-  StyledLinkUser,
   StyledAppBar,
   StyledContainer,
-  StyledToolbar
+  StyledLinkUser,
+  StyledMenuItem,
+  StyledSelectCurrency,
+  StyledToolbar,
+  StyledTypographyHeaderTitle
 } from './Header.styles';
-import Modal from './Modal/Modal';
-import ProtectedRoute from './ProtectedRoute';
-import SelectButton from './SelectButton';
 import {
   Avatar,
   Card,
@@ -45,17 +64,10 @@ import {
   UserHeader,
   Wrapper
 } from './User/User.styles';
-import {
-  StyledDivCarousel,
-  StyledLinkCarouselItem,
-  StyledImg,
-  StyledSpanContainerPrice,
-  StyledAliceCarousel,
-  ResponsiveCarouselView,
-  StyledSpanPriceColor,
-  StyledSpanEmpty
-} from '../components/Banner/Carousel.styles';
+import { StyledSpanSelectButton } from './SelectButton.styles';
+
 export {
+  Carousel,
   ProtectedRoute,
   SForm,
   IconStyleWrapper,
@@ -102,5 +114,11 @@ export {
   StyledAliceCarousel,
   ResponsiveCarouselView,
   StyledSpanPriceColor,
-  StyledSpanEmpty
+  StyledSpanEmpty,
+  StyledBannerContainer,
+  StyledBannerWrapper,
+  StyledTagline,
+  StyledTypographySubtitle,
+  StyledTypographyTitle,
+  StyledSpanSelectButton
 };

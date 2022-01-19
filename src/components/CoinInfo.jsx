@@ -1,17 +1,17 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { CryptoState } from '../Context/CryptoContext';
+import { HistoricalChart } from '../config/api';
+import { chartDays } from '../config/data';
+import { Line } from 'react-chartjs-2';
+import { SelectButton } from '.';
+import Chart from 'chart.js/auto'; //Do not clean this import
 import {
   CircularProgress,
   createTheme,
   makeStyles,
   ThemeProvider
 } from '@material-ui/core';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2';
-import { HistoricalChart } from '../config/api';
-import { chartDays } from '../config/data';
-import { CryptoState } from '../Context/CryptoContext';
-import { SelectButton } from '.';
-import Chart from 'chart.js/auto'; //Do not clean this import
 
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();

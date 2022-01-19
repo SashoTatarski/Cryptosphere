@@ -1,5 +1,6 @@
-import { makeStyles } from '@material-ui/core';
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
+import { StyledSpanSelectButton } from '../components';
 
 const SelectButton = ({ children, selected, onClick }) => {
   const useStyles = makeStyles({
@@ -26,9 +27,9 @@ const SelectButton = ({ children, selected, onClick }) => {
   const classes = useStyles();
 
   return (
-    <span onClick={onClick} className={classes.selectbutton}>
+    <StyledSpanSelectButton onClick={onClick} className={classes.selectbutton}>
       {children}
-    </span>
+    </StyledSpanSelectButton>
   );
 };
 

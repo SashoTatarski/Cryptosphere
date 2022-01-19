@@ -1,12 +1,12 @@
 import React from 'react';
 import {
+  Carousel,
   StyledBannerContainer,
   StyledBannerWrapper,
   StyledTagline,
   StyledTypographySubtitle,
   StyledTypographyTitle,
-} from './Banner.styles';
-import Carousel from './Carousel';
+} from '../../components';
 
 const Banner = () => {
   return (
