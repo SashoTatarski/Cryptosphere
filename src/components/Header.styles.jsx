@@ -1,17 +1,20 @@
 import {
   AppBar,
-  Container, MenuItem,
-  Select, Toolbar, Typography
+  Container,
+  MenuItem,
+  Select,
+  Toolbar,
+  Typography
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledTypographyHeaderTitle = styled(Typography)`
+ font-family: 'Montserrat!important';
   flex: 1;
   color: gold;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'Montserrat';
   font-size: 1.25rem;
 `;
 
