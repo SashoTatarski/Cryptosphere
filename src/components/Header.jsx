@@ -1,19 +1,19 @@
+import { ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { CryptoState } from '../Context/CryptoContext';
-import { logoutUser } from '../redux/auth/authActions';
-import { ThemeProvider } from '@material-ui/core';
 import {
-  StyledDarkTheme,
-  StyledTypographyHeaderTitle,
-  StyledSelectCurrency,
-  StyledMenuItem,
-  StyledLinkUser,
   StyledAppBar,
   StyledContainer,
-  StyledToolbar
+  StyledDarkTheme,
+  StyledLinkUser,
+  StyledMenuItem,
+  StyledSelectCurrency,
+  StyledToolbar,
+  StyledTypographyHeaderTitle
 } from '../components';
+import { CryptoState } from '../Context/CryptoContext';
+import { logoutUser } from '../redux/auth/authActions';
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
@@ -28,7 +28,15 @@ const Header = () => {
       <StyledAppBar color="transparent" position="static">
         <StyledContainer>
           <StyledToolbar>
-            <StyledTypographyHeaderTitle onClick={() => history('/dashboard')}>
+            <StyledTypographyHeaderTitle
+              onClick={() => history('/dashboard')}
+              style={{
+                fontFamily: 'Montserrat',
+                fontSize: '1.25rem',
+                fontWeight: 'bold',
+                flex: 1
+              }}
+            >
               Home
             </StyledTypographyHeaderTitle>
             <StyledSelectCurrency
@@ -39,7 +47,7 @@ const Header = () => {
               <StyledMenuItem value={'USD'}>USD</StyledMenuItem>
               <StyledMenuItem value={'EUR'}>EUR</StyledMenuItem>
             </StyledSelectCurrency>
-            <StyledLinkUser to="/user" >
+            <StyledLinkUser to="/user">
               <StyledMenuItem>User</StyledMenuItem>
             </StyledLinkUser>
             <StyledMenuItem onClick={handleLogout}>Logout</StyledMenuItem>

@@ -1,10 +1,14 @@
-import { makeStyles, Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import { LinearProgress, makeStyles, Typography } from '@material-ui/core';
 
 export const StyledDivDashboard = styled.div`
   background-color: #14161a;
   color: white;
   min-height: 100vh;
+`;
+
+export const StyledLinearProgress = styled(LinearProgress)`
+  background-color: gold;
 `;
 
 export const CoinPageUseStyles = makeStyles((theme) => ({
@@ -25,7 +29,7 @@ export const CoinPageUseStyles = makeStyles((theme) => ({
     alignItems: 'center',
     marginTop: 25,
     borderRight: '2px solid grey'
-  },  
+  },
   marketData: {
     alignSelf: 'start',
     padding: 25,
@@ -67,10 +71,10 @@ export const StyledTypographyCoinDesc = styled(Typography)`
   text-align: justify;
 `;
 
-export const StyledTypographyMont = styled(Typography)`  
+export const StyledTypographyMont = styled(Typography)`
   font-family: Montserrat;
 `;
 
 export const StyledSpan = styled.span`
-display: flex;
+  display: flex;
 `;

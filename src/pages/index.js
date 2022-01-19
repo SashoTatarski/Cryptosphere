@@ -11,7 +11,8 @@ import {
   StyledTypographyHeading,
   StyledTypographyCoinDesc,
   StyledTypographyMont,
-  StyledSpan
+  StyledSpan,
+  StyledLinearProgress
 } from './CoinPage.styles';
 export {
   Login,
@@ -26,5 +27,6 @@ export {
   StyledTypographyHeading,
   StyledTypographyCoinDesc,
   StyledTypographyMont,
-  StyledSpan
+  StyledSpan,
+  StyledLinearProgress
 };
