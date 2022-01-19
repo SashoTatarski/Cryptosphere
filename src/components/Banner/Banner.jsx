@@ -5,7 +5,7 @@ import {
   StyledBannerWrapper,
   StyledTagline,
   StyledTypographySubtitle,
-  StyledTypographyTitle,
+  StyledTypographyTitle
 } from '../../components';
 
 const Banner = () => {

@@ -55,7 +55,6 @@ export const StyledButton = styled.button`
   color: white;
   margin-bottom: 10px;
   background-color: #667eea;
-
 `;
 
 export const SRedirect = styled.div`

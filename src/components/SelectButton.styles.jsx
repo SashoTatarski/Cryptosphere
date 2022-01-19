@@ -14,7 +14,7 @@ export const StyledSpanSelectButton = styled.span`
   &:hover {
     background-color: gold;
     color: black;
-  };
-  width: 22%
+  }
+  width: 22%;
   //   margin: 5,
 `;

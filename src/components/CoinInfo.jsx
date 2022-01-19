@@ -5,7 +5,7 @@ import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
 import { Line } from 'react-chartjs-2';
 /* eslint:disable:no-unused-variable */
-import Chart from 'chart.js/auto'; 
+import Chart from 'chart.js/auto';
 import { ThemeProvider } from '@material-ui/core';
 import {
   SelectButton,

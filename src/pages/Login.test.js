@@ -7,7 +7,7 @@ describe('Login page', () => {
   beforeEach(() => {
     render(<Login />);
   });
-  it.only('email field is on the screen',  async() => {
+  it.only('email field is on the screen', async () => {
     await waitFor(() => {
       expect(getEmail()).toBeInTheDocument();
     });

@@ -27,7 +27,7 @@ export const StyledContainerCoinsTable = styled(Container)`
   text-align: center;
 `;
 
-export const CoinsTableUseStyles = makeStyles({  
+export const CoinsTableUseStyles = makeStyles({
   pagination: {
     '& .MuiPaginationItem-root': {
       color: 'gold'
@@ -57,10 +57,10 @@ export const StyledTableCellTitle = styled(TableCell)`
 
 export const StyledTableRowBody = styled(TableRow)`
   background-color: #16171a;
-  cursor: pointer;  
+  cursor: pointer;
   &:hover {
-    background-color: #131111;    
-  };
+    background-color: #131111;
+  }
   font-family: Montserrat;
 `;
 
