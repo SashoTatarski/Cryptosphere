@@ -9,10 +9,7 @@ import {
   StyledLinkCarouselItem,
   StyledSpanContainerPrice
 } from './Carousel.styles';
-
-export function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+import { numberWithCommas } from '../../components/CoinsTable';
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);

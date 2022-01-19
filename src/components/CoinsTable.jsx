@@ -1,6 +1,5 @@
 import {
   Container,
-  createTheme,
   LinearProgress,
   Paper,
   Table,
@@ -20,10 +19,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CoinList } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
-
-export function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+import { StyledDarkTheme } from '../components';
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
@@ -32,7 +28,6 @@ const CoinsTable = () => {
   const [page, setPage] = useState(1);
 
   const { currency, symbol } = CryptoState();
-
   let navigate = useNavigate();
 
   const fetchCoins = async () => {
@@ -42,8 +37,6 @@ const CoinsTable = () => {
     setCoins(data);
     setLoading(false);
   };
-
-  //console.log(coins);
 
   useEffect(() => {
     fetchCoins();
@@ -65,16 +58,7 @@ const CoinsTable = () => {
     }
   });
 
-  const classes = useStyles();
-
-  const darkTheme = createTheme({
-    palette: {
-      primary: {
-        main: '#fff'
-      },
-      type: 'dark'
-    }
-  });
+  const classes = useStyles();  
 
   const handleSearch = () => {
     return coins.filter(
@@ -85,7 +69,7 @@ const CoinsTable = () => {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={StyledDarkTheme}>
       <Container style={{ textAlign: 'center' }}>
         <Typography variant="h4" style={{ margin: 18, fontFamily: 'Montserrat' }}>
           Cryptocurrency Prices by Market Cap
@@ -198,5 +182,9 @@ const CoinsTable = () => {
     </ThemeProvider>
   );
 };
+
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 export default CoinsTable;

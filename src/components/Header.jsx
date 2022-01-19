@@ -1,7 +1,6 @@
 import {
   AppBar,
   Container,
-  createTheme,
   makeStyles,
   MenuItem,
   Select,
@@ -14,8 +13,9 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { CryptoState } from '../Context/CryptoContext';
 import { logoutUser } from '../redux/auth/authActions';
+import { StyledDarkTheme, StyledTypographyHeaderTitle } from '../components';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   title: {
     flex: 1,
     color: 'gold',
@@ -26,32 +26,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
-  const classes = useStyles();
-  const history = useNavigate();
-  const dispatch = useDispatch();
-  const handleLogout = () => dispatch(logoutUser());
   const { currency, setCurrency } = CryptoState();
 
-  const darkTheme = createTheme({
-    palette: {
-      primary: {
-        main: '#fff'
-      },
-      type: 'dark'
-    }
-  });
+  const history = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => dispatch(logoutUser()); 
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={StyledDarkTheme}>
       <AppBar color="transparent" position="static">
         <Container>
           <Toolbar>
-            <Typography
-              onClick={() => history('/dashboard')}
-              className={classes.title}
+            <StyledTypographyHeaderTitle
+              onClick={() => history('/dashboard')}              
             >
               Home
-            </Typography>
+            </StyledTypographyHeaderTitle>
             <Select
               variant="outlined"
               style={{

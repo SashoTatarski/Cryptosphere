@@ -35,6 +35,8 @@ import {
   SaveStyledSave,
   NameParagraph
 } from './User/User.styles';
+import { StyledDarkTheme } from './CoinsTable.styles';
+import { StyledTypographyHeaderTitle } from './Header.styles';
 export {
   ProtectedRoute,
   SForm,
@@ -66,5 +68,7 @@ export {
   NameParagraph,
   CoinsTable,
   CoinInfo,
-  SelectButton
+  SelectButton,
+  StyledDarkTheme,
+  StyledTypographyHeaderTitle
 };
