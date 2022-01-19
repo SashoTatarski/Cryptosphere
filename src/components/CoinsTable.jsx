@@ -1,7 +1,9 @@
-import { Paper, ThemeProvider } from '@material-ui/core';
-import { Pagination } from '@material-ui/lab';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { CoinList } from '../config/api';
+import { CryptoState } from '../Context/CryptoContext';
+import { StyledLinearProgress } from '../pages/CoinPage.styles';
+import { Paper, ThemeProvider } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import {
   CoinsTableUseStyles,
@@ -25,9 +27,7 @@ import {
   StyledTypographyTable,
   StyledTablePagination
 } from '../components';
-import { CoinList } from '../config/api';
-import { CryptoState } from '../Context/CryptoContext';
-import { StyledLinearProgress } from '../pages/CoinPage.styles';
+
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
