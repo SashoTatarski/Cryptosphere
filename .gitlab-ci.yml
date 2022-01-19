@@ -1,12 +1,27 @@
 image: node
+stages:
+  - test
 
-pages:
-  stage: deploy
+  - deploy
+
+testing:
+  stage: test
   cache:
     paths:
       - node_modules/
   script:
     - npm install
+    - npm run test
+  artifacts:
+    paths:
+      - public
+
+deploy:
+  stage: deploy
+  cache:
+    paths:
+      - node_modules/
+  script:
     - npm run build
     - rm -rf public
     - mv dist public
@@ -14,5 +29,6 @@ pages:
   artifacts:
     paths:
       - public
+
   only:
-    - develop
+    - main
