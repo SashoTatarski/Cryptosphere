@@ -1,11 +1,11 @@
 import Banner from './Banner/Banner';
 import CoinInfo from './CoinInfo';
 import CoinsTable from './CoinsTable';
-import SelectButton from './SelectButton';
+import { StyledDarkTheme } from './CoinsTable.styles';
 import {
+  FlexWrapper,
   SFlexContainer,
-  SFlexDiv,
-  FlexWrapper
+  SFlexDiv
 } from './Form/Container/Container.styles';
 import {
   IconStyleWrapper,
@@ -20,23 +20,31 @@ import {
   StyledTitle
 } from './Form/Form/Form.styles';
 import Header from './Header';
+import {
+  StyledMenuItem,
+  StyledSelectCurrency,
+  StyledTypographyHeaderTitle,
+  StyledLinkUser,
+  StyledAppBar,
+  StyledContainer,
+  StyledToolbar
+} from './Header.styles';
 import Modal from './Modal/Modal';
 import ProtectedRoute from './ProtectedRoute';
+import SelectButton from './SelectButton';
 import {
-  Wrapper,
-  Card,
-  UserHeader,
   Avatar,
-  Title,
-  Name,
-  StyledParagraph,
-  Stats,
+  Card,
   EditStyledIcon,
+  Name,
+  NameParagraph,
   SaveStyledSave,
-  NameParagraph
+  Stats,
+  StyledParagraph,
+  Title,
+  UserHeader,
+  Wrapper
 } from './User/User.styles';
-import { StyledDarkTheme } from './CoinsTable.styles';
-import { StyledTypographyHeaderTitle } from './Header.styles';
 export {
   ProtectedRoute,
   SForm,
@@ -70,5 +78,11 @@ export {
   CoinInfo,
   SelectButton,
   StyledDarkTheme,
-  StyledTypographyHeaderTitle
+  StyledTypographyHeaderTitle,
+  StyledSelectCurrency,
+  StyledMenuItem,
+  StyledLinkUser,
+  StyledAppBar,
+  StyledContainer,
+  StyledToolbar
 };
