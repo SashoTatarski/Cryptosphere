@@ -1,15 +1,19 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import AliceCarousel from 'react-alice-carousel';
+import axios from 'axios';
 import { TrendingCoins } from '../../config/api';
 import { CryptoState } from '../../Context/CryptoContext';
+import { numberWithCommas } from '../../components/CoinsTable';
 import {
+  ResponsiveCarouselView,
+  StyledAliceCarousel,
   StyledDivCarousel,
   StyledImg,
   StyledLinkCarouselItem,
-  StyledSpanContainerPrice
-} from './Carousel.styles';
-import { numberWithCommas } from '../../components/CoinsTable';
+  StyledSpanContainerPrice,
+  StyledSpanPriceColor,
+  StyledSpanEmpty
+} from '../../components';
+
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
@@ -29,19 +33,14 @@ const Carousel = () => {
     return (
       <StyledLinkCarouselItem to={`/coins/${coin.id}`} key={coin.id}>
         <StyledImg src={coin?.image} alt={coin.name} />
-        <span>
+        <StyledSpanEmpty>
           {coin?.symbol}
           &nbsp;
-          <span
-            style={{
-              color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
-              fontWeight: 500              
-            }}
-          >
+          <StyledSpanPriceColor>
             {profit && '+'}
             {coin?.price_change_percentage_24h?.toFixed(2)}%
-          </span>
-        </span>
+          </StyledSpanPriceColor>
+        </StyledSpanEmpty>
         <StyledSpanContainerPrice>
           {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
         </StyledSpanContainerPrice>
@@ -49,24 +48,16 @@ const Carousel = () => {
     );
   });
 
-  const responsive = {
-    0: {
-      items: 2
-    },
-    512: {
-      items: 4
-    }
-  };
   return (
     <StyledDivCarousel>
-      <AliceCarousel
+      <StyledAliceCarousel
         mouseTracking
         infinite
         autoPlayInterval={1000}
         animationDuration={1500}
         disableDotsControls
         disableButtonsControls
-        responsive={responsive}
+        responsive={ResponsiveCarouselView}
         autoPlay
         items={items}
       />

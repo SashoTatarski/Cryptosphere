@@ -45,6 +45,16 @@ import {
   UserHeader,
   Wrapper
 } from './User/User.styles';
+import {
+  StyledDivCarousel,
+  StyledLinkCarouselItem,
+  StyledImg,
+  StyledSpanContainerPrice,
+  StyledAliceCarousel,
+  ResponsiveCarouselView,
+  StyledSpanPriceColor,
+  StyledSpanEmpty
+} from '../components/Banner/Carousel.styles';
 export {
   ProtectedRoute,
   SForm,
@@ -84,5 +94,13 @@ export {
   StyledLinkUser,
   StyledAppBar,
   StyledContainer,
-  StyledToolbar
+  StyledToolbar,
+  StyledDivCarousel,
+  StyledLinkCarouselItem,
+  StyledImg,
+  StyledSpanContainerPrice,
+  StyledAliceCarousel,
+  ResponsiveCarouselView,
+  StyledSpanPriceColor,
+  StyledSpanEmpty
 };

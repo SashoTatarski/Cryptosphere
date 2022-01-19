@@ -1,11 +1,13 @@
-import styled from 'styled-components';
+import AliceCarousel from 'react-alice-carousel';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const StyledDivCarousel = styled.div`
   height: 50%;
   display: flex;
   align-items: center;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;    
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 `;
 
 export const StyledLinkCarouselItem = styled(Link)`
@@ -14,7 +16,7 @@ export const StyledLinkCarouselItem = styled(Link)`
   align-items: center;
   cursor: pointer;
   text-transform: uppercase;
-  color: white;  
+  color: white;
 `;
 
 export const StyledImg = styled.img`
@@ -25,6 +27,24 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledSpanContainerPrice = styled.span`
- font-size: 22px; 
- font-weight: 500
+  font-size: 22px;
+  font-weight: 500;
 `;
+
+export const ResponsiveCarouselView = {
+  0: {
+    items: 3
+  },
+  1024: {
+    items: 4
+  }
+};
+
+export const StyledSpanPriceColor = styled.span`
+  font-weight: 500;
+  color: ${(props) => (props.profit > 0 ? 'rgb(14, 203, 129)' : 'red')};
+`;
+
+export const StyledSpanEmpty = styled.span``;
+
+export const StyledAliceCarousel = styled(AliceCarousel)``;
