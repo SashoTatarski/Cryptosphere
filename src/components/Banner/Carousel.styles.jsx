@@ -31,6 +31,14 @@ export const StyledSpanContainerPrice = styled.span`
   font-weight: 500;
 `;
 
+export const StyledSpanPriceColor = styled.span`
+  font-weight: 500;
+  color: ${(props) => (props.profit > 0 ? 'rgb(14, 203, 129)' : 'red')};
+`;
+
+export const StyledSpanEmpty = styled.span``;
+export const StyledAliceCarousel = styled(AliceCarousel)``;
+
 export const ResponsiveCarouselView = {
   0: {
     items: 3
@@ -39,11 +47,3 @@ export const ResponsiveCarouselView = {
     items: 4
   }
 };
-
-export const StyledSpanPriceColor = styled.span`
-  font-weight: 500;
-  color: ${(props) => (props.profit > 0 ? 'rgb(14, 203, 129)' : 'red')};
-`;
-
-export const StyledSpanEmpty = styled.span``;
-export const StyledAliceCarousel = styled(AliceCarousel)``;

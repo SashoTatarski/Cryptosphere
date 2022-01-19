@@ -1,6 +1,5 @@
-import { LinearProgress } from '@material-ui/core';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 import { useParams } from 'react-router-dom';
 import { CoinInfo, Header } from '../components';
@@ -14,7 +13,8 @@ import {
   StyledSpan,
   StyledTypographyCoinDesc,
   StyledTypographyHeading,
-  StyledTypographyMont
+  StyledTypographyMont,
+  StyledLinearProgress
 } from '../pages';
 
 const CoinPage = () => {
@@ -35,7 +35,7 @@ const CoinPage = () => {
 
   const classes = CoinPageUseStyles();
 
-  if (!coin) return <LinearProgress style={{ backgroundColor: 'gold' }} />;
+  if (!coin) return <StyledLinearProgress />;
 
   return (
     <StyledDivDashboard>

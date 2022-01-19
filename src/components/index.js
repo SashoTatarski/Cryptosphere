@@ -71,7 +71,27 @@ import {
   StyledCircularProgress,
   StyledDivChartButtons
 } from './CoinInfo.styles';
-
+import {
+  CoinsTableUseStyles,
+  StyledContainerCoinsTable,
+  StyledTypographyTable,
+  StyledTextFieldTable,
+  StyledTableContainer,
+  StyledTableHead,
+  StyledTableCellTitle,
+  StyledTableRow,
+  StyledTableCell,
+  StyledTableBody,
+  StyledTable,
+  StyledTableRowBody,
+  StyledTableCellSymbol,
+  StyledImgCoinsTable,
+  StyledDivSymbolAbbr,
+  StyledSpanSymbolAbbr,
+  StyledSpanSymbolName,
+  StyledTableCellPercentage,
+  StyledTablePagination
+} from './CoinsTable.styles';
 export {
   Carousel,
   ProtectedRoute,
@@ -130,5 +150,24 @@ export {
   StyledDivChartContainer,
   StyledDivChartResponsive,
   StyledCircularProgress,
-  StyledDivChartButtons
+  StyledDivChartButtons,
+  CoinsTableUseStyles,
+  StyledContainerCoinsTable,
+  StyledTypographyTable,
+  StyledTextFieldTable,
+  StyledTableContainer,
+  StyledTableHead,
+  StyledTableCellTitle,
+  StyledTableRow,
+  StyledTableBody,
+  StyledTable,
+  StyledTableRowBody,
+  StyledTableCellSymbol,
+  StyledImgCoinsTable,
+  StyledDivSymbolAbbr,
+  StyledSpanSymbolAbbr,
+  StyledSpanSymbolName,
+  StyledTableCell,
+  StyledTableCellPercentage,
+  StyledTablePagination
 };
