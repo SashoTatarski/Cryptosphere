@@ -1,7 +1,9 @@
-import { ThemeProvider } from '@material-ui/core';
 import React from 'react';
+import { ThemeProvider } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { CryptoState } from '../Context/CryptoContext';
+import { logoutUser } from '../redux/auth/authActions';
 import {
   StyledAppBar,
   StyledContainer,
@@ -12,13 +14,11 @@ import {
   StyledToolbar,
   StyledTypographyHeaderTitle
 } from '../components';
-import { CryptoState } from '../Context/CryptoContext';
-import { logoutUser } from '../redux/auth/authActions';
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
 
-  const history = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleLogout = () => dispatch(logoutUser());
@@ -29,7 +29,7 @@ const Header = () => {
         <StyledContainer>
           <StyledToolbar>
             <StyledTypographyHeaderTitle
-              onClick={() => history('/dashboard')}
+              onClick={() => navigate('/dashboard')}
               style={{
                 fontFamily: 'Montserrat',
                 fontSize: '1.25rem',
