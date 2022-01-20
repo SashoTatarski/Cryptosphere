@@ -13,7 +13,7 @@ const Modal = ({ hideModal, modal }) => {
   const onCloseButtonClick = () => {
     hideModal();
   };
-  console.log(modal);
+
   if (!modal.isVisible) {
     return null;
   }

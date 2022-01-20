@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledSpanSelectButton } from '../components';
 
-const SelectButton = ({ children, selected, onClick }) => {   
+const SelectButton = ({ children, selected, onClick }) => {
   return (
     <StyledSpanSelectButton
       onClick={onClick}

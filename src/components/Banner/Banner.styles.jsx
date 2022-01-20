@@ -21,9 +21,9 @@ export const StyledTagline = styled.div`
 `;
 
 export const StyledTypographyTitle = styled(Typography)`
- font-weight: bold;
- margin-bottom: 15px;
- font-family: 'Montserrat';
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: 'Montserrat';
 `;
 
 export const StyledTypographySubtitle = styled(Typography)`

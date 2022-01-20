@@ -3,12 +3,12 @@ import { Banner, CoinsTable, Header } from '../components';
 import { StyledDivDashboard } from '../pages';
 
 const Dashboard = () => {
-  return (       
-      <StyledDivDashboard>
-        <Header />
-        <Banner />
-        <CoinsTable />
-      </StyledDivDashboard>       
+  return (
+    <StyledDivDashboard>
+      <Header />
+      <Banner />
+      <CoinsTable />
+    </StyledDivDashboard>
   );
 };
 

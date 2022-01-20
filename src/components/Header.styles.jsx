@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledTypographyHeaderTitle = styled(Typography)`
- font-family: 'Montserrat!important';
+  font-family: 'Montserrat!important';
   flex: 1;
   color: gold;
   font-weight: bold;

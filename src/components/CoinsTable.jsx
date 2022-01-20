@@ -28,7 +28,6 @@ import {
   StyledTablePagination
 } from '../components';
 
-
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -96,7 +95,7 @@ const CoinsTable = () => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
                       <StyledTableRowBody
-                        onClick={() => navigate(`/coins/${row.id}`)}                       
+                        onClick={() => navigate(`/coins/${row.id}`)}
                         key={row.name}
                       >
                         <StyledTableCellSymbol component="th" scope="row">
@@ -128,7 +127,7 @@ const CoinsTable = () => {
           )}
         </StyledTableContainer>
         <StyledTablePagination
-          count={(handleSearch()?.length / 10).toFixed(0)}         
+          count={(handleSearch()?.length / 10).toFixed(0)}
           classes={{ ul: classes.pagination }}
           onChange={(_, value) => {
             setPage(value);
