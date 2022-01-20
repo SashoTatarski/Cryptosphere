@@ -8,7 +8,6 @@ describe('Login page', () => {
   beforeEach(() => {
     render(<Login />);
   });
-  
 
   it('the entered value is visible in the email field', () => {
     user.type(getEmail(), 'test@gmail.com');
@@ -21,7 +20,6 @@ describe('Login page', () => {
 
     expect(getPassword().value).toBe('123456');
   });
-
 
   it('login button is visible on the screen', () => {
     expect(getLoginButton()).toBeInTheDocument();
