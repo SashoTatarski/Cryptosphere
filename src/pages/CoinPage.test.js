@@ -7,9 +7,7 @@ import CoinPage from './CoinPage';
 
 describe('Coin page', () => {
   beforeEach(() => {
-    render(<CoinPage />, {
-
-    });
+    render(<CoinPage />, {});
   });
 
   it('first name is visible on the screen', () => {
