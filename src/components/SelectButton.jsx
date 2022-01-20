@@ -10,7 +10,7 @@ const SelectButton = ({ children, selected, onClick }) => {
         color: selected ? 'black' : '',
         fontWeight: selected ? 700 : 500
       }}
-    >
+    >      
       {children}
     </StyledSpanSelectButton>
   );
