@@ -37,16 +37,22 @@ const CoinsTable = () => {
   const { currency, symbol } = CryptoState();
   let navigate = useNavigate();
 
-  const fetchCoins = async () => {
-    setLoading(true);
-    const { data } = await axios.get(CoinList(currency));
-
-    setCoins(data);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    let active = true;
+
+    const fetchCoins = async () => {
+      setLoading(true);
+      const { data } = await axios.get(CoinList(currency));
+      if (active) {
+        setCoins(data);
+        setLoading(false);
+      }
+    };
     fetchCoins();
+    return () => {
+      active = false;
+
+    };
   }, [currency]);
 
   const classes = CoinsTableUseStyles();
@@ -80,7 +86,7 @@ const CoinsTable = () => {
                   {['Coin', 'Price', '24h Change', 'Market Cap'].map((head) => (
                     <StyledTableCellTitle
                       key={head}
-                      align={head === 'Coin' ? '' : 'right'}
+                      align={head === 'Coin' ? 'left' : 'right'}
                     >
                       {head}
                     </StyledTableCellTitle>
@@ -127,7 +133,7 @@ const CoinsTable = () => {
           )}
         </StyledTableContainer>
         <StyledTablePagination
-          count={(handleSearch()?.length / 10).toFixed(0)}
+          count={Number((handleSearch()?.length / 10).toFixed(0))}
           classes={{ ul: classes.pagination }}
           onChange={(_, value) => {
             setPage(value);

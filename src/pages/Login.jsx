@@ -55,7 +55,9 @@ const Login = ({ userData, fetchUser }) => {
             validationFailed={errors.password}
           />
 
-          {userData.error ? <StyledError>{userData.error}</StyledError> : null}
+          {userData.error==='Incorrect Email or Password' ? (
+            <StyledError>{userData.error}</StyledError>
+          ) : null}
           <StyledButton type="submit">Login</StyledButton>
           <SRedirect>
             <SRedirectLabel>{'Do not have an account?'}&nbsp;</SRedirectLabel>

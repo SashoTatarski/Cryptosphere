@@ -3,7 +3,7 @@ import user from '@testing-library/user-event';
 import { render } from '../test.utils';
 import React from 'react';
 import Register from './Register';
-describe('Login page', () => {
+describe('Register page', () => {
   beforeEach(() => {
     render(<Register />);
   });

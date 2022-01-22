@@ -18,13 +18,20 @@ const Carousel = () => {
   const [trending, setTrending] = useState([]);
   const { currency, symbol } = CryptoState();
 
-  const fetchTrendingCoins = async () => {
-    const { data } = await axios.get(TrendingCoins(currency));
-    setTrending(data);
-  };
-
   useEffect(() => {
+    let active = true;
+    const fetchTrendingCoins = async () => {
+      const { data } = await axios.get(TrendingCoins(currency));
+
+      if (active) {
+        setTrending(data);
+      }
+    };
+
     fetchTrendingCoins();
+    return () => {
+      active = false;
+    };
   }, [currency]);
 
   const items = trending.map((coin) => {

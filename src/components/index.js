@@ -62,7 +62,8 @@ import {
   StyledParagraph,
   Title,
   UserHeader,
-  Wrapper
+  Wrapper,
+  StButton
 } from './User/User.styles';
 import { StyledSpanSelectButton } from './SelectButton.styles';
 import {
@@ -169,5 +170,6 @@ export {
   StyledSpanSymbolName,
   StyledTableCell,
   StyledTableCellPercentage,
-  StyledTablePagination
+  StyledTablePagination,
+  StButton
 };

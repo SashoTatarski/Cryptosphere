@@ -14,7 +14,8 @@ import {
   Stats,
   EditStyledIcon,
   SaveStyledSave,
-  NameParagraph
+  NameParagraph,
+  StButton
 } from '../components';
 
 import { updateUser } from '../redux/auth/authActions';
@@ -65,8 +66,17 @@ const Profile = () => {
 
             {edit ? (
               <Title>
-                <Name type="text" value={firstName} onChange={changeFirstName} />
-                <Name value={lastName} onChange={lastFirstName} />{' '}
+                <Name
+                  type="text"
+                  value={firstName}
+                  onChange={changeFirstName}
+                  data-testid="first-name-element"
+                />
+                <Name
+                  value={lastName}
+                  onChange={lastFirstName}
+                  data-testid="last-name-element"
+                />{' '}
               </Title>
             ) : (
               <Title>
@@ -79,9 +89,13 @@ const Profile = () => {
           </UserHeader>
           <Stats>
             {!edit ? (
-              <EditStyledIcon onClick={() => setEdit(true)} />
+              <StButton onClick={() => setEdit(true)} data-testid="edit-element">
+                <EditStyledIcon />
+              </StButton>
             ) : (
-              <SaveStyledSave onClick={handleUpdate} />
+              <StButton onClick={handleUpdate} data-testid="save-element">
+                <SaveStyledSave />
+              </StButton>
             )}
           </Stats>
         </Card>
