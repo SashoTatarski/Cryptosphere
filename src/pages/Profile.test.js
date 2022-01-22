@@ -52,7 +52,6 @@ describe('Profile page', () => {
     user.type(screen.getByTestId('last-name-element'), '{selectall}Dimova');
 
     user.click(getSaveButton());
-    
 
     expect(screen.getByText(/desi/i)).toBeInTheDocument();
     expect(screen.getByText(/dimova/i)).toBeInTheDocument();

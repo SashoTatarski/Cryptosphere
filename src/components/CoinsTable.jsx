@@ -51,7 +51,6 @@ const CoinsTable = () => {
     fetchCoins();
     return () => {
       active = false;
-
     };
   }, [currency]);
 

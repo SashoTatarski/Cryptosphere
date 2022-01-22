@@ -55,7 +55,7 @@ const Login = ({ userData, fetchUser }) => {
             validationFailed={errors.password}
           />
 
-          {userData.error==='Incorrect Email or Password' ? (
+          {userData.error === 'Incorrect Email or Password' ? (
             <StyledError>{userData.error}</StyledError>
           ) : null}
           <StyledButton type="submit">Login</StyledButton>
