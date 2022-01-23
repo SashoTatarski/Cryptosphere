@@ -45,6 +45,8 @@ describe('Integration tests Register page', () => {
       expect(screen.getByRole('heading', { name: /login/i })).toBeInTheDocument();
     });
   });
+
+  
 });
 
 const getFirstName = () => {

@@ -1,16 +1,15 @@
 import { screen, waitFor } from '@testing-library/react';
+import user from '@testing-library/user-event';
 
 import React from 'react';
 
 import { Dashboard, Login } from '../../src/pages';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
+
 import { render } from '../../src/test.utils';
 
-describe('Login page', () => {
-  beforeEach(() => {
-    render(<Login />);
-  });
+describe('Dashboard', () => {
   const data = [
     {
       current_price: 30908,
@@ -24,7 +23,6 @@ describe('Login page', () => {
       price_change_percentage_24h: -4.36876
     }
   ];
-
   const server = setupServer(
     rest.get(
       'https://api.coingecko.com/api/v3/coins/markets',
@@ -40,27 +38,39 @@ describe('Login page', () => {
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
-  it('Redirect to Dashboard after successful login', async () => {
-    await waitFor(() => {
-      render(<Dashboard />, {
-        initialState: {
-          auth: {
+  
+  beforeEach(() => {
+    render(<Dashboard />, {
+      initialState: {
+        auth: {
+          user: {
+            isLoggedIn: true,
             user: {
-              isLoggedIn: true,
-              user: {
-                email: 'test@gmail.com',
-                firstName: 'Deshka',
-                lastName: 'Ilieva'
-              }
+              email: 'test@gmail.com',
+              firstName: 'Deshka',
+              lastName: 'Ilieva'
             }
           }
         }
-      });
-      expect(
-        screen.getByRole('heading', {
-          name: /crypto dashboard/i
-        })
-      ).toBeInTheDocument();
+      }
+    });
+  });
+
+  it('user logout redirect to login page', async () => {
+    user.click(getLogout());
+    render(<Login />, {
+      initialState: {
+        auth: {
+          user: {
+            isLoggedIn: false,
+            user: null
+          }
+        }
+      }
+    });
+
+    await waitFor(() => {
+      expect(getLoginButton()).toBeInTheDocument();
     });
   });
 });
@@ -71,6 +81,11 @@ const getEmail = () => {
   return screen.getByPlaceholderText(/email/i);
 };
 
+const getLogout = () => {
+  return screen.getByRole('menuitem', {
+    name: /logout/i
+  });
+};
 const getLoginButton = () => {
   return screen.getByRole('button', { name: /login/i });
 };

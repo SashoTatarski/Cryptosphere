@@ -77,7 +77,9 @@ export const Register = ({ userData, createUser }) => {
           {errors.confirmPassword && (
             <StyledError>{errors.confirmPassword.message}</StyledError>
           )}
-          {userData.error==='Email already exist'? <StyledError>{userData.error}</StyledError> : null}
+          {userData.error === 'Email already exist' ? (
+            <StyledError>{userData.error}</StyledError>
+          ) : null}
           <StyledButton type="submit">Register</StyledButton>
           <SRedirect>
             <SRedirectLabel>{'Already have an account?'}&nbsp;</SRedirectLabel>

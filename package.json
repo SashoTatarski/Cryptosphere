@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\"",
     "build": "webpack --mode production",
     "prepare": "husky install",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
   },

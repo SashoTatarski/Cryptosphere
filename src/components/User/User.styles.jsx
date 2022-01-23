@@ -119,6 +119,6 @@ export const SaveStyledSave = styled(Save)`
 `;
 export const StButton = styled.button`
   outline: none;
-  background-color:white;
-  border:none;
+  background-color: white;
+  border: none;
 `;
