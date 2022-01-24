@@ -35,12 +35,22 @@ describe('Coin page', () => {
     await waitFor(() => expect(screen.getByText(/1 year/i)).toBeInTheDocument());
   });
   it('rank is  visible on the screen', async () => {
-    await waitFor(() => expect(screen.getByRole('heading', { name: /rank:/i })).toBeInTheDocument());
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: /rank:/i })).toBeInTheDocument()
+    );
   });
   it('current price is visible on the screen', async () => {
-    await waitFor(() => expect(screen.getByRole('heading', { name: /current price:/i })).toBeInTheDocument());
+    await waitFor(() =>
+      expect(
+        screen.getByRole('heading', { name: /current price:/i })
+      ).toBeInTheDocument()
+    );
   });
   it(' market cap is  visible on the screen', async () => {
-    await waitFor(() => expect(screen.getByRole('heading', { name: /market cap:/i })).toBeInTheDocument());
+    await waitFor(() =>
+      expect(
+        screen.getByRole('heading', { name: /market cap:/i })
+      ).toBeInTheDocument()
+    );
   });
 });
