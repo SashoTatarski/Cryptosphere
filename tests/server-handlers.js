@@ -31,10 +31,10 @@ const history = {
 };
 const handlers = [
   rest.post('http://localhost:8000/api/auth/register', async (req, res, ctx) => {
-    return res(ctx.json({ message: 'Successs' }));
+    return res(ctx.json({ message: 'Success' }));
   }),
   rest.post('http://localhost:8000/api/update', async (req, res, ctx) => {
-    return res(ctx.json({ message: 'Successs' }));
+    return res(ctx.json({ message: 'Success' }));
   }),
   rest.get(
     'https://api.coingecko.com/api/v3/coins/markets',

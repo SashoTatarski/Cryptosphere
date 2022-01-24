@@ -5,7 +5,6 @@ import React from 'react';
 import { Modal } from '../../src/components';
 import { Login, Register } from '../../src/pages';
 
-
 import { render } from '..';
 
 describe('Integration tests Register page', () => {
@@ -13,8 +12,7 @@ describe('Integration tests Register page', () => {
     render(<Register />);
   });
   describe('Integration tests Register page', () => {
-   
-    it('confirmation modal is opened after successful registration', async () => {
+  it('confirmation modal is opened after successful registration', async () => {
       user.type(getFirstName(), 'Peter');
       user.type(getLastName(), 'Petrov');
       user.type(getEmail(), 'test@gmail.com');
@@ -44,8 +42,9 @@ describe('Integration tests Register page', () => {
 
   it('when login link is clicked Login page is rendered', async () => {
     user.click(getLoginLink());
-    render(<Login />);
+
     await waitFor(() => {
+      render(<Login />);
       expect(screen.getByRole('heading', { name: /login/i })).toBeInTheDocument();
     });
   });

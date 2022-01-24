@@ -31,7 +31,11 @@ const Login = ({ userData, fetchUser }) => {
   };
 
   useEffect(() => {
-    userData.isLoggedIn ? navigate('dashboard') : null;
+    let active = true;
+    userData.isLoggedIn ? navigate('dashboard') && active === true : null;
+    return () => {
+      active = false;
+    };
   }, [userData.isLoggedIn]);
 
   return (

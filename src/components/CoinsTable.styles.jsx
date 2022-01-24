@@ -70,6 +70,7 @@ export const StyledTableCellSymbol = styled(TableCell)`
 `;
 
 export const StyledImgCoinsTable = styled.img`
+
   margin-bottom: 10px;
   height: 50px;
 `;

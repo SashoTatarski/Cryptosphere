@@ -1,8 +1,8 @@
 import { screen, waitFor } from '@testing-library/react';
-
+import user from '@testing-library/user-event';
 import React from 'react';
 
-import { Dashboard, Login } from '../../src/pages';
+import { Dashboard, Login, Register } from '../../src/pages';
 
 import { render } from '..';
 
@@ -34,6 +34,13 @@ describe('Login page', () => {
       ).toBeInTheDocument();
     });
   });
+  it('when register link is clicked Register page is rendered', async () => {
+    user.click(getRegisterLink());
+    render(<Register />);
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { name: /register/i })).toBeInTheDocument();
+    });
+  });
 });
 const getPassword = () => {
   return screen.getByPlaceholderText(/password/i);
@@ -44,4 +51,7 @@ const getEmail = () => {
 
 const getLoginButton = () => {
   return screen.getByRole('button', { name: /login/i });
+};
+const getRegisterLink = () => {
+  return screen.getByRole('link', { name: /register/i });
 };

@@ -110,8 +110,15 @@ const CoinsTable = () => {
                         onClick={() => navigate(`/coins/${row.id}`)}
                         key={row.name}
                       >
-                        <StyledTableCellSymbol component="th" scope="row">
-                          <StyledImgCoinsTable src={row?.image} alt={row.name} />
+                        <StyledTableCellSymbol
+                          component="th"
+                          scope="row"
+                        >
+                          <StyledImgCoinsTable
+                            src={row?.image}
+                            alt={row.name}
+                            data-testid={'image-element'}
+                          />
                           <StyledDivSymbolAbbr>
                             <StyledSpanSymbolAbbr>{row.symbol}</StyledSpanSymbolAbbr>
                             <StyledSpanSymbolName>{row.name}</StyledSpanSymbolName>

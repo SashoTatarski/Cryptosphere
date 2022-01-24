@@ -3,13 +3,11 @@ import user from '@testing-library/user-event';
 
 import React from 'react';
 
-import { Dashboard, Login } from '../../src/pages';
+import { Dashboard, Login, Profile } from '../../src/pages';
 
 import { render } from '..';
 
-
 describe('Dashboard', () => {
-
   beforeEach(() => {
     render(<Dashboard />, {
       initialState: {
@@ -42,6 +40,28 @@ describe('Dashboard', () => {
 
     await waitFor(() => {
       expect(getLoginButton()).toBeInTheDocument();
+    });
+  });
+  it('redirect from dashboard to user profile page view', async () => {
+    user.click(screen.getByRole('menuitem', { name: /user/i }));
+
+    render(<Profile />, {
+      initialState: {
+        auth: {
+          user: {
+            isLoggedIn: true,
+            user: {
+              email: 'test@gmail.com',
+              firstName: 'Deshka',
+              lastName: 'Ilieva'
+            }
+          }
+        }
+      }
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/test@gmail.com/i)).toBeInTheDocument();
     });
   });
 });
