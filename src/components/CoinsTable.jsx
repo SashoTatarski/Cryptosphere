@@ -30,7 +30,12 @@ import {
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
-  const [headers, setHeads] = useState(['Coin', 'Price', '24h Change', 'Market Cap']);
+  const [headers, setHeads] = useState([
+    'Coin',
+    'Price',
+    '24h Change',
+    'Market Cap'
+  ]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
@@ -45,7 +50,6 @@ const CoinsTable = () => {
       setLoading(true);
       const { data } = await axios.get(CoinList(currency));
       if (active) {
-   
         setCoins(data);
         setLoading(false);
       }
@@ -69,9 +73,10 @@ const CoinsTable = () => {
   return (
     <ThemeProvider theme={StyledDarkTheme}>
       <StyledContainerCoinsTable>
-        <StyledTypographyTable variant="h4">Cryptocurrency Prices by Market Cap</StyledTypographyTable>
+        <StyledTypographyTable variant="h4">
+          Cryptocurrency Prices by Market Cap
+        </StyledTypographyTable>
         <StyledTextFieldTable
-
           label="Search For a Crypto Currency.."
           variant="outlined"
           onChange={(e) => setSearch(e.target.value)}

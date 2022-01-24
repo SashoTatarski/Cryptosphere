@@ -19,6 +19,9 @@
     "setupFilesAfterEnv": [
       "<rootDir>/src/jest.setup.js"
     ],
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/__mocks__/styleMock.js"
     }
@@ -61,11 +64,13 @@
     "eslint-webpack-plugin": "^3.1.1",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
+    "jest-canvas-mock": "^2.3.1",
     "msw": "^0.36.5",
     "node-sass": "^7.0.1",
     "prettier": "^2.5.1",
     "react-hot-loader": "^4.13.0",
     "react-refresh": "^0.11.0",
+    "resize-observer-polyfill": "^1.5.1",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",

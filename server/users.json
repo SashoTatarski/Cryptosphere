@@ -1,1 +1,1 @@
-{"users":[{"id":2,"name":"Test","email":"test@gmail.com","password":"123456","firstName":"Deshka","lastName":"Ilieva"},{"id":3,"firstName":"Deshkasss","lastName":"Ilieva","email":"testaaa@gmail.com","password":"123456"}]}
+{"users":[{"id":2,"name":"Test","email":"test@gmail.com","password":"123456","firstName":"Deshka","lastName":"Ilievas"},{"id":3,"firstName":"Deshkasss","lastName":"Ilieva","email":"testaaa@gmail.com","password":"123456"},{"id":4,"firstName":"Pitar","lastName":"Westwood","email":"pitarmaaaail@test.com","password":"aaaaaa"}]}

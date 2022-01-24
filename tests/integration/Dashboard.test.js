@@ -4,41 +4,12 @@ import user from '@testing-library/user-event';
 import React from 'react';
 
 import { Dashboard, Login } from '../../src/pages';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
 
-import { render } from '../../src/test.utils';
+import { render } from '..';
+
 
 describe('Dashboard', () => {
-  const data = [
-    {
-      current_price: 30908,
-      id: 'bitcoin',
-      image:
-        'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
-      market_cap: 52676539347,
-      market_cap_rank: 1,
-      name: 'Bitcoin',
-      price_change_24h: -1411.967577486466,
-      price_change_percentage_24h: -4.36876
-    }
-  ];
-  const server = setupServer(
-    rest.get(
-      'https://api.coingecko.com/api/v3/coins/markets',
 
-      (req, res, ctx) => {
-        const currency = req.url.searchParams.get('eur');
-
-        return res(ctx.json(data));
-      }
-    )
-  );
-
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
-  
   beforeEach(() => {
     render(<Dashboard />, {
       initialState: {

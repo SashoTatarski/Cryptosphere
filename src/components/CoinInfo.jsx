@@ -4,7 +4,7 @@ import { CryptoState } from '../Context/CryptoContext';
 import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
 import { Line } from 'react-chartjs-2';
-/* eslint:disable:no-unused-variable */
+
 import Chart from 'chart.js/auto';
 import { ThemeProvider } from '@material-ui/core';
 import {
@@ -24,16 +24,20 @@ const CoinInfo = ({ coin }) => {
 
   const classes = StyledDivChartResponsive();
 
-  const fetchHistoricData = async () => {
-    const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
-    setflag(true);
-    setHistoricData(data.prices);
-  };
-
   useEffect(() => {
-    fetchHistoricData();
-  }, [days, currency]);
+    let active = true;
 
+    const fetchHistoricData = async () => {
+      const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
+      if (active) {
+        setHistoricData(data.prices);
+      }
+    };
+    fetchHistoricData();
+    return () => {
+      active = false;
+    };
+  }, [days, currency]);
   return (
     <ThemeProvider theme={StyledDarkTheme}>
       <StyledDivChartContainer className={classes.container}>

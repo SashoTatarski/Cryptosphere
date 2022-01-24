@@ -1,16 +1,31 @@
 import { screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
-
-import { render } from '../test.utils';
 import React from 'react';
+import { render } from '../../tests';
 import CoinPage from './CoinPage';
 
 describe('Coin page', () => {
+  
   beforeEach(() => {
-    render(<CoinPage />, {});
+    render(<CoinPage />, {
+      initialState: {
+        auth: {
+          user: {
+            isLoggedIn: true,
+            user: {
+              email: 'test@gmail.com',
+              firstName: 'Deshka',
+              lastName: 'Ilieva'
+            }
+          }
+        }
+      }
+    });
   });
 
-  it('first name is visible on the screen', () => {
-    expect(screen.getByText('3 Months')).toBeInTheDocument();
+  it('24 h visible on the screen', async () => {
+    await waitFor(() => {
+      expect(screen.getByText(/24 hours/i)).toBeInTheDocument();
+    });
   });
 });

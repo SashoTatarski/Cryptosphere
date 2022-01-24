@@ -1,6 +1,6 @@
 import { screen, waitFor, cleanup } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import { render } from '../test.utils';
+import { render } from '../../tests';
 import React from 'react';
 import Register from './Register';
 

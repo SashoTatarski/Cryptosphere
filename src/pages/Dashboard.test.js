@@ -1,42 +1,11 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-import { render } from '../test.utils';
 import React from 'react';
 
 import { Dashboard } from '.';
+import { render } from '../../tests';
 
 describe('Dashboard Page', () => {
-  const data = [
-    {
-      current_price: 30908,
-      id: 'bitcoin',
-      image:
-        'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579',
-      market_cap: 52676539347,
-      market_cap_rank: 1,
-      name: 'Bitcoin',
-      price_change_24h: -1411.967577486466,
-      price_change_percentage_24h: -4.36876
-    }
-  ];
-
-  const server = setupServer(
-    rest.get(
-      'https://api.coingecko.com/api/v3/coins/markets',
-
-      (req, res, ctx) => {
-        const currency = req.url.searchParams.get('eur');
-
-        return res(ctx.json(data));
-      }
-    )
-  );
-
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
 
   beforeEach(() => {
     render(<Dashboard />, {
@@ -101,22 +70,7 @@ describe('Dashboard Page', () => {
         }
       });
     });
-    // it('heading on coin table section', async () => {
-    //   await waitFor(() => {
-    //     expect(
-    //       screen.getByRole('heading', {
-    //         name: /cryptocurrency prices by market cap/i
-    //       })
-    //     ).toBeInTheDocument();
-    //   });
-    // });
-    // it('the entered value is visible in the search field', async () => {
-    //   user.type(getSearchField(), 'bitcoin');
 
-    //   await waitFor(() => {
-    //     expect(getSearchField().value).toBe('bitcoin');
-    //   });
-    // });
     it('coin column visible on the table', async () => {
       await waitFor(() => {
         expect(getCoinColumn()).toBeInTheDocument();
@@ -161,9 +115,7 @@ const getLogout = () => {
   });
 };
 
-const getSearchField = () => {
-  return screen.getByTestId('search-element');
-};
+
 
 const getCoinColumn = () => {
   return screen.getByRole('columnheader', {

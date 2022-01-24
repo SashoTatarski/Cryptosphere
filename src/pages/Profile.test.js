@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
-
-import { render } from '../test.utils';
+import { render } from '../../tests';
 import React from 'react';
 import Profile from './Profile';
 

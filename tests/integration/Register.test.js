@@ -5,36 +5,40 @@ import React from 'react';
 import { Modal } from '../../src/components';
 import { Login, Register } from '../../src/pages';
 
-import { render } from '../../src/test.utils';
+
+import { render } from '..';
 
 describe('Integration tests Register page', () => {
   beforeEach(() => {
     render(<Register />);
   });
-  it('confirmation modal is opened after successful registration', async () => {
-    user.type(getFirstName(), 'Peter');
-    user.type(getLastName(), 'Petrov');
-    user.type(getEmail(), 'test@gmail.com');
-    user.type(getPassword(), '123456');
-    user.type(getConfirmPassword(), '123456');
+  describe('Integration tests Register page', () => {
+   
+    it('confirmation modal is opened after successful registration', async () => {
+      user.type(getFirstName(), 'Peter');
+      user.type(getLastName(), 'Petrov');
+      user.type(getEmail(), 'test@gmail.com');
+      user.type(getPassword(), '123456');
+      user.type(getConfirmPassword(), '123456');
 
-    user.click(getRegisterButton());
-    render(<Modal />, {
-      initialState: {
-        modal: {
-          isVisible: true,
-          title: {
-            title: 'Registration Completed Successfully!'
+      user.click(getRegisterButton());
+      render(<Modal />, {
+        initialState: {
+          modal: {
+            isVisible: true,
+            title: {
+              title: 'Registration Completed Successfully!'
+            }
           }
         }
-      }
-    });
-    await waitFor(() => {
-      expect(
-        screen.getByRole('heading', {
-          name: /registration completed successfully!/i
-        })
-      ).toBeInTheDocument();
+      });
+      await waitFor(() => {
+        expect(
+          screen.getByRole('heading', {
+            name: /registration completed successfully!/i
+          })
+        ).toBeInTheDocument();
+      });
     });
   });
 
@@ -45,8 +49,6 @@ describe('Integration tests Register page', () => {
       expect(screen.getByRole('heading', { name: /login/i })).toBeInTheDocument();
     });
   });
-
-  
 });
 
 const getFirstName = () => {

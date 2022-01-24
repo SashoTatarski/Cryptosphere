@@ -23,16 +23,22 @@ const CoinPage = () => {
 
   const { currency, symbol } = CryptoState();
 
-  const fetchCoin = async () => {
-    const { data } = await axios.get(SingleCoin(id));
-
-    setCoin(data);
-  };
-
   useEffect(() => {
-    fetchCoin();
-  }, []);
+    let active = true;
 
+    const fetchCoin = async () => {
+      const { data } = await axios.get(SingleCoin(id));
+     
+
+      if (active) {
+        setCoin(data);
+      }
+    };
+    fetchCoin();
+    return () => {
+      active = false;
+    };
+  }, []);
   const classes = CoinPageUseStyles();
 
   if (!coin) return <StyledLinearProgress />;

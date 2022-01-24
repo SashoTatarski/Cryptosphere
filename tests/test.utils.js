@@ -5,10 +5,12 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import CryptoContext from './Context/CryptoContext';
-import thunk from 'redux-thunk';
 
-import { rootReducer } from './redux';
+import thunk from 'redux-thunk';
+import { rootReducer } from '../src/redux';
+import CryptoContext from '../src/Context/CryptoContext';
+
+
 
 const middleware = [thunk];
 
@@ -24,7 +26,7 @@ function render(
     ...renderOptions
   } = {}
 ) {
-  function Wrapper({ children }) {
+  const Wrapper = ({ children }) => {
     return (
       <Provider store={store}>
         <CryptoContext>
@@ -32,7 +34,7 @@ function render(
         </CryptoContext>
       </Provider>
     );
-  }
+  };
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
 
