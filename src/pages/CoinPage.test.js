@@ -5,7 +5,6 @@ import { render } from '../../tests';
 import CoinPage from './CoinPage';
 
 describe('Coin page', () => {
-  
   beforeEach(() => {
     render(<CoinPage />, {
       initialState: {

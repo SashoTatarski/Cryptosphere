@@ -6,7 +6,6 @@ import { Dashboard } from '.';
 import { render } from '../../tests';
 
 describe('Dashboard Page', () => {
-
   beforeEach(() => {
     render(<Dashboard />, {
       initialState: {
@@ -114,8 +113,6 @@ const getLogout = () => {
     name: /logout/i
   });
 };
-
-
 
 const getCoinColumn = () => {
   return screen.getByRole('columnheader', {

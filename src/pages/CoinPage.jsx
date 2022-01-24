@@ -28,7 +28,6 @@ const CoinPage = () => {
 
     const fetchCoin = async () => {
       const { data } = await axios.get(SingleCoin(id));
-     
 
       if (active) {
         setCoin(data);
