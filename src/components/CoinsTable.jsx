@@ -111,11 +111,7 @@ const CoinsTable = () => {
                         key={row.name}
                       >
                         <StyledTableCellSymbol component="th" scope="row">
-                          <StyledImgCoinsTable
-                            src={row?.image}
-                            alt={row.name}
-                           
-                          />
+                          <StyledImgCoinsTable src={row?.image} alt={row.name} />
                           <StyledDivSymbolAbbr>
                             <StyledSpanSymbolAbbr>{row.symbol}</StyledSpanSymbolAbbr>
                             <StyledSpanSymbolName>{row.name}</StyledSpanSymbolName>
