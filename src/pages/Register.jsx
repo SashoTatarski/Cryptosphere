@@ -27,19 +27,31 @@ export const Register = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors }
   } = useForm();
 
   const onSubmit = (data) => {
     registerUser(data);
     setShowModal(true);
+    reset({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    });
   };
 
   const password = watch('password');
   return (
     <SFlexDiv>
       <SFlexContainer>
-        <Modal visible={showModal} title={'Registration Completed Successfully!'} onClose={()=>setShowModal()}/>
+        <Modal
+          visible={showModal}
+          title={'Registration Completed Successfully!'}
+          onClose={() => setShowModal()}
+        />
         <IconStyleWrapper />
         <StyledTitle>Register</StyledTitle>
 

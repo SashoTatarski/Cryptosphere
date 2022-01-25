@@ -8,8 +8,7 @@ import {
   StyledModalTitle
 } from './Modal.styles';
 
-const Modal = ({ visible, title , onClose }) => {
-
+const Modal = ({ visible, title, onClose }) => {
   return visible ? (
     <StyledModalOverlay>
       <StyledModal>
