@@ -1,6 +1,5 @@
-import { screen, waitFor } from '@testing-library/react';
-
 import React from 'react';
+import { screen, waitFor } from '@testing-library/react';
 
 import { Dashboard } from '.';
 import { render } from '../../tests';

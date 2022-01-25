@@ -31,12 +31,11 @@ const Login = ({ userData, fetchUser }) => {
   };
 
   useEffect(() => {
-    let active = true;
-    userData.isLoggedIn ? navigate('dashboard') && active === true : null;
-    return () => {
-      active = false;
-    };
+
+    userData.isLoggedIn ? navigate('dashboard')  : null;
+  
   }, [userData.isLoggedIn]);
+
 
   return (
     <SFlexDiv>

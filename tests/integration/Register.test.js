@@ -1,7 +1,8 @@
+import React from 'react';
+
 import { screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
-import React from 'react';
 import { Modal } from '../../src/components';
 import { Login, Register } from '../../src/pages';
 
@@ -11,32 +12,31 @@ describe('Integration tests Register page', () => {
   beforeEach(() => {
     render(<Register />);
   });
-  describe('Integration tests Register page', () => {
-  it('confirmation modal is opened after successful registration', async () => {
-      user.type(getFirstName(), 'Peter');
-      user.type(getLastName(), 'Petrov');
-      user.type(getEmail(), 'test@gmail.com');
-      user.type(getPassword(), '123456');
-      user.type(getConfirmPassword(), '123456');
 
-      user.click(getRegisterButton());
-      render(<Modal />, {
-        initialState: {
-          modal: {
-            isVisible: true,
-            title: {
-              title: 'Registration Completed Successfully!'
-            }
+  it('confirmation modal is opened after successful registration', async () => {
+    user.type(getFirstName(), 'Peter');
+    user.type(getLastName(), 'Petrov');
+    user.type(getEmail(), 'test@gmail.com');
+    user.type(getPassword(), '123456');
+    user.type(getConfirmPassword(), '123456');
+
+    user.click(getRegisterButton());
+    render(<Modal />, {
+      initialState: {
+        modal: {
+          isVisible: true,
+          title: {
+            title: 'Registration Completed Successfully!'
           }
         }
-      });
-      await waitFor(() => {
-        expect(
-          screen.getByRole('heading', {
-            name: /registration completed successfully!/i
-          })
-        ).toBeInTheDocument();
-      });
+      }
+    });
+    await waitFor(() => {
+      expect(
+        screen.getByRole('heading', {
+          name: /registration completed successfully!/i
+        })
+      ).toBeInTheDocument();
     });
   });
 

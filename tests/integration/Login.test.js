@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import React from 'react';
 
 import { Dashboard, Login, Register } from '../../src/pages';
 
@@ -42,16 +43,7 @@ describe('Login page', () => {
     });
   });
 });
-const getPassword = () => {
-  return screen.getByPlaceholderText(/password/i);
-};
-const getEmail = () => {
-  return screen.getByPlaceholderText(/email/i);
-};
 
-const getLoginButton = () => {
-  return screen.getByRole('button', { name: /login/i });
-};
 const getRegisterLink = () => {
   return screen.getByRole('link', { name: /register/i });
 };

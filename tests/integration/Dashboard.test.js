@@ -1,7 +1,7 @@
+import React from 'react';
+
 import { screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
-
-import React from 'react';
 
 import { Dashboard, Login, Profile } from '../../src/pages';
 
@@ -65,12 +65,6 @@ describe('Dashboard', () => {
     });
   });
 });
-const getPassword = () => {
-  return screen.getByPlaceholderText(/password/i);
-};
-const getEmail = () => {
-  return screen.getByPlaceholderText(/email/i);
-};
 
 const getLogout = () => {
   return screen.getByRole('menuitem', {
