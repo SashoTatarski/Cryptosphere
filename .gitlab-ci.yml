@@ -12,7 +12,7 @@ testing:
   script:
     - npm install
     - npm run test
-    - npm run test:cypress
+    - npx cypress run
   artifacts:
     paths:
       - public
