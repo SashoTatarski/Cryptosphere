@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { createUser } from '../redux';
 import {
   SFlexContainer,
   SForm,
@@ -15,19 +16,20 @@ import {
   Modal,
   SFlexDiv
 } from '../components';
-import { createUser } from '../redux';
 
-export const Register = ({ userData, createUser }) => {
+export const Register = () => {
+  const userData = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const registerUser = (values) => dispatch(createUser(values));
+
   const {
     register,
     handleSubmit,
     watch,
-    reset,
     formState: { errors }
   } = useForm();
   const onSubmit = (data) => {
-    createUser(data);
-    reset();
+    registerUser(data);
   };
 
   const password = watch('password');
@@ -91,15 +93,4 @@ export const Register = ({ userData, createUser }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    userData: state.auth
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createUser: (values) => dispatch(createUser(values))
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default Register;

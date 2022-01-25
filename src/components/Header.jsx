@@ -3,7 +3,7 @@ import { ThemeProvider } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { CryptoState } from '../Context/CryptoContext';
-import { logoutUser } from '../redux/auth/authActions';
+import { logoutUser } from '../redux';
 import {
   StyledAppBar,
   StyledContainer,
@@ -14,6 +14,7 @@ import {
   StyledToolbar,
   StyledTypographyHeaderTitle
 } from '../components';
+
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();

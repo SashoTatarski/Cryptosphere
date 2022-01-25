@@ -1,7 +1,8 @@
-import { screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { render } from '../../tests';
-import React from 'react';
+
 import Login from './Login';
 
 describe('Login page', () => {

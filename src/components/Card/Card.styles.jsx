@@ -22,7 +22,7 @@ export const Card = styled.article`
   margin: 0 1.625rem;
 `;
 
-export const UserHeader = styled.header`
+export const CardHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -61,10 +61,10 @@ import {
   Stats,
   StyledParagraph,
   Title,
-  UserHeader,
+  CardHeader,
   Wrapper,
   StButton
-} from './User/User.styles';
+} from './Card/Card.styles';
 import { StyledSpanSelectButton } from './SelectButton.styles';
 import {
   StyledDivChartContainer,
@@ -114,7 +114,7 @@ export {
   FlexWrapper,
   Wrapper,
   Card,
-  UserHeader,
+  CardHeader,
   Avatar,
   Name,
   Title,

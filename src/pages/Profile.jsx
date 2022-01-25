@@ -1,12 +1,12 @@
-import { makeStyles } from '@material-ui/core';
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUser } from '../redux';
 import {
   Header,
   Wrapper,
   Card,
-  UserHeader,
+  CardHeader,
   Avatar,
   Title,
   Name,
@@ -17,8 +17,7 @@ import {
   NameParagraph,
   StButton
 } from '../components';
-
-import { updateUser } from '../redux/auth/authActions';
+import { StyledDivDashboard } from '../pages';
 
 const Profile = () => {
   const userData = useSelector((state) => state.auth);
@@ -27,14 +26,6 @@ const Profile = () => {
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
   const handleUpdateUser = (values) => dispatch(updateUser(values));
-
-  const useStyles = makeStyles(() => ({
-    App: {
-      backgroundColor: '#14161a',
-      color: 'white'
-    }
-  }));
-  const classes = useStyles();
 
   const changeFirstName = (e) => {
     setFirstName(e.target.value);
@@ -54,14 +45,12 @@ const Profile = () => {
   };
 
   return (
-    <div>
-      <div className={classes.App}>
-        <Header />
-      </div>
+    <StyledDivDashboard>
+      <Header />
 
       <Wrapper>
         <Card>
-          <UserHeader>
+          <CardHeader>
             <Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUZufYn_dxi91143X8E3p0QLJQRJ2XxvJzjbpJm1eNnPkrBzInQ5jKWNXyIchAnIv4kao&usqp=CAU" />
 
             {edit ? (
@@ -86,7 +75,7 @@ const Profile = () => {
             )}
 
             <StyledParagraph>{userData.user.user.email}</StyledParagraph>
-          </UserHeader>
+          </CardHeader>
           <Stats>
             {!edit ? (
               <StButton onClick={() => setEdit(true)} data-testid="edit-element">
@@ -100,7 +89,7 @@ const Profile = () => {
           </Stats>
         </Card>
       </Wrapper>
-    </div>
+    </StyledDivDashboard>
   );
 };
 

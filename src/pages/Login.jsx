@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchUser } from '../redux';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -18,16 +18,21 @@ import {
   SFlexDiv
 } from '../components';
 
-const Login = ({ userData, fetchUser }) => {
+const Login = () => {
+  const userData = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const loginUser = (values) => dispatch(fetchUser(values));
+
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
+
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    fetchUser(data);
+    loginUser(data);
   };
 
   useEffect(() => {
@@ -69,15 +74,4 @@ const Login = ({ userData, fetchUser }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    userData: state.auth
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchUser: (values) => dispatch(fetchUser(values))
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;
