@@ -22,14 +22,6 @@ describe('Integration tests Register page', () => {
 
     user.click(getRegisterButton());
     render(<Modal />, {
-      initialState: {
-        modal: {
-          isVisible: true,
-          title: {
-            title: 'Registration Completed Successfully!'
-          }
-        }
-      }
     });
     await waitFor(() => {
       expect(

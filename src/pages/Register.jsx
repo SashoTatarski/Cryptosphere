@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from '../redux';
@@ -21,6 +21,7 @@ export const Register = () => {
   const userData = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const registerUser = (values) => dispatch(createUser(values));
+  const [showModal, setShowModal] = useState(false);
 
   const {
     register,
@@ -28,15 +29,17 @@ export const Register = () => {
     watch,
     formState: { errors }
   } = useForm();
+
   const onSubmit = (data) => {
     registerUser(data);
+    setShowModal(true);
   };
 
   const password = watch('password');
   return (
     <SFlexDiv>
       <SFlexContainer>
-        <Modal />
+        <Modal visible={showModal} title={'Registration Completed Successfully!'} onClose={()=>setShowModal()}/>
         <IconStyleWrapper />
         <StyledTitle>Register</StyledTitle>
 

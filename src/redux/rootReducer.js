@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
 import authReducer from './auth/authReducer';
-import modalReducer from './modal/modalReducer';
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  modal: modalReducer
+  auth: authReducer
 });
 
 export default rootReducer;

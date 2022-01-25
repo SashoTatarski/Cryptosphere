@@ -15,7 +15,6 @@ import {
   StyledTypographyHeaderTitle
 } from '../components';
 
-
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
 

@@ -1,6 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { hideModal } from '../../redux/modal/modalActions';
+import React, { useState } from 'react';
+
 import {
   StyledModal,
   StyledModalOverlay,
@@ -9,34 +8,16 @@ import {
   StyledModalTitle
 } from './Modal.styles';
 
-const Modal = ({ hideModal, modal }) => {
-  const onCloseButtonClick = () => {
-    hideModal();
-  };
+const Modal = ({ visible, title , onClose }) => {
 
-  if (!modal.isVisible) {
-    return null;
-  }
-
-  return (
+  return visible ? (
     <StyledModalOverlay>
       <StyledModal>
-        <StyledCloseButton onClick={onCloseButtonClick}>&#10005;</StyledCloseButton>
+        <StyledCloseButton onClick={onClose}>&#10005;</StyledCloseButton>
         <IconDoneStyleWrapper />
-        <StyledModalTitle> {modal.title.title}</StyledModalTitle>
+        <StyledModalTitle> {title}</StyledModalTitle>
       </StyledModal>
     </StyledModalOverlay>
-  );
+  ) : null;
 };
-const mapStateToProps = (state) => {
-  return {
-    modal: state.modal
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    hideModal: () => dispatch(hideModal())
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default Modal;
