@@ -15,7 +15,6 @@ testing:
 
 deploy:
   stage: deploy
-
   script:
     script:
       - npm install
