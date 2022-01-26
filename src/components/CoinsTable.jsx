@@ -3,28 +3,27 @@ import axios from 'axios';
 import { CoinList } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 import { StyledLinearProgress } from '../pages/CoinPage.styles';
-import { Paper, ThemeProvider } from '@material-ui/core';
+import { Paper, ThemeProvider,Table,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableContainer } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import {
   CoinsTableUseStyles,
-  StyledContainerCoinsTable,
+  StyledContainer,
   StyledDarkTheme,
-  StyledDivSymbolAbbr,
-  StyledImgCoinsTable,
+  StyledCoinSymbol,
+  StyledCoinImage,
   StyledSpanSymbolAbbr,
   StyledSpanSymbolName,
-  StyledTable,
-  StyledTableBody,
-  StyledTableCell,
   StyledTableCellPercentage,
-  StyledTableCellSymbol,
-  StyledTableCellTitle,
-  StyledTableContainer,
+  StyledTableCell,
+  StyledCellTitle,
   StyledTableHead,
-  StyledTableRow,
-  StyledTableRowBody,
-  StyledTextFieldTable,
-  StyledTypographyTable,
+  StyledRow,
+  StyledSearchBar,
+  StyledTableTitle,
   StyledTablePagination
 } from '../components';
 
@@ -72,54 +71,54 @@ const CoinsTable = () => {
 
   return (
     <ThemeProvider theme={StyledDarkTheme}>
-      <StyledContainerCoinsTable>
-        <StyledTypographyTable variant="h4">
+      <StyledContainer>
+        <StyledTableTitle variant="h4">
           Cryptocurrency Prices by Market Cap
-        </StyledTypographyTable>
-        <StyledTextFieldTable
+        </StyledTableTitle>
+        <StyledSearchBar
           label="Search For a Crypto Currency.."
           variant="outlined"
           onChange={(e) => setSearch(e.target.value)}
           data-testid="search-element"
         />
-        <StyledTableContainer component={Paper}>
+        <TableContainer component={Paper}>
           {loading ? (
             <StyledLinearProgress />
           ) : (
-            <StyledTable aria-label="simple table">
+            <Table aria-label="simple table">
               <StyledTableHead>
-                <StyledTableRow>
+                <TableRow>
                   {tableHeaders.map((head) => (
-                    <StyledTableCellTitle
+                    <StyledCellTitle
                       key={head}
                       align={head === 'Coin' ? 'left' : 'right'}
                     >
                       {head}
-                    </StyledTableCellTitle>
+                    </StyledCellTitle>
                   ))}
-                </StyledTableRow>
+                </TableRow>
               </StyledTableHead>
 
-              <StyledTableBody>
+              <TableBody>
                 {handleSearch()
                   .slice((page - 1) * 10, (page - 1) * 10 + 10)
                   .map((row) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
-                      <StyledTableRowBody
+                      <StyledRow
                         onClick={() => navigate(`/coins/${row.id}`)}
                         key={row.name}
                       >
-                        <StyledTableCellSymbol component="th" scope="row">
-                          <StyledImgCoinsTable src={row?.image} alt={row.name} />
-                          <StyledDivSymbolAbbr>
+                        <StyledTableCell component="th" scope="row">
+                          <StyledCoinImage src={row?.image} alt={row.name} />
+                          <StyledCoinSymbol>
                             <StyledSpanSymbolAbbr>{row.symbol}</StyledSpanSymbolAbbr>
                             <StyledSpanSymbolName>{row.name}</StyledSpanSymbolName>
-                          </StyledDivSymbolAbbr>
-                        </StyledTableCellSymbol>
-                        <StyledTableCell align="right">
-                          {symbol} {numberWithCommas(row.current_price.toFixed(2))}
+                          </StyledCoinSymbol>
                         </StyledTableCell>
+                        <TableCell align="right">
+                          {symbol} {numberWithCommas(row.current_price.toFixed(2))}
+                        </TableCell>
                         <StyledTableCellPercentage
                           align="right"
                           style={{ color: profit > 0 ? 'rgb(14, 203, 129)' : 'red' }}
@@ -127,17 +126,17 @@ const CoinsTable = () => {
                           {profit && '+'}
                           {row.price_change_percentage_24h.toFixed(2)}%
                         </StyledTableCellPercentage>
-                        <StyledTableCell align="right">
+                        <TableCell align="right">
                           {symbol}{' '}
                           {numberWithCommas(row.market_cap.toString().slice(0, -6))}M
-                        </StyledTableCell>
-                      </StyledTableRowBody>
+                        </TableCell>
+                      </StyledRow>
                     );
                   })}
-              </StyledTableBody>
-            </StyledTable>
+              </TableBody>
+            </Table>
           )}
-        </StyledTableContainer>
+        </TableContainer>
         <StyledTablePagination
           count={Number((handleSearch()?.length / 10).toFixed(0))}
           classes={{ ul: classes.pagination }}
@@ -146,7 +145,7 @@ const CoinsTable = () => {
             window.scroll(0, 450);
           }}
         />
-      </StyledContainerCoinsTable>
+      </StyledContainer>
     </ThemeProvider>
   );
 };

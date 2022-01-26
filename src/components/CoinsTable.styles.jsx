@@ -1,18 +1,16 @@
+import styled from 'styled-components';
+import { Pagination } from '@material-ui/lab';
 import {
   Container,
   createTheme,
   makeStyles,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
+  TableCell,  
   TableHead,
   TableRow,
   TextField,
   Typography
 } from '@material-ui/core';
-import { Pagination } from '@material-ui/lab';
-import styled from 'styled-components';
+
 
 export const StyledDarkTheme = createTheme({
   palette: {
@@ -23,7 +21,7 @@ export const StyledDarkTheme = createTheme({
   }
 });
 
-export const StyledContainerCoinsTable = styled(Container)`
+export const StyledContainer = styled(Container)`
   text-align: center;
 `;
 
@@ -35,12 +33,12 @@ export const CoinsTableUseStyles = makeStyles({
   }
 });
 
-export const StyledTypographyTable = styled(Typography)`
+export const StyledTableTitle = styled(Typography)`
   margin: 20px !important;
   font-family: Montserrat !important;
 `;
 
-export const StyledTextFieldTable = styled(TextField)`
+export const StyledSearchBar = styled(TextField)`
   margin-bottom: 20px !important;
   width: 100%;
 `;
@@ -49,13 +47,13 @@ export const StyledTableHead = styled(TableHead)`
   background-color: #eebc1d;
 `;
 
-export const StyledTableCellTitle = styled(TableCell)`
+export const StyledCellTitle = styled(TableCell)`
   color: black !important;
   font-weight: 700 !important;
   font-family: Montserrat !important;
 `;
 
-export const StyledTableRowBody = styled(TableRow)`
+export const StyledRow = styled(TableRow)`
   background-color: #16171a;
   cursor: pointer;
   &:hover {
@@ -64,17 +62,17 @@ export const StyledTableRowBody = styled(TableRow)`
   font-family: Montserrat;
 `;
 
-export const StyledTableCellSymbol = styled(TableCell)`
+export const StyledTableCell = styled(TableCell)`
   display: flex !important;
   gap: 15px;
 `;
 
-export const StyledImgCoinsTable = styled.img`
+export const StyledCoinImage = styled.img`
   margin-bottom: 10px;
   height: 50px;
 `;
 
-export const StyledDivSymbolAbbr = styled.div`
+export const StyledCoinSymbol = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -100,8 +98,3 @@ export const StyledTablePagination = styled(Pagination)`
   justify-content: center;
 `;
 
-export const StyledTable = styled(Table)``;
-export const StyledTableContainer = styled(TableContainer)``;
-export const StyledTableRow = styled(TableRow)``;
-export const StyledTableBody = styled(TableBody)``;
-export const StyledTableCell = styled(TableCell)``;
