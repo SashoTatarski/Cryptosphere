@@ -9,10 +9,10 @@ import Carousel from '../components/Banner/Carousel';
 import SelectButton from './SelectButton';
 import {
   StyledBannerContainer,
-  StyledBannerDivImg,
-  StyledDivTitle,
-  StyledTypographySubtitle,
-  StyledTypographyTitle
+  StyledBackgroundImage,
+  StyledBannerTitle,
+  StyledSubtitle,
+  StyledHeading
 } from '../components/Banner/Banner.styles';
 import {
   ResponsiveCarouselView,
@@ -143,10 +143,10 @@ export {
   StyledSpanPriceColor,
   StyledSpanEmpty,
   StyledBannerContainer,
-  StyledBannerDivImg,
-  StyledDivTitle,
-  StyledTypographySubtitle,
-  StyledTypographyTitle,
+  StyledBackgroundImage,
+  StyledBannerTitle,
+  StyledSubtitle,
+  StyledHeading,
   StyledSpanSelectButton,
   StyledDivChartContainer,
   StyledDivChartResponsive,
