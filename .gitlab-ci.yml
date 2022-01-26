@@ -6,9 +6,6 @@ stages:
 
 testing:
   stage: test
-  cache:
-    paths:
-      - node_modules/
   script:
     - npm install
     - npm run test
@@ -18,9 +15,7 @@ testing:
 
 deploy:
   stage: deploy
-  cache:
-    paths:
-      - node_modules/
+
   script:
     - npm run build
     - rm -rf public
