@@ -69,6 +69,9 @@ export const StyledTypographyCoinDesc = styled(Typography)`
   padding-bottom: 15px;
   padding-top: 0px;
   text-align: justify;
+  a {
+    color: gold;
+  };
 `;
 
 export const StyledTypographyMont = styled(Typography)`

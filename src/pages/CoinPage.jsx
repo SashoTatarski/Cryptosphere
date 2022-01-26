@@ -52,7 +52,7 @@ const CoinPage = () => {
             {coin?.name}
           </StyledTypographyHeading>
           <StyledTypographyCoinDesc variant="subtitle1">
-            {ReactHtmlParser(coin?.description.en.split('. ')[0])}.
+            {ReactHtmlParser(coin?.description.en.split('. ')[0])}.  
           </StyledTypographyCoinDesc>
           <div className={classes.marketData}>
             <StyledSpan>

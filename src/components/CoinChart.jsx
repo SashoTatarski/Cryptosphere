@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CryptoState } from '../Context/CryptoContext';
 import { HistoricalChart } from '../config/api';
-import { chartDays } from '../config/data';
+import { chartTimePeriod } from '../config/data';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { ThemeProvider } from '@material-ui/core';
@@ -51,8 +51,7 @@ const CoinChart = ({ coin }) => {
                   let time =
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                      : `${date.getHours()}:${date.getMinutes()} AM`;
-                  console.log(date.toLocaleDateString());
+                      : `${date.getHours()}:${date.getMinutes()} AM`;                  
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
 
@@ -73,7 +72,7 @@ const CoinChart = ({ coin }) => {
               }}
             />
             <StyledDivChartButtons>
-              {chartDays.map((day) => (
+              {chartTimePeriod.map((day) => (
                 <SelectButton
                   key={day.value}
                   onClick={() => {
@@ -81,7 +80,7 @@ const CoinChart = ({ coin }) => {
                     setflag(false);
                   }}
                   selected={day.value === days}
-                >
+                >                  
                   {day.label}
                 </SelectButton>
               ))}
