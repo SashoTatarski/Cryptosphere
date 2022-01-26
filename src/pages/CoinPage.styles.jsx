@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { LinearProgress, makeStyles, Typography } from '@material-ui/core';
 
-export const StyledDivDashboard = styled.div`
+export const StyledDashboard = styled.div`
   background-color: #14161a;
   color: white;
   min-height: 100vh;
@@ -49,20 +49,20 @@ export const CoinPageUseStyles = makeStyles((theme) => ({
   }
 }));
 
-export const StyledImgCoinPage = styled.img`
+export const StyledImage = styled.img`
   src: ${(props) => props.coin?.image.large};
   alt: ${(props) => props.coin?.name};
   height: 200px;
   margin-bottom: 20px;
 `;
 
-export const StyledTypographyHeading = styled(Typography)`
+export const StyledHeading = styled(Typography)`
   font-weight: bold;
   margin-bottom: 20px;
   font-family: Montserrat;
 `;
 
-export const StyledTypographyCoinDesc = styled(Typography)`
+export const StyledCoinDescription = styled(Typography)`
   width: 100%;
   font-family: Montserrat;
   padding: 25px;
@@ -74,7 +74,7 @@ export const StyledTypographyCoinDesc = styled(Typography)`
   }
 `;
 
-export const StyledTypographyMont = styled(Typography)`
+export const StyledCoinPrice = styled(Typography)`
   font-family: Montserrat;
 `;
 

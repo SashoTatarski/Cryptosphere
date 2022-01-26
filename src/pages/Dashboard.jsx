@@ -1,14 +1,14 @@
 import React from 'react';
 import { Banner, CoinsTable, Header } from '../components';
-import { StyledDivDashboard } from '../pages';
+import { StyledDashboard } from '../pages';
 
 const Dashboard = () => {
   return (
-    <StyledDivDashboard>
+    <StyledDashboard>
       <Header />
       <Banner />
       <CoinsTable />
-    </StyledDivDashboard>
+    </StyledDashboard>
   );
 };
 

@@ -7,14 +7,14 @@ import { numberWithCommas } from '../components/CoinsTable';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 import {
-  CoinPageUseStyles,
-  StyledDivDashboard,
-  StyledImgCoinPage,
+  CoinPageUseStyles,  
+  StyledImage,
   StyledSpan,
-  StyledTypographyCoinDesc,
-  StyledTypographyHeading,
-  StyledTypographyMont,
-  StyledLinearProgress
+  StyledCoinDescription,
+  StyledHeading,
+  StyledCoinPrice,
+  StyledLinearProgress,
+  StyledDashboard
 } from '../pages';
 
 const CoinPage = () => {
@@ -43,44 +43,44 @@ const CoinPage = () => {
   if (!coin) return <StyledLinearProgress />;
 
   return (
-    <StyledDivDashboard>
+    <StyledDashboard>
       <Header />
       <div className={classes.container}>
         <div className={classes.sidebar}>
-          <StyledImgCoinPage src={coin?.image.large} alt={coin?.name} />
-          <StyledTypographyHeading variant="h3">
+          <StyledImage src={coin?.image.large} alt={coin?.name} />
+          <StyledHeading variant="h3">
             {coin?.name}
-          </StyledTypographyHeading>
-          <StyledTypographyCoinDesc variant="subtitle1">
+          </StyledHeading>
+          <StyledCoinDescription variant="subtitle1">
             {ReactHtmlParser(coin?.description.en.split('. ')[0])}.
-          </StyledTypographyCoinDesc>
+          </StyledCoinDescription>
           <div className={classes.marketData}>
             <StyledSpan>
-              <StyledTypographyHeading variant="h5">Rank:</StyledTypographyHeading>
+              <StyledHeading variant="h5">Rank:</StyledHeading>
               &nbsp; &nbsp;
-              <StyledTypographyMont variant="h5">
+              <StyledCoinPrice variant="h5">
                 {numberWithCommas(coin?.market_cap_rank)}
-              </StyledTypographyMont>
+              </StyledCoinPrice>
             </StyledSpan>
 
             <StyledSpan>
-              <StyledTypographyHeading variant="h5">
+              <StyledHeading variant="h5">
                 Current Price:
-              </StyledTypographyHeading>
+              </StyledHeading>
               &nbsp; &nbsp;
-              <StyledTypographyMont variant="h5">
+              <StyledCoinPrice variant="h5">
                 {symbol}{' '}
                 {numberWithCommas(
                   coin?.market_data.current_price[currency.toLowerCase()]
                 )}
-              </StyledTypographyMont>
+              </StyledCoinPrice>
             </StyledSpan>
             <StyledSpan>
-              <StyledTypographyHeading variant="h5">
+              <StyledHeading variant="h5">
                 Market Cap:
-              </StyledTypographyHeading>
+              </StyledHeading>
               &nbsp; &nbsp;
-              <StyledTypographyMont variant="h5">
+              <StyledCoinPrice variant="h5">
                 {symbol}{' '}
                 {numberWithCommas(
                   coin?.market_data.market_cap[currency.toLowerCase()]
@@ -88,13 +88,13 @@ const CoinPage = () => {
                     .slice(0, -6)
                 )}
                 M
-              </StyledTypographyMont>
+              </StyledCoinPrice>
             </StyledSpan>
           </div>
         </div>
         <CoinChart coin={coin} />
       </div>
-    </StyledDivDashboard>
+    </StyledDashboard>
   );
 };
 

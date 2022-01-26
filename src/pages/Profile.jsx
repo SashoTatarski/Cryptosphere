@@ -17,7 +17,7 @@ import {
   NameParagraph,
   StButton
 } from '../components';
-import { StyledDivDashboard } from '../pages';
+import { StyledDashboard } from '../pages';
 
 const Profile = () => {
   const userData = useSelector((state) => state.auth);
@@ -45,7 +45,7 @@ const Profile = () => {
   };
 
   return (
-    <StyledDivDashboard>
+    <StyledDashboard>
       <Header />
 
       <Wrapper>
@@ -89,7 +89,7 @@ const Profile = () => {
           </Stats>
         </Card>
       </Wrapper>
-    </StyledDivDashboard>
+    </StyledDashboard>
   );
 };
 

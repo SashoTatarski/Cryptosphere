@@ -4,15 +4,15 @@ import Login from './Login';
 import NotFound from './NotFound';
 import Register from './Register';
 import Profile from './Profile';
-import { StyledDivDashboard } from './Dashboard.styles';
 import {
   CoinPageUseStyles,
-  StyledImgCoinPage,
-  StyledTypographyHeading,
-  StyledTypographyCoinDesc,
-  StyledTypographyMont,
+  StyledImage,
+  StyledHeading,
+  StyledCoinDescription,
+  StyledCoinPrice,
   StyledSpan,
-  StyledLinearProgress
+  StyledLinearProgress,
+  StyledDashboard
 } from './CoinPage.styles';
 export {
   Login,
@@ -21,12 +21,12 @@ export {
   Dashboard,
   CoinPage,
   Profile,
-  StyledDivDashboard,
+  StyledDashboard,
   CoinPageUseStyles,
-  StyledImgCoinPage,
-  StyledTypographyHeading,
-  StyledTypographyCoinDesc,
-  StyledTypographyMont,
+  StyledImage,
+  StyledHeading,
+  StyledCoinDescription,
+  StyledCoinPrice,
   StyledSpan,
   StyledLinearProgress
 };
