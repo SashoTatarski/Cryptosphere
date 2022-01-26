@@ -1,35 +1,62 @@
 import {
-  StyledBackgroundImage, StyledBannerContainer, StyledBannerTitle, StyledHeading, StyledSubtitle
+  StyledBackgroundImage,
+  StyledBannerContainer,
+  StyledBannerTitle,
+  StyledHeading,
+  StyledSubtitle
 } from '../components/Banner/Banner.styles';
 import Carousel from '../components/Banner/Carousel';
 import {
   ResponsiveCarouselView,
-  StyledCarouselItem, StyledCarousel,
+  StyledCarouselItem,
+  StyledCarousel,
   StyledImg,
   StyledPrice
 } from '../components/Banner/Carousel.styles';
 import Banner from './Banner/Banner';
 import {
   Avatar,
-  Card, CardHeader, EditStyledIcon,
+  Card,
+  CardHeader,
+  EditStyledIcon,
   Name,
   NameParagraph,
   SaveStyledSave,
-  Stats, StButton, StyledParagraph,
-  Title, Wrapper
+  Stats,
+  StButton,
+  StyledParagraph,
+  Title,
+  Wrapper
 } from './Card/Card.styles';
 import CoinChart from './CoinChart';
 import {
   StyledCircularProgress,
-  StyledDivChartButtons, StyledDivChartContainer,
+  StyledDivChartButtons,
+  StyledDivChartContainer,
   StyledDivChartResponsive
 } from './CoinChart.styles';
 import CoinsTable from './CoinsTable';
 import {
   CoinsTableUseStyles,
-  StyledContainerCoinsTable, StyledDarkTheme, StyledDivSymbolAbbr, StyledImgCoinsTable, StyledSpanSymbolAbbr,
-  StyledSpanSymbolName, StyledTable, StyledTableBody, StyledTableCell, StyledTableCellPercentage, StyledTableCellSymbol, StyledTableCellTitle, StyledTableContainer,
-  StyledTableHead, StyledTablePagination, StyledTableRow, StyledTableRowBody, StyledTextFieldTable, StyledTypographyTable
+  StyledContainerCoinsTable,
+  StyledDarkTheme,
+  StyledDivSymbolAbbr,
+  StyledImgCoinsTable,
+  StyledSpanSymbolAbbr,
+  StyledSpanSymbolName,
+  StyledTable,
+  StyledTableBody,
+  StyledTableCell,
+  StyledTableCellPercentage,
+  StyledTableCellSymbol,
+  StyledTableCellTitle,
+  StyledTableContainer,
+  StyledTableHead,
+  StyledTablePagination,
+  StyledTableRow,
+  StyledTableRowBody,
+  StyledTextFieldTable,
+  StyledTypographyTable
 } from './CoinsTable.styles';
 import {
   FlexWrapper,
@@ -140,4 +167,3 @@ export {
   StyledTablePagination,
   StButton
 };
-

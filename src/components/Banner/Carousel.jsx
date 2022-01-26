@@ -5,7 +5,7 @@ import { numberWithCommas } from '../../components/CoinsTable';
 import { TrendingCoins } from '../../config/api';
 import AliceCarousel from 'react-alice-carousel';
 import {
-  ResponsiveCarouselView,  
+  ResponsiveCarouselView,
   StyledCarousel,
   StyledImg,
   StyledCarouselItem,
