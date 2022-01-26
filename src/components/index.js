@@ -31,8 +31,8 @@ import {
 import CoinChart from './CoinChart';
 import {
   StyledCircularProgress,
-  StyledDivChartButtons,
-  StyledDivChartContainer,
+  StyledChartButtons,
+  StyledChartContainer,
   StyledDivChartResponsive
 } from './CoinChart.styles';
 import CoinsTable from './CoinsTable';
@@ -142,10 +142,10 @@ export {
   StyledSubtitle,
   StyledHeading,
   StyledSpanSelectButton,
-  StyledDivChartContainer,
+  StyledChartContainer,
   StyledDivChartResponsive,
   StyledCircularProgress,
-  StyledDivChartButtons,
+  StyledChartButtons,
   CoinsTableUseStyles,
   StyledContainerCoinsTable,
   StyledTextFieldTable,

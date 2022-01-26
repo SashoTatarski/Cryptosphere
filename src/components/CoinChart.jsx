@@ -9,17 +9,16 @@ import { ThemeProvider } from '@material-ui/core';
 import {
   SelectButton,
   StyledDarkTheme,
-  StyledDivChartContainer,
+  StyledChartContainer,
   StyledDivChartResponsive,
   StyledCircularProgress,
-  StyledDivChartButtons
+  StyledChartButtons
 } from '.';
 
 const CoinChart = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
-  const { currency } = CryptoState();
-  const [flag, setflag] = useState(false);
+  const { currency } = CryptoState();  
 
   const classes = StyledDivChartResponsive();
 
@@ -39,7 +38,7 @@ const CoinChart = ({ coin }) => {
   }, [days, currency]);
   return (
     <ThemeProvider theme={StyledDarkTheme}>
-      <StyledDivChartContainer className={classes.container}>
+      <StyledChartContainer className={classes.container}>
         {!historicData ? (
           <StyledCircularProgress size={250} thickness={1} />
         ) : (
@@ -71,23 +70,22 @@ const CoinChart = ({ coin }) => {
                 }
               }}
             />
-            <StyledDivChartButtons>
+            <StyledChartButtons>
               {chartTimePeriod.map((day) => (
                 <SelectButton
                   key={day.value}
                   onClick={() => {
-                    setDays(day.value);
-                    setflag(false);
+                    setDays(day.value);                    
                   }}
                   selected={day.value === days}
                 >
                   {day.label}
                 </SelectButton>
               ))}
-            </StyledDivChartButtons>
+            </StyledChartButtons>
           </>
         )}
-      </StyledDivChartContainer>
+      </StyledChartContainer>
     </ThemeProvider>
   );
 };

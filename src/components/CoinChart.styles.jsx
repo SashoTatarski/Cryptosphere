@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { CircularProgress, makeStyles } from '@material-ui/core';
 
-export const StyledDivChartContainer = styled.div`
+export const StyledChartContainer = styled.div`
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ export const StyledCircularProgress = styled(CircularProgress)`
   color: gold;
 `;
 
-export const StyledDivChartButtons = styled.div`
+export const StyledChartButtons = styled.div`
   display: flex;
   margin-top: 20px;
   justify-content: space-around;
