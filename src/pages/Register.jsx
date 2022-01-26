@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from '../redux';
@@ -33,11 +33,6 @@ export const Register = () => {
 
   const onSubmit = (data) => {
     registerUser(data);
-
-    if (userData.error !== 'Email already exist') {
-      setShowModal(true);
-    }
-
     reset({
       firstName: '',
       lastName: '',
@@ -46,6 +41,12 @@ export const Register = () => {
       confirmPassword: ''
     });
   };
+
+  useEffect(() => {
+    if (userData.isRegistered) {
+      setShowModal(!showModal);
+    }
+  }, [userData]);
 
   const password = watch('password');
   return (
@@ -93,15 +94,10 @@ export const Register = () => {
           {errors.confirmPassword && (
             <StyledError>{errors.confirmPassword.message}</StyledError>
           )}
-          {userData.error === 'Email already exist' ? (
+          {userData.error === 'Email already exist' && (
             <StyledError>{userData.error}</StyledError>
-          ) : (
-            <Modal
-              visible={showModal}
-              title={'Registration Completed Successfully!'}
-              onClose={() => setShowModal()}
-            />
           )}
+
           <StyledButton type="submit">Register</StyledButton>
           <SRedirect>
             <SRedirectLabel>{'Already have an account?'}&nbsp;</SRedirectLabel>
@@ -109,6 +105,11 @@ export const Register = () => {
           </SRedirect>
         </SForm>
       </SFlexContainer>
+      <Modal
+        visible={showModal}
+        title={'Registration Completed Successfully!'}
+        onClose={() => setShowModal()}
+      />
     </SFlexDiv>
   );
 };
