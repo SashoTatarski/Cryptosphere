@@ -17,7 +17,6 @@ import {
   StyledHomeButton
 } from '../components';
 
-
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
   const userData = useSelector((state) => state.auth);

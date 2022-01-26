@@ -78,7 +78,7 @@ import {
 import Header from './Header';
 import {
   StyledLinkUser,
-  StyledSelectCurrency,  
+  StyledSelectCurrency,
   StyledHomeButton
 } from './Header.styles';
 import Modal from './Modal/Modal';

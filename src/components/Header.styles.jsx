@@ -1,7 +1,4 @@
-import {
-  Select,  
-  Typography
-} from '@material-ui/core';
+import { Select, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -21,5 +18,3 @@ export const StyledLinkUser = styled(Link)`
   text-decoration: none;
   color: white;
 `;
-
-
