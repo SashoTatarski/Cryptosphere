@@ -51,7 +51,7 @@ const CoinChart = ({ coin }) => {
                   let time =
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                      : `${date.getHours()}:${date.getMinutes()} AM`;                  
+                      : `${date.getHours()}:${date.getMinutes()} AM`;
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
 
@@ -80,7 +80,7 @@ const CoinChart = ({ coin }) => {
                     setflag(false);
                   }}
                   selected={day.value === days}
-                >                  
+                >
                   {day.label}
                 </SelectButton>
               ))}

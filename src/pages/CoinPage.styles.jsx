@@ -71,7 +71,7 @@ export const StyledTypographyCoinDesc = styled(Typography)`
   text-align: justify;
   a {
     color: gold;
-  };
+  }
 `;
 
 export const StyledTypographyMont = styled(Typography)`
