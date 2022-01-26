@@ -9,13 +9,10 @@ import {
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledTypographyHeaderTitle = styled(Typography)`
-  font-family: 'Montserrat!important';
+export const StyledTypographyHeaderTitle = styled(Typography)`  
   flex: 1;
-  color: gold;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.25rem;
+  color: gold;  
+  cursor: pointer;  
 `;
 
 export const StyledSelectCurrency = styled(Select)`

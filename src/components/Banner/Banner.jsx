@@ -2,27 +2,27 @@ import React from 'react';
 import {
   Carousel,
   StyledBannerContainer,
-  StyledBannerWrapper,
-  StyledTagline,
+  StyledBannerDivImg,
+  StyledDivTitle,
   StyledTypographySubtitle,
   StyledTypographyTitle
 } from '../../components';
 
 const Banner = () => {
   return (
-    <StyledBannerWrapper>
+    <StyledBannerDivImg>
       <StyledBannerContainer>
-        <StyledTagline>
+        <StyledDivTitle>
           <StyledTypographyTitle variant="h2">
             Crypto Dashboard
           </StyledTypographyTitle>
           <StyledTypographySubtitle variant="subtitle2">
             Get all the Info regarding your favorite Crypto Currency
           </StyledTypographySubtitle>
-        </StyledTagline>
+        </StyledDivTitle>
         <Carousel />
       </StyledBannerContainer>
-    </StyledBannerWrapper>
+    </StyledBannerDivImg>
   );
 };
 

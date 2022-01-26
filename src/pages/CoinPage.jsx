@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 import { useParams } from 'react-router-dom';
-import { CoinInfo, Header } from '../components';
+import { CoinChart, Header } from '../components';
 import { numberWithCommas } from '../components/CoinsTable';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
@@ -92,7 +92,7 @@ const CoinPage = () => {
             </StyledSpan>
           </div>
         </div>
-        <CoinInfo coin={coin} />
+        <CoinChart coin={coin} />
       </div>
     </StyledDivDashboard>
   );

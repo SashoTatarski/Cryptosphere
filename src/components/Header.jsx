@@ -1,9 +1,7 @@
-import React from 'react';
 import { ThemeProvider } from '@material-ui/core';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { CryptoState } from '../Context/CryptoContext';
-import { logoutUser } from '../redux';
 import {
   StyledAppBar,
   StyledContainer,
@@ -14,6 +12,8 @@ import {
   StyledToolbar,
   StyledTypographyHeaderTitle
 } from '../components';
+import { CryptoState } from '../Context/CryptoContext';
+import { logoutUser } from '../redux';
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();

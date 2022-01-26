@@ -2,15 +2,15 @@ import Modal from './Modal/Modal';
 import ProtectedRoute from './ProtectedRoute';
 
 import Header from './Header';
-import CoinInfo from './CoinInfo';
+import CoinChart from './CoinChart';
 import CoinsTable from './CoinsTable';
 import Banner from './Banner/Banner';
 import Carousel from '../components/Banner/Carousel';
 import SelectButton from './SelectButton';
 import {
   StyledBannerContainer,
-  StyledBannerWrapper,
-  StyledTagline,
+  StyledBannerDivImg,
+  StyledDivTitle,
   StyledTypographySubtitle,
   StyledTypographyTitle
 } from '../components/Banner/Banner.styles';
@@ -71,7 +71,7 @@ import {
   StyledDivChartResponsive,
   StyledCircularProgress,
   StyledDivChartButtons
-} from './CoinInfo.styles';
+} from './CoinChart.styles';
 import {
   CoinsTableUseStyles,
   StyledContainerCoinsTable,
@@ -124,7 +124,7 @@ export {
   SaveStyledSave,
   NameParagraph,
   CoinsTable,
-  CoinInfo,
+  CoinChart,
   SelectButton,
   StyledDarkTheme,
   StyledTypographyHeaderTitle,
@@ -143,8 +143,8 @@ export {
   StyledSpanPriceColor,
   StyledSpanEmpty,
   StyledBannerContainer,
-  StyledBannerWrapper,
-  StyledTagline,
+  StyledBannerDivImg,
+  StyledDivTitle,
   StyledTypographySubtitle,
   StyledTypographyTitle,
   StyledSpanSelectButton,
@@ -154,8 +154,8 @@ export {
   StyledDivChartButtons,
   CoinsTableUseStyles,
   StyledContainerCoinsTable,
-  StyledTypographyTable,
   StyledTextFieldTable,
+  StyledTypographyTable,
   StyledTableContainer,
   StyledTableHead,
   StyledTableCellTitle,

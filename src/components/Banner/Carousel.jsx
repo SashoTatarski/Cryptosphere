@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { TrendingCoins } from '../../config/api';
-import { CryptoState } from '../../Context/CryptoContext';
-import { numberWithCommas } from '../../components/CoinsTable';
+import React, { useEffect, useState } from 'react';
 import {
   ResponsiveCarouselView,
   StyledAliceCarousel,
   StyledDivCarousel,
   StyledImg,
   StyledLinkCarouselItem,
-  StyledSpanContainerPrice,
-  StyledSpanPriceColor,
-  StyledSpanEmpty
+  StyledSpanContainerPrice, StyledSpanEmpty, StyledSpanPriceColor
 } from '../../components';
+import { numberWithCommas } from '../../components/CoinsTable';
+import { TrendingCoins } from '../../config/api';
+import { CryptoState } from '../../Context/CryptoContext';
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
@@ -42,7 +40,10 @@ const Carousel = () => {
         <StyledSpanEmpty>
           {coin?.symbol}
           &nbsp;
-          <StyledSpanPriceColor>
+          <StyledSpanPriceColor style={{
+              color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
+              fontWeight: 500,
+            }}>
             {profit && '+'}
             {coin?.price_change_percentage_24h?.toFixed(2)}%
           </StyledSpanPriceColor>

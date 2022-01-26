@@ -4,7 +4,6 @@ import { CryptoState } from '../Context/CryptoContext';
 import { HistoricalChart } from '../config/api';
 import { chartDays } from '../config/data';
 import { Line } from 'react-chartjs-2';
-
 import Chart from 'chart.js/auto';
 import { ThemeProvider } from '@material-ui/core';
 import {
@@ -14,9 +13,9 @@ import {
   StyledDivChartResponsive,
   StyledCircularProgress,
   StyledDivChartButtons
-} from '../components';
+} from '.';
 
-const CoinInfo = ({ coin }) => {
+const CoinChart = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
   const { currency } = CryptoState();
@@ -48,11 +47,12 @@ const CoinInfo = ({ coin }) => {
             <Line
               data={{
                 labels: historicData.map((coin) => {
-                  let date = new Date(coin[0]);
+                  let date = new Date(coin[0]);                  
                   let time =
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
+                      console.log(date.toLocaleDateString());
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
 
@@ -93,4 +93,4 @@ const CoinInfo = ({ coin }) => {
   );
 };
 
-export default CoinInfo;
+export default CoinChart;

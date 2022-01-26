@@ -30,7 +30,7 @@ import {
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
-  const [headers, setHeads] = useState([
+  const [tableHeaders, setTableHeaders] = useState([
     'Coin',
     'Price',
     '24h Change',
@@ -62,13 +62,13 @@ const CoinsTable = () => {
 
   const classes = CoinsTableUseStyles();
 
-  const handleSearch = () => {
+  const handleSearch = () => {    
     return coins.filter(
       (coin) =>
         coin.name.toLowerCase().includes(search) ||
         coin.symbol.toLowerCase().includes(search)
     );
-  };
+  };  
 
   return (
     <ThemeProvider theme={StyledDarkTheme}>
@@ -89,7 +89,7 @@ const CoinsTable = () => {
             <StyledTable aria-label="simple table">
               <StyledTableHead>
                 <StyledTableRow>
-                  {headers.map((head) => (
+                  {tableHeaders.map((head) => (
                     <StyledTableCellTitle
                       key={head}
                       align={head === 'Coin' ? 'left' : 'right'}
