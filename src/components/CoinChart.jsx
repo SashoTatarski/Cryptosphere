@@ -18,7 +18,7 @@ import {
 const CoinChart = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
-  const { currency } = CryptoState();  
+  const { currency } = CryptoState();
 
   const classes = StyledDivChartResponsive();
 
@@ -75,7 +75,7 @@ const CoinChart = ({ coin }) => {
                 <SelectButton
                   key={day.value}
                   onClick={() => {
-                    setDays(day.value);                    
+                    setDays(day.value);
                   }}
                   selected={day.value === days}
                 >
