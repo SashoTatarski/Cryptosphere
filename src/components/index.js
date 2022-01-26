@@ -138,7 +138,7 @@ export {
   StyledSearchBar,
   StyledTableTitle,
   StyledTableHead,
-  StyledCellTitle,  
+  StyledCellTitle,
   StyledRow,
   StyledTableCell,
   StyledCoinImage,

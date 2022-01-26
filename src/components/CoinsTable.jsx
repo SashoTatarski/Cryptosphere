@@ -3,11 +3,15 @@ import axios from 'axios';
 import { CoinList } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 import { StyledLinearProgress } from '../pages/CoinPage.styles';
-import { Paper, ThemeProvider,Table,
+import {
+  Paper,
+  ThemeProvider,
+  Table,
   TableBody,
   TableRow,
   TableCell,
-  TableContainer } from '@material-ui/core';
+  TableContainer
+} from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import {
   CoinsTableUseStyles,

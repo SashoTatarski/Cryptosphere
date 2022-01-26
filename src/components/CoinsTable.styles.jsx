@@ -4,13 +4,12 @@ import {
   Container,
   createTheme,
   makeStyles,
-  TableCell,  
+  TableCell,
   TableHead,
   TableRow,
   TextField,
   Typography
 } from '@material-ui/core';
-
 
 export const StyledDarkTheme = createTheme({
   palette: {
@@ -97,4 +96,3 @@ export const StyledTablePagination = styled(Pagination)`
   display: flex;
   justify-content: center;
 `;
-
