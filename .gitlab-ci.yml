@@ -18,11 +18,11 @@ deploy:
 
   script:
     script:
-    - npm install
-    - npm run build
-    - rm -rf public
-    - mv dist public
-    - cp public/index.html public/404.html
+      - npm install
+      - npm run build
+      - rm -rf public
+      - mv dist public
+      - cp public/index.html public/404.html
   artifacts:
     paths:
       - public
