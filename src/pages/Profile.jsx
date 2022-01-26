@@ -69,8 +69,8 @@ const Profile = () => {
               </Title>
             ) : (
               <Title>
-                <NameParagraph    data-testid="name-element">{firstName}</NameParagraph>
-                <NameParagraph    >{lastName}</NameParagraph>
+                <NameParagraph data-testid="name-element">{firstName}</NameParagraph>
+                <NameParagraph>{lastName}</NameParagraph>
               </Title>
             )}
 
