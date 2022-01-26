@@ -45,7 +45,7 @@ export const Register = () => {
 
   const password = watch('password');
   return (
-   <SFlexDiv>
+    <SFlexDiv>
       <SFlexContainer>
         <Modal
           visible={showModal}
