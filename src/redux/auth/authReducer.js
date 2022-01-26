@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: false,
-        user: null
+        error: ''
       };
     case REGISTER_FAIL:
       return {
@@ -33,7 +33,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: true,
-        user: payload.user
+        user: payload.user,
+        error: ''
       };
     case LOGIN_FAIL:
       return {

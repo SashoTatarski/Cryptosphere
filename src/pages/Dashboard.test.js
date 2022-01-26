@@ -13,8 +13,8 @@ describe('Dashboard Page', () => {
             isLoggedIn: true,
             user: {
               email: 'test@gmail.com',
-              firstName: 'Deshka',
-              lastName: 'Ilieva'
+              firstName: 'test',
+              lastName: 'testing'
             }
           }
         }
@@ -60,8 +60,8 @@ describe('Dashboard Page', () => {
               isLoggedIn: true,
               user: {
                 email: 'test@gmail.com',
-                firstName: 'Deshka',
-                lastName: 'Ilieva'
+                firstName: 'test',
+                lastName: 'testing'
               }
             }
           }
@@ -103,7 +103,7 @@ const getCurrency = () => {
 
 const getUserLink = () => {
   return screen.getByRole('menuitem', {
-    name: /user/i
+    name: /test/i
   });
 };
 

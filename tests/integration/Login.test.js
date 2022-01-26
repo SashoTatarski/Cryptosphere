@@ -37,8 +37,9 @@ describe('Login page', () => {
   });
   it('when register link is clicked Register page is rendered', async () => {
     user.click(getRegisterLink());
-    render(<Register />);
+
     await waitFor(() => {
+      render(<Register />);
       expect(screen.getByRole('heading', { name: /register/i })).toBeInTheDocument();
     });
   });

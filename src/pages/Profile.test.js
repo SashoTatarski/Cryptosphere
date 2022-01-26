@@ -27,7 +27,7 @@ describe('Profile page', () => {
     expect(screen.getByRole('img')).toBeInTheDocument();
   });
   it('first name is visible on the screen', () => {
-    expect(screen.getByText(/deshka/i)).toBeInTheDocument();
+    expect(screen.getByTestId('name-element')).toBeInTheDocument();
   });
   it('last name is visible on the screen', () => {
     expect(screen.getByText(/ilieva/i)).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('Profile page', () => {
     expect(getSaveButton()).toBeInTheDocument();
   });
 
-  it('when edit button is clicked save button is shown', () => {
+  it('first and last name are update correctly', () => {
     user.click(getEditButton());
 
     user.type(screen.getByTestId('first-name-element'), '{selectall}Desi');

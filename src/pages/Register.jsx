@@ -33,7 +33,11 @@ export const Register = () => {
 
   const onSubmit = (data) => {
     registerUser(data);
-    setShowModal(true);
+
+    if (userData.error !== 'Email already exist') {
+      setShowModal(true);
+    }
+
     reset({
       firstName: '',
       lastName: '',
@@ -47,11 +51,6 @@ export const Register = () => {
   return (
     <SFlexDiv>
       <SFlexContainer>
-        <Modal
-          visible={showModal}
-          title={'Registration Completed Successfully!'}
-          onClose={() => setShowModal()}
-        />
         <IconStyleWrapper />
         <StyledTitle>Register</StyledTitle>
 
@@ -96,7 +95,13 @@ export const Register = () => {
           )}
           {userData.error === 'Email already exist' ? (
             <StyledError>{userData.error}</StyledError>
-          ) : null}
+          ) : (
+            <Modal
+              visible={showModal}
+              title={'Registration Completed Successfully!'}
+              onClose={() => setShowModal()}
+            />
+          )}
           <StyledButton type="submit">Register</StyledButton>
           <SRedirect>
             <SRedirectLabel>{'Already have an account?'}&nbsp;</SRedirectLabel>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { CryptoState } from '../Context/CryptoContext';
 import { logoutUser } from '../redux';
@@ -17,7 +17,7 @@ import {
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
-
+  const userData = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -48,7 +48,7 @@ const Header = () => {
               <StyledMenuItem value={'EUR'}>EUR</StyledMenuItem>
             </StyledSelectCurrency>
             <StyledLinkUser to="/user">
-              <StyledMenuItem>User</StyledMenuItem>
+              <StyledMenuItem>{userData.user.user.firstName}</StyledMenuItem>
             </StyledLinkUser>
             <StyledMenuItem onClick={handleLogout}>Logout</StyledMenuItem>
           </StyledToolbar>
