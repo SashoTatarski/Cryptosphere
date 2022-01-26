@@ -6,7 +6,9 @@ import {
   StyledDivCarousel,
   StyledImg,
   StyledLinkCarouselItem,
-  StyledSpanContainerPrice, StyledSpanEmpty, StyledSpanPriceColor
+  StyledSpanContainerPrice,
+  StyledSpanEmpty,
+  StyledSpanPriceColor
 } from '../../components';
 import { numberWithCommas } from '../../components/CoinsTable';
 import { TrendingCoins } from '../../config/api';
@@ -40,10 +42,12 @@ const Carousel = () => {
         <StyledSpanEmpty>
           {coin?.symbol}
           &nbsp;
-          <StyledSpanPriceColor style={{
+          <StyledSpanPriceColor
+            style={{
               color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
-              fontWeight: 500,
-            }}>
+              fontWeight: 500
+            }}
+          >
             {profit && '+'}
             {coin?.price_change_percentage_24h?.toFixed(2)}%
           </StyledSpanPriceColor>

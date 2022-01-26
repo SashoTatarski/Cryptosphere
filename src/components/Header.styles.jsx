@@ -9,10 +9,10 @@ import {
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledTypographyHeaderTitle = styled(Typography)`  
+export const StyledTypographyHeaderTitle = styled(Typography)`
   flex: 1;
-  color: gold;  
-  cursor: pointer;  
+  color: gold;
+  cursor: pointer;
 `;
 
 export const StyledSelectCurrency = styled(Select)`

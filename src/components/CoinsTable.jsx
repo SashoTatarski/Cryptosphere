@@ -62,13 +62,13 @@ const CoinsTable = () => {
 
   const classes = CoinsTableUseStyles();
 
-  const handleSearch = () => {    
+  const handleSearch = () => {
     return coins.filter(
       (coin) =>
         coin.name.toLowerCase().includes(search) ||
         coin.symbol.toLowerCase().includes(search)
     );
-  };  
+  };
 
   return (
     <ThemeProvider theme={StyledDarkTheme}>

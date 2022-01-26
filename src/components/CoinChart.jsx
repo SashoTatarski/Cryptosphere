@@ -47,12 +47,12 @@ const CoinChart = ({ coin }) => {
             <Line
               data={{
                 labels: historicData.map((coin) => {
-                  let date = new Date(coin[0]);                  
+                  let date = new Date(coin[0]);
                   let time =
                     date.getHours() > 12
                       ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                       : `${date.getHours()}:${date.getMinutes()} AM`;
-                      console.log(date.toLocaleDateString());
+                  console.log(date.toLocaleDateString());
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
 

@@ -21,13 +21,13 @@ export const StyledDivTitle = styled.div`
 `;
 
 export const StyledTypographyTitle = styled(Typography)`
-  font-weight: bold!important;
-  margin-bottom: 15px!important;
-  font-family: Montserrat!important;
+  font-weight: bold !important;
+  margin-bottom: 15px !important;
+  font-family: Montserrat !important;
 `;
 
 export const StyledTypographySubtitle = styled(Typography)`
-  color: darkgrey!important;
-  text-transform: capitalize!important;
-  font-family: Montserrat!important;
+  color: darkgrey !important;
+  text-transform: capitalize !important;
+  font-family: Montserrat !important;
 `;
