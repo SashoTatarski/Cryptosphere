@@ -7,7 +7,7 @@ import { numberWithCommas } from '../components/CoinsTable';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 import {
-  CoinPageUseStyles,  
+  CoinPageUseStyles,
   StyledImage,
   StyledSpan,
   StyledCoinDescription,
@@ -48,9 +48,7 @@ const CoinPage = () => {
       <div className={classes.container}>
         <div className={classes.sidebar}>
           <StyledImage src={coin?.image.large} alt={coin?.name} />
-          <StyledHeading variant="h3">
-            {coin?.name}
-          </StyledHeading>
+          <StyledHeading variant="h3">{coin?.name}</StyledHeading>
           <StyledCoinDescription variant="subtitle1">
             {ReactHtmlParser(coin?.description.en.split('. ')[0])}.
           </StyledCoinDescription>
@@ -64,9 +62,7 @@ const CoinPage = () => {
             </StyledSpan>
 
             <StyledSpan>
-              <StyledHeading variant="h5">
-                Current Price:
-              </StyledHeading>
+              <StyledHeading variant="h5">Current Price:</StyledHeading>
               &nbsp; &nbsp;
               <StyledCoinPrice variant="h5">
                 {symbol}{' '}
@@ -76,9 +72,7 @@ const CoinPage = () => {
               </StyledCoinPrice>
             </StyledSpan>
             <StyledSpan>
-              <StyledHeading variant="h5">
-                Market Cap:
-              </StyledHeading>
+              <StyledHeading variant="h5">Market Cap:</StyledHeading>
               &nbsp; &nbsp;
               <StyledCoinPrice variant="h5">
                 {symbol}{' '}
