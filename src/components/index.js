@@ -77,13 +77,9 @@ import {
 } from './Form/Form/Form.styles';
 import Header from './Header';
 import {
-  StyledAppBar,
-  StyledContainer,
   StyledLinkUser,
-  StyledMenuItem,
-  StyledSelectCurrency,
-  StyledToolbar,
-  StyledTypographyHeaderTitle
+  StyledSelectCurrency,  
+  StyledHomeButton
 } from './Header.styles';
 import Modal from './Modal/Modal';
 import ProtectedRoute from './ProtectedRoute';
@@ -124,13 +120,9 @@ export {
   CoinChart,
   SelectButton,
   StyledDarkTheme,
-  StyledTypographyHeaderTitle,
+  StyledHomeButton,
   StyledSelectCurrency,
-  StyledMenuItem,
   StyledLinkUser,
-  StyledAppBar,
-  StyledContainer,
-  StyledToolbar,
   StyledCarousel,
   StyledCarouselItem,
   StyledImg,

@@ -1,15 +1,11 @@
 import {
-  AppBar,
-  Container,
-  MenuItem,
-  Select,
-  Toolbar,
+  Select,  
   Typography
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledTypographyHeaderTitle = styled(Typography)`
+export const StyledHomeButton = styled(Typography)`
   flex: 1;
   color: gold;
   cursor: pointer;
@@ -26,7 +22,4 @@ export const StyledLinkUser = styled(Link)`
   color: white;
 `;
 
-export const StyledMenuItem = styled(MenuItem)``;
-export const StyledAppBar = styled(AppBar)``;
-export const StyledContainer = styled(Container)``;
-export const StyledToolbar = styled(Toolbar)``;
+

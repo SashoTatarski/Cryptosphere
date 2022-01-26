@@ -1,19 +1,22 @@
-import { ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {
-  StyledAppBar,
-  StyledContainer,
-  StyledDarkTheme,
-  StyledLinkUser,
-  StyledMenuItem,
-  StyledSelectCurrency,
-  StyledToolbar,
-  StyledTypographyHeaderTitle
-} from '../components';
 import { CryptoState } from '../Context/CryptoContext';
 import { logoutUser } from '../redux';
+import {
+  AppBar,
+  Container,
+  MenuItem,
+  ThemeProvider,
+  Toolbar
+} from '@material-ui/core';
+import {
+  StyledDarkTheme,
+  StyledLinkUser,
+  StyledSelectCurrency,
+  StyledHomeButton
+} from '../components';
+
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
@@ -25,10 +28,10 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={StyledDarkTheme}>
-      <StyledAppBar color="transparent" position="static">
-        <StyledContainer>
-          <StyledToolbar>
-            <StyledTypographyHeaderTitle
+      <AppBar color="transparent" position="static">
+        <Container>
+          <Toolbar>
+            <StyledHomeButton
               onClick={() => navigate('/dashboard')}
               style={{
                 fontFamily: 'Montserrat',
@@ -38,22 +41,22 @@ const Header = () => {
               }}
             >
               Home
-            </StyledTypographyHeaderTitle>
+            </StyledHomeButton>
             <StyledSelectCurrency
               variant="outlined"
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
             >
-              <StyledMenuItem value={'USD'}>USD</StyledMenuItem>
-              <StyledMenuItem value={'EUR'}>EUR</StyledMenuItem>
+              <MenuItem value={'USD'}>USD</MenuItem>
+              <MenuItem value={'EUR'}>EUR</MenuItem>
             </StyledSelectCurrency>
             <StyledLinkUser to="/user">
-              <StyledMenuItem>{userData.user.user.firstName}</StyledMenuItem>
+              <MenuItem>{userData.user.user.firstName}</MenuItem>
             </StyledLinkUser>
-            <StyledMenuItem onClick={handleLogout}>Logout</StyledMenuItem>
-          </StyledToolbar>
-        </StyledContainer>
-      </StyledAppBar>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </ThemeProvider>
   );
 };
