@@ -17,6 +17,8 @@ deploy:
   stage: deploy
 
   script:
+    script:
+    - npm install
     - npm run build
     - rm -rf public
     - mv dist public
