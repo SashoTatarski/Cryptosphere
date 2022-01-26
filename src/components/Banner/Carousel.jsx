@@ -1,18 +1,16 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {
-  ResponsiveCarouselView,
-  StyledAliceCarousel,
-  StyledDivCarousel,
-  StyledImg,
-  StyledLinkCarouselItem,
-  StyledSpanContainerPrice,
-  StyledSpanEmpty,
-  StyledSpanPriceColor
-} from '../../components';
+import axios from 'axios';
+import { CryptoState } from '../../Context/CryptoContext';
 import { numberWithCommas } from '../../components/CoinsTable';
 import { TrendingCoins } from '../../config/api';
-import { CryptoState } from '../../Context/CryptoContext';
+import AliceCarousel from 'react-alice-carousel';
+import {
+  ResponsiveCarouselView,  
+  StyledCarousel,
+  StyledImg,
+  StyledCarouselItem,
+  StyledPrice
+} from '../../components';
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
@@ -37,12 +35,12 @@ const Carousel = () => {
   const items = trending.map((coin) => {
     let profit = coin?.price_change_percentage_24h >= 0;
     return (
-      <StyledLinkCarouselItem to={`/coins/${coin.id}`} key={coin.id}>
+      <StyledCarouselItem to={`/coins/${coin.id}`} key={coin.id}>
         <StyledImg src={coin?.image} alt={coin.name} />
-        <StyledSpanEmpty>
+        <span>
           {coin?.symbol}
           &nbsp;
-          <StyledSpanPriceColor
+          <span
             style={{
               color: profit > 0 ? 'rgb(14, 203, 129)' : 'red',
               fontWeight: 500
@@ -50,18 +48,18 @@ const Carousel = () => {
           >
             {profit && '+'}
             {coin?.price_change_percentage_24h?.toFixed(2)}%
-          </StyledSpanPriceColor>
-        </StyledSpanEmpty>
-        <StyledSpanContainerPrice>
+          </span>
+        </span>
+        <StyledPrice>
           {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
-        </StyledSpanContainerPrice>
-      </StyledLinkCarouselItem>
+        </StyledPrice>
+      </StyledCarouselItem>
     );
   });
 
   return (
-    <StyledDivCarousel>
-      <StyledAliceCarousel
+    <StyledCarousel>
+      <AliceCarousel
         mouseTracking
         infinite
         autoPlayInterval={1000}
@@ -72,7 +70,7 @@ const Carousel = () => {
         autoPlay
         items={items}
       />
-    </StyledDivCarousel>
+    </StyledCarousel>
   );
 };
 

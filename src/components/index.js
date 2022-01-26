@@ -1,30 +1,36 @@
-import Modal from './Modal/Modal';
-import ProtectedRoute from './ProtectedRoute';
-
-import Header from './Header';
-import CoinChart from './CoinChart';
-import CoinsTable from './CoinsTable';
-import Banner from './Banner/Banner';
-import Carousel from '../components/Banner/Carousel';
-import SelectButton from './SelectButton';
 import {
-  StyledBannerContainer,
-  StyledBackgroundImage,
-  StyledBannerTitle,
-  StyledSubtitle,
-  StyledHeading
+  StyledBackgroundImage, StyledBannerContainer, StyledBannerTitle, StyledHeading, StyledSubtitle
 } from '../components/Banner/Banner.styles';
+import Carousel from '../components/Banner/Carousel';
 import {
   ResponsiveCarouselView,
-  StyledAliceCarousel,
-  StyledDivCarousel,
+  StyledCarouselItem, StyledCarousel,
   StyledImg,
-  StyledLinkCarouselItem,
-  StyledSpanContainerPrice,
-  StyledSpanEmpty,
-  StyledSpanPriceColor
+  StyledPrice
 } from '../components/Banner/Carousel.styles';
-import { StyledDarkTheme } from './CoinsTable.styles';
+import Banner from './Banner/Banner';
+import {
+  Avatar,
+  Card, CardHeader, EditStyledIcon,
+  Name,
+  NameParagraph,
+  SaveStyledSave,
+  Stats, StButton, StyledParagraph,
+  Title, Wrapper
+} from './Card/Card.styles';
+import CoinChart from './CoinChart';
+import {
+  StyledCircularProgress,
+  StyledDivChartButtons, StyledDivChartContainer,
+  StyledDivChartResponsive
+} from './CoinChart.styles';
+import CoinsTable from './CoinsTable';
+import {
+  CoinsTableUseStyles,
+  StyledContainerCoinsTable, StyledDarkTheme, StyledDivSymbolAbbr, StyledImgCoinsTable, StyledSpanSymbolAbbr,
+  StyledSpanSymbolName, StyledTable, StyledTableBody, StyledTableCell, StyledTableCellPercentage, StyledTableCellSymbol, StyledTableCellTitle, StyledTableContainer,
+  StyledTableHead, StyledTablePagination, StyledTableRow, StyledTableRowBody, StyledTextFieldTable, StyledTypographyTable
+} from './CoinsTable.styles';
 import {
   FlexWrapper,
   SFlexContainer,
@@ -42,6 +48,7 @@ import {
   StyledInput,
   StyledTitle
 } from './Form/Form/Form.styles';
+import Header from './Header';
 import {
   StyledAppBar,
   StyledContainer,
@@ -51,48 +58,11 @@ import {
   StyledToolbar,
   StyledTypographyHeaderTitle
 } from './Header.styles';
-import {
-  Avatar,
-  Card,
-  EditStyledIcon,
-  Name,
-  NameParagraph,
-  SaveStyledSave,
-  Stats,
-  StyledParagraph,
-  Title,
-  CardHeader,
-  Wrapper,
-  StButton
-} from './Card/Card.styles';
+import Modal from './Modal/Modal';
+import ProtectedRoute from './ProtectedRoute';
+import SelectButton from './SelectButton';
 import { StyledSpanSelectButton } from './SelectButton.styles';
-import {
-  StyledDivChartContainer,
-  StyledDivChartResponsive,
-  StyledCircularProgress,
-  StyledDivChartButtons
-} from './CoinChart.styles';
-import {
-  CoinsTableUseStyles,
-  StyledContainerCoinsTable,
-  StyledTypographyTable,
-  StyledTextFieldTable,
-  StyledTableContainer,
-  StyledTableHead,
-  StyledTableCellTitle,
-  StyledTableRow,
-  StyledTableCell,
-  StyledTableBody,
-  StyledTable,
-  StyledTableRowBody,
-  StyledTableCellSymbol,
-  StyledImgCoinsTable,
-  StyledDivSymbolAbbr,
-  StyledSpanSymbolAbbr,
-  StyledSpanSymbolName,
-  StyledTableCellPercentage,
-  StyledTablePagination
-} from './CoinsTable.styles';
+
 export {
   Carousel,
   ProtectedRoute,
@@ -134,14 +104,11 @@ export {
   StyledAppBar,
   StyledContainer,
   StyledToolbar,
-  StyledDivCarousel,
-  StyledLinkCarouselItem,
+  StyledCarousel,
+  StyledCarouselItem,
   StyledImg,
-  StyledSpanContainerPrice,
-  StyledAliceCarousel,
+  StyledPrice,
   ResponsiveCarouselView,
-  StyledSpanPriceColor,
-  StyledSpanEmpty,
   StyledBannerContainer,
   StyledBackgroundImage,
   StyledBannerTitle,
@@ -173,3 +140,4 @@ export {
   StyledTablePagination,
   StButton
 };
+
