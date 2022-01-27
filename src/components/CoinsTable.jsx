@@ -131,7 +131,7 @@ const CoinsTable = () => {
                           {row.price_change_percentage_24h.toFixed(2)}%
                         </StyledTableCellPercentage>
                         <TableCell align="right">
-                          {symbol}{' '}                          
+                          {symbol}{' '}
                           {formatPrice(row.market_cap.toString().slice(0, -6))}M
                         </TableCell>
                       </StyledRow>
