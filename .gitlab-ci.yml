@@ -15,6 +15,9 @@ build:
   script:
     - npm install
     - npm run build
+  artifacts:
+    paths:
+      - dist/
 
 test:
   stage: test
@@ -28,8 +31,8 @@ test:
 deploy:
   stage: deploy
   script:
-    - rm -rf public
-    - mv dist public
+   - rm -rf public
+   - mv dist public  
   artifacts:
     paths:
       - public
