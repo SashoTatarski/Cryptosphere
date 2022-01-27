@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { SingleCoin } from '../src/config/api';
+
 
 const data = [
   {

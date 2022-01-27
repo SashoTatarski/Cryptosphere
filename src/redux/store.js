@@ -11,13 +11,7 @@ const localStorageMiddleware = (store) => (next) => (action) => {
   if (action.type === LOGIN_SUCCESS || UPDATE_USER_SUCCESS) {
     const authState = store.getState().auth.user;
     localStorage.setItem('user', JSON.stringify(authState));
-  }
-  return result;
-};
-
-const localStorageMiddlewareLogout = (store) => (next) => (action) => {
-  const result = next(action);
-  if (action.type === LOGOUT) {
+  } else if (action.type === LOGOUT) {
     localStorage.removeItem('user');
   }
   return result;
@@ -25,13 +19,6 @@ const localStorageMiddlewareLogout = (store) => (next) => (action) => {
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(
-    applyMiddleware(
-      logger,
-      thunk,
-      localStorageMiddleware,
-      localStorageMiddlewareLogout
-    )
-  )
+  composeWithDevTools(applyMiddleware(logger, thunk, localStorageMiddleware))
 );
 export default store;

@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    userData.isLoggedIn ? navigate('dashboard') : null;
+    userData.isLoggedIn ? navigate('user') : null;
   }, [userData.isLoggedIn]);
 
   return (
@@ -47,7 +47,6 @@ const Login = () => {
         <SmallStyledTitle>Sign in to your account</SmallStyledTitle>
         <SForm onSubmit={handleSubmit(onSubmit)}>
           <StyledInput
-            type=""
             placeholder="Email"
             {...register('email', { required: true })}
             validationFailed={errors.email}
