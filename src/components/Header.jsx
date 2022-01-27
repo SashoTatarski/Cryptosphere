@@ -19,10 +19,10 @@ import {
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
-  const userData = useSelector((state) => state.auth);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
+  const userData = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const handleLogout = () => dispatch(logoutUser());
 
   return (
