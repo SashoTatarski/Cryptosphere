@@ -1,8 +1,8 @@
-import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
-
-import { Dashboard } from '../../src/pages';
+import React from 'react';
 import { render } from '..';
+import { Dashboard } from '../../src/pages';
+
 
 describe('Dashboard Page', () => {
   beforeEach(() => {
@@ -41,7 +41,7 @@ describe('Dashboard Page', () => {
     it('headings on banner section', () => {
       expect(
         screen.getByRole('heading', {
-          name: /crypto dashboard/i
+          name: /Cryptosphere/i
         })
       ).toBeInTheDocument();
       expect(
