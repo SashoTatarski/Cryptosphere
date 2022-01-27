@@ -33,12 +33,7 @@ import {
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
-  const [tableHeaders, setTableHeaders] = useState([
-    'Coin',
-    'Price',
-    '24h Change',
-    'Market Cap'
-  ]);
+  
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
@@ -73,6 +68,13 @@ const CoinsTable = () => {
     );
   };
 
+  const tableHeaders = [
+    'Coin',
+    'Price',
+    '24h Change',
+    'Market Cap'
+  ];
+
   return (
     <ThemeProvider theme={StyledDarkTheme}>
       <StyledContainer>
@@ -104,35 +106,36 @@ const CoinsTable = () => {
               </StyledTableHead>
 
               <TableBody>
+                {console.log(handleSearch().slice((page - 1) * 10, (page - 1) * 10 + 10))}
                 {handleSearch()
                   .slice((page - 1) * 10, (page - 1) * 10 + 10)
-                  .map((row) => {
-                    const profit = row.price_change_percentage_24h > 0;
+                  .map((coin) => {
+                    const profit = coin.price_change_percentage_24h > 0;
                     return (
                       <StyledRow
-                        onClick={() => navigate(`/coins/${row.id}`)}
-                        key={row.name}
+                        onClick={() => navigate(`/coins/${coin.id}`)}
+                        key={coin.name}
                       >
                         <StyledTableCell component="th" scope="row">
-                          <StyledCoinImage src={row?.image} alt={row.name} />
+                          <StyledCoinImage src={coin?.image} alt={coin.name} />
                           <StyledCoinSymbol>
-                            <StyledSpanSymbolAbbr>{row.symbol}</StyledSpanSymbolAbbr>
-                            <StyledSpanSymbolName>{row.name}</StyledSpanSymbolName>
+                            <StyledSpanSymbolAbbr>{coin.symbol}</StyledSpanSymbolAbbr>
+                            <StyledSpanSymbolName>{coin.name}</StyledSpanSymbolName>
                           </StyledCoinSymbol>
                         </StyledTableCell>
                         <TableCell align="right">
-                          {symbol} {formatPrice(row.current_price.toFixed(2))}
+                          {symbol} {formatPrice(coin.current_price.toFixed(2))}
                         </TableCell>
                         <StyledTableCellPercentage
                           align="right"
                           style={{ color: profit > 0 ? 'rgb(14, 203, 129)' : 'red' }}
                         >
                           {profit && '+'}
-                          {row.price_change_percentage_24h.toFixed(2)}%
+                          {coin.price_change_percentage_24h.toFixed(2)}%
                         </StyledTableCellPercentage>
                         <TableCell align="right">
                           {symbol}{' '}
-                          {formatPrice(row.market_cap.toString().slice(0, -6))}M
+                          {formatPrice(coin.market_cap.toString().slice(0, -6))}M
                         </TableCell>
                       </StyledRow>
                     );
