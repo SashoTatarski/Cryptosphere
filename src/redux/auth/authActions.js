@@ -36,7 +36,8 @@ export const fetchUser = (values) => {
         data.access_token && data.user
           ? dispatch(loginUserSuccess(data))
           : dispatch(loginUserFailure(data.error))
-      ).catch((e) => {
+      )
+      .catch((e) => {
         dispatch(loginUserFailure(e));
       });
   };
