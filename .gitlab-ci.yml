@@ -1,11 +1,22 @@
 image: node
 
 stages:
+  - build
+
   - test
 
   - deploy
 
-testing:
+build:
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install
+    - npm run build
+
+test:
   stage: test
   cache:
     paths:
@@ -13,18 +24,10 @@ testing:
   script:
     - npm install
     - npm run test
-  artifacts:
-    paths:
-      - public
 
-pages:
+deploy:
   stage: deploy
-  cache:
-    paths:
-      - node_modules/
   script:
-    - npm install
-    - npm run build
     - rm -rf public
     - mv dist public
   artifacts:

@@ -3,8 +3,8 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
-import { render } from '../../tests';
-import Profile from './Profile';
+import { render } from '..';
+import Profile from '../../src/pages/Profile';
 
 describe('Profile page', () => {
   beforeEach(() => {
@@ -48,14 +48,14 @@ describe('Profile page', () => {
   it('first and last name are update correctly', () => {
     user.click(getEditButton());
 
-    user.type(screen.getByTestId('first-name-element'), '{selectall}Desi');
+    user.type(screen.getByTestId('first-name-element'), '{selectall}Vesi');
 
-    user.type(screen.getByTestId('last-name-element'), '{selectall}Dimova');
+    user.type(screen.getByTestId('last-name-element'), '{selectall}Vasileva');
 
     user.click(getSaveButton());
 
-    expect(screen.getByText(/desi/i)).toBeInTheDocument();
-    expect(screen.getByText(/dimova/i)).toBeInTheDocument();
+    expect(screen.getByText(/vesi/i)).toBeInTheDocument();
+    expect(screen.getByText(/vasileva/i)).toBeInTheDocument();
   });
 });
 
