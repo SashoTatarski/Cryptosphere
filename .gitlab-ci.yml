@@ -35,6 +35,6 @@ deploy:
    - mv dist public  
   artifacts:
     paths:
-      - public
+      - dist
   only:
     - develop
