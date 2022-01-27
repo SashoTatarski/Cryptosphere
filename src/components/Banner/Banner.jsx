@@ -13,8 +13,8 @@ const Banner = () => {
     <StyledBackgroundImage>
       <StyledBannerContainer>
         <StyledBannerTitle>
-          <StyledHeading variant="h2">Crypto Dashboard</StyledHeading>
-          <StyledSubtitle variant="subtitle2">
+          <StyledHeading variant="h2">Cryptosphere</StyledHeading>
+          <StyledSubtitle variant="subtitle3">
             Get all the Info regarding your favorite Crypto Currency
           </StyledSubtitle>
         </StyledBannerTitle>
