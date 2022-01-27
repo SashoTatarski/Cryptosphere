@@ -14,7 +14,7 @@ const Banner = () => {
       <StyledBannerContainer>
         <StyledBannerTitle>
           <StyledHeading variant="h2">Cryptosphere</StyledHeading>
-          <StyledSubtitle variant="subtitle3">
+          <StyledSubtitle variant="subtitle2">
             Get all the Info regarding your favorite Crypto Currency
           </StyledSubtitle>
         </StyledBannerTitle>
