@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { CoinList } from '../config/api';
+import { CoinListByMarketCap } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 import { StyledLinearProgress } from '../pages/CoinPage.styles';
 import {
@@ -46,7 +46,7 @@ const CoinsTable = () => {
 
     const fetchCoins = async () => {
       setLoading(true);
-      const { data } = await axios.get(CoinList(currency));
+      const { data } = await axios.get(CoinListByMarketCap(currency));
       if (active) {
         setCoins(data);
         setLoading(false);
@@ -77,7 +77,7 @@ const CoinsTable = () => {
           Cryptocurrency Prices by Market Cap
         </StyledTableTitle>
         <StyledSearchBar
-          label="Search For a Crypto Currency.."
+          label="Search..."
           variant="outlined"
           onChange={(e) => setSearch(e.target.value)}
           data-testid="search-element"
@@ -100,10 +100,7 @@ const CoinsTable = () => {
                 </TableRow>
               </StyledTableHead>
 
-              <TableBody>
-                {console.log(
-                  handleSearch().slice((page - 1) * 10, (page - 1) * 10 + 10)
-                )}
+              <TableBody>                
                 {handleSearch()
                   .slice((page - 1) * 10, (page - 1) * 10 + 10)
                   .map((coin) => {
