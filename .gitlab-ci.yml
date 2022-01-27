@@ -8,8 +8,8 @@ stages:
   - deploy
 
 build:
-stage: build
-cache:
+  stage: build
+  cache:
     paths:
       - node_modules/
   script:
