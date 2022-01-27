@@ -28,10 +28,10 @@ test:
 deploy:
   stage: deploy
   script:
-    - rm -rf public
-    - mv dist public
+    - rm -rf dist
+    - mv build dist
   artifacts:
     paths:
-      - public
+      - dist
   only:
     - develop
