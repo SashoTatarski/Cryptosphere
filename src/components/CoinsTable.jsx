@@ -100,7 +100,7 @@ const CoinsTable = () => {
                 </TableRow>
               </StyledTableHead>
 
-              <TableBody>                
+              <TableBody>
                 {handleSearch()
                   .slice((page - 1) * 10, (page - 1) * 10 + 10)
                   .map((coin) => {
