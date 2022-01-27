@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CryptoState } from '../../Context/CryptoContext';
-import { numberWithCommas } from '../../components/CoinsTable';
+import { formatPrice } from '../../components/CoinsTable';
 import { TrendingCoins } from '../../config/api';
 import AliceCarousel from 'react-alice-carousel';
 import {
@@ -51,7 +51,7 @@ const Carousel = () => {
           </span>
         </span>
         <StyledPrice>
-          {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+          {symbol} {formatPrice(coin?.current_price.toFixed(2))}
         </StyledPrice>
       </StyledCarouselItem>
     );

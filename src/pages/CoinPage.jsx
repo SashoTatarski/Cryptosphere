@@ -3,7 +3,7 @@ import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 import { useParams } from 'react-router-dom';
 import { CoinChart, Header } from '../components';
-import { numberWithCommas } from '../components/CoinsTable';
+import { formatPrice } from '../components/CoinsTable';
 import { SingleCoin } from '../config/api';
 import { CryptoState } from '../Context/CryptoContext';
 import {
@@ -57,7 +57,7 @@ const CoinPage = () => {
               <StyledHeading variant="h5">Rank:</StyledHeading>
               &nbsp; &nbsp;
               <StyledCoinPrice variant="h5">
-                {numberWithCommas(coin?.market_cap_rank)}
+                {formatPrice(coin?.market_cap_rank)}
               </StyledCoinPrice>
             </StyledSpan>
 
@@ -66,7 +66,7 @@ const CoinPage = () => {
               &nbsp; &nbsp;
               <StyledCoinPrice variant="h5">
                 {symbol}{' '}
-                {numberWithCommas(
+                {formatPrice(
                   coin?.market_data.current_price[currency.toLowerCase()]
                 )}
               </StyledCoinPrice>
@@ -76,7 +76,7 @@ const CoinPage = () => {
               &nbsp; &nbsp;
               <StyledCoinPrice variant="h5">
                 {symbol}{' '}
-                {numberWithCommas(
+                {formatPrice(
                   coin?.market_data.market_cap[currency.toLowerCase()]
                     .toString()
                     .slice(0, -6)

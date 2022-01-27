@@ -121,7 +121,7 @@ const CoinsTable = () => {
                           </StyledCoinSymbol>
                         </StyledTableCell>
                         <TableCell align="right">
-                          {symbol} {numberWithCommas(row.current_price.toFixed(2))}
+                          {symbol} {formatPrice(row.current_price.toFixed(2))}
                         </TableCell>
                         <StyledTableCellPercentage
                           align="right"
@@ -131,8 +131,8 @@ const CoinsTable = () => {
                           {row.price_change_percentage_24h.toFixed(2)}%
                         </StyledTableCellPercentage>
                         <TableCell align="right">
-                          {symbol}{' '}
-                          {numberWithCommas(row.market_cap.toString().slice(0, -6))}M
+                          {symbol}{' '}                          
+                          {formatPrice(row.market_cap.toString().slice(0, -6))}M
                         </TableCell>
                       </StyledRow>
                     );
@@ -154,8 +154,8 @@ const CoinsTable = () => {
   );
 };
 
-export function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export function formatPrice(price) {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 export default CoinsTable;
