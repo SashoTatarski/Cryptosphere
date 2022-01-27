@@ -1,8 +1,8 @@
 import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
 
-import { render } from '../../tests';
-import CoinPage from './CoinPage';
+import { render } from '..';
+import CoinPage from '../../src/pages/CoinPage';
 
 describe('Coin page', () => {
   beforeEach(() => {

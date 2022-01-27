@@ -1,8 +1,8 @@
 import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
 
-import { Dashboard } from '.';
-import { render } from '../../tests';
+import { Dashboard } from '../../src/pages';
+import { render } from '..';
 
 describe('Dashboard Page', () => {
   beforeEach(() => {

@@ -1,8 +1,8 @@
 import { screen, waitFor, cleanup } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import { render } from '../../tests';
+import { render } from '..';
 import React from 'react';
-import Register from './Register';
+import Register from '../../src/pages/Register';
 
 describe('Register page', () => {
   describe('fields and errors on the register page', () => {
