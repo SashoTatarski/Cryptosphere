@@ -33,7 +33,7 @@ import {
 
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
-  
+
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
@@ -68,12 +68,7 @@ const CoinsTable = () => {
     );
   };
 
-  const tableHeaders = [
-    'Coin',
-    'Price',
-    '24h Change',
-    'Market Cap'
-  ];
+  const tableHeaders = ['Coin', 'Price', '24h Change', 'Market Cap'];
 
   return (
     <ThemeProvider theme={StyledDarkTheme}>
@@ -106,7 +101,9 @@ const CoinsTable = () => {
               </StyledTableHead>
 
               <TableBody>
-                {console.log(handleSearch().slice((page - 1) * 10, (page - 1) * 10 + 10))}
+                {console.log(
+                  handleSearch().slice((page - 1) * 10, (page - 1) * 10 + 10)
+                )}
                 {handleSearch()
                   .slice((page - 1) * 10, (page - 1) * 10 + 10)
                   .map((coin) => {
@@ -119,7 +116,9 @@ const CoinsTable = () => {
                         <StyledTableCell component="th" scope="row">
                           <StyledCoinImage src={coin?.image} alt={coin.name} />
                           <StyledCoinSymbol>
-                            <StyledSpanSymbolAbbr>{coin.symbol}</StyledSpanSymbolAbbr>
+                            <StyledSpanSymbolAbbr>
+                              {coin.symbol}
+                            </StyledSpanSymbolAbbr>
                             <StyledSpanSymbolName>{coin.name}</StyledSpanSymbolName>
                           </StyledCoinSymbol>
                         </StyledTableCell>
