@@ -1,6 +1,8 @@
 # React Stock Market Dashboard Project.
 <br>
-![image1.jpg](./image1.jpg)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/49935435/151591503-ae36d3d7-4c2b-402f-b6e7-36857b74932f.JPG" width="" title="hover text">  
+</p>
 
 ## Table of contents
    - [1. Description](#1-description)
