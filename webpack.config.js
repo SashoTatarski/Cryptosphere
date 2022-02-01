@@ -24,13 +24,15 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    //publicPath: '/stock-market-dashboard/',
+    publicPath: '/stock-market-dashboard/',
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     historyApiFallback: true,
-    static: path.resolve(__dirname, './dist'),
+    static: {
+      directory: path.join(__dirname, './dist'),
+    },
     hot: true,
     port: 3000
   },
