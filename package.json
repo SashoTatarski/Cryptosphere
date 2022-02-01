@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.+(js|jsx|json|css|md)\"",
     "build": "webpack --mode production",
     "prepare": "husky install",
-    "test:cypress":"cypress run",
+    "test:cypress": "cypress run",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
@@ -23,7 +23,9 @@
     "setupFiles": [
       "jest-canvas-mock"
     ],
-    "testPathIgnorePatterns":[ "<rootDir>/cypress/"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/cypress/"
+    ],
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/__mocks__/styleMock.js"
     }
