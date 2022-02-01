@@ -24,7 +24,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/stock-market-dashboard/',
+    //publicPath: '/stock-market-dashboard/',
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
