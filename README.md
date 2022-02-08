@@ -18,7 +18,7 @@
 ### **1. Description**
 <br> 
 
-Crypto Project - deployed to <a href="https://sashot.gitlab.io/stock-market-dashboard" target="_blank">Gitlab page</a>
+Crypto Project - deployed to <a href="https://sashotatarski.github.io/Cryptosphere/" target="_blank">Gitlab page</a>
 
 <br>
 
