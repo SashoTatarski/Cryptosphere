@@ -51,7 +51,7 @@ const Login = () => {
             {...register('email', { required: true })}
             validationFailed={errors.email}
             // Only for dev purposes
-            value='test@gmail.com'
+            value="test@gmail.com"
           />
 
           <StyledInput
@@ -60,7 +60,7 @@ const Login = () => {
             {...register('password', { required: true })}
             validationFailed={errors.password}
             // Only for dev purposes
-            value='123456'
+            value="123456"
           />
 
           {userData.error === 'Incorrect Email or Password' ? (
@@ -72,8 +72,10 @@ const Login = () => {
             <SRedirectLink to={'/register'}>{'Register'}</SRedirectLink>
           </SRedirect>
         </SForm>
-            <div style={{color: 'red'}}>*Please use the following credentials: test@gmail.com, pass: 123456</div>
-            <div style={{color: 'red'}}>They should be prerendered on the form</div>
+        <div style={{ color: 'red' }}>
+          *Please use the following credentials: test@gmail.com, pass: 123456
+        </div>
+        <div style={{ color: 'red' }}>They should be prerendered on the form</div>
       </SFlexContainer>
     </SFlexDiv>
   );
