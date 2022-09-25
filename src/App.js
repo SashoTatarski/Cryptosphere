@@ -8,11 +8,11 @@ const App = () => {
   return (
     <BrowserRouter basename="/stock-market-dashboard">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="register" element={<Register />} />
         <Route path="dashboard" element={<ProtectedRoute component={Dashboard} />} />
         <Route path="coins/:id" element={<ProtectedRoute component={CoinPage} />} />
-        <Route path="user" element={<ProtectedRoute component={Profile} />} />
+        {/* <Route path="user" element={<ProtectedRoute component={Profile} />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

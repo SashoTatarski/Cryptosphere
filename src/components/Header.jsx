@@ -49,10 +49,10 @@ const Header = () => {
               <MenuItem value={'USD'}>USD</MenuItem>
               <MenuItem value={'EUR'}>EUR</MenuItem>
             </StyledSelectCurrency>
-            <StyledLinkUser to="/user">
+            {/* <StyledLinkUser to="/user">
               <MenuItem>{userData.user.user.firstName}</MenuItem>
             </StyledLinkUser>
-            <MenuItem onClick={handleLogout}>Logout</MenuItem>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem> */}
           </Toolbar>
         </Container>
       </AppBar>
