@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    userData.isLoggedIn ? navigate('user') : null;
+    userData.isLoggedIn ? navigate('dashboard') : null;
   }, [userData.isLoggedIn]);
 
   return (

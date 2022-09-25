@@ -1,8 +1,3 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { CryptoState } from '../Context/CryptoContext';
-import { logoutUser } from '../redux';
 import {
   AppBar,
   Container,
@@ -10,12 +5,17 @@ import {
   ThemeProvider,
   Toolbar
 } from '@material-ui/core';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   StyledDarkTheme,
+  StyledHomeButton,
   StyledLinkUser,
-  StyledSelectCurrency,
-  StyledHomeButton
+  StyledSelectCurrency
 } from '../components';
+import { CryptoState } from '../Context/CryptoContext';
+import { logoutUser } from '../redux';
 
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
@@ -49,10 +49,10 @@ const Header = () => {
               <MenuItem value={'USD'}>USD</MenuItem>
               <MenuItem value={'EUR'}>EUR</MenuItem>
             </StyledSelectCurrency>
-            {/* <StyledLinkUser to="/user">
+            <StyledLinkUser to="/user">
               <MenuItem>{userData.user.user.firstName}</MenuItem>
             </StyledLinkUser>
-            <MenuItem onClick={handleLogout}>Logout</MenuItem> */}
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Toolbar>
         </Container>
       </AppBar>
